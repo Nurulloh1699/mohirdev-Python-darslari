@@ -202,13 +202,13 @@ Created on Sat Oct 26 19:25:01 2024
 # AMALIYOT TOPSHIRIQLARI.
 #1 - Quyidagi o'zgaruvchilarni yarating: 
 
-kocha="Bog'bon"
+# kocha="Bog'bon"
 
-mahalla="Sog'bon"
+# mahalla="Sog'bon"
 
-tuman="Bodomzor" 
+# tuman="Bodomzor" 
 
-viloyat="Samarqand"
+# viloyat="Samarqand"
 
 #2 - Yuqoridagi o'zgaruvchilarni jamlab, quyidagi ko'rinishda konsolga chiqaring: Bog'bon ko'chasi, Sog'bon mahallasi, Bodomzor tumani,
 # Samarqand viloyati
@@ -684,67 +684,67 @@ viloyat="Samarqand"
 
 # AMALIY TOPSHIRIQLAR.
 #1 - O'zingizga ma'lum davlatlarning ro'yxatini tuzing va ro'yxatni konsolga chiqaring
-countries = ["o'zbekiston", 'qatar', 'rossiya', 'ispaniya']
-print("Countries ro'yxati ichida ", countries, "shu davlatlar bor.\n")
+# countries = ["o'zbekiston", 'qatar', 'rossiya', 'ispaniya']
+# print("Countries ro'yxati ichida ", countries, "shu davlatlar bor.\n")
 
 #2 - Ro'yxatning uzunligini konsolga chiqaring.
-print("Countries ro'yxatida: ", len(countries), "ta element bor\n")
+# print("Countries ro'yxatida: ", len(countries), "ta element bor\n")
 
 #3 - sorted() funktsiyasi yordamida ro'yxatni tartiblangan holda konsolga chiqaring.
-print("Countries ro'yxatidagi elementlarnig tartiblangan holati: ", sorted(countries), "shunday bo'ladi\n")
+# print("Countries ro'yxatidagi elementlarnig tartiblangan holati: ", sorted(countries), "shunday bo'ladi\n")
 
 #4 - sorted() yordamida ro'yxatni teskari tartibda konsolga chiqaring.
-print("Countries ro'yxatidagi elementlarnig teskari tartiblangan holati: ", sorted(countries, reverse=True),\
-"shunday bo'ladi\n")
+# print("Countries ro'yxatidagi elementlarnig teskari tartiblangan holati: ", sorted(countries, reverse=True),\
+# "shunday bo'ladi\n")
     
 #5 - Asl ro'yxatni qaytadan konsolga chiqaring.
-print("Countries ro'yxatining asl ko'rinishi: ", countries,"shu ko'rinishda.\n")
+# print("Countries ro'yxatining asl ko'rinishi: ", countries,"shu ko'rinishda.\n")
 
 #6 - reverse() metodi yordamida ro'yxatni ortidan boshlab chiqaring.
-countries.reverse()
-print("Asl ro'yxatning teskari ko'rinishi: ", countries, "shu ko'rinishda.\n")
+# countries.reverse()
+# print("Asl ro'yxatning teskari ko'rinishi: ", countries, "shu ko'rinishda.\n")
 
 #7 - sort() metodi yordamida ro'yxatni avval alifbo bo'yicha, keyin esa alifboga teskari tartibda konsolga chiqaring.
-countries.sort()
-print(countries)
-countries.sort(reverse=True)
-print(countries)
+# countries.sort()
+# print(countries)
+# countries.sort(reverse=True)
+# print(countries)
 
 #8 - 120 dan 1200 gacha bo'lgan juft sonlar ro'yxatini tuzing.
-j_sonlar = list(range(120,1200,2))
-print("120dan 1200gacha bo'lgan juft sonlar: ", j_sonlar, "dan iborat.\n")
+# j_sonlar = list(range(120,1200,2))
+# print("120dan 1200gacha bo'lgan juft sonlar: ", j_sonlar, "dan iborat.\n")
 
 #9 - Ro'yxatdagi sonlar yig'indisini hisoblang va konsolga chiqaring.
-print("j_sonlar ro'yxatidagi sonlar yeg'indisi: ", sum(j_sonlar), "ga teng.\n")
+# print("j_sonlar ro'yxatidagi sonlar yeg'indisi: ", sum(j_sonlar), "ga teng.\n")
 
 #10 - Ro'yxatdagi eng katta va eng kichik son o'rtasidagi ayirmani hisoblang va konsolga chiqaring.
-print("j_sonlar ro'yxatidagi eng katta va eng kichik son o'rtasidagi ayirma: ", max(j_sonlar) - min(j_sonlar), "ga teng.\n")
+# print("j_sonlar ro'yxatidagi eng katta va eng kichik son o'rtasidagi ayirma: ", max(j_sonlar) - min(j_sonlar), "ga teng.\n")
 
 #11 - Ro'yxatdagi elementlar sonini hisoblang.
-print("j_sonlar ro'yxatidagi elementlar soni: ", len(j_sonlar), "taga teng.\n")
+# print("j_sonlar ro'yxatidagi elementlar soni: ", len(j_sonlar), "taga teng.\n")
 
 #12 - Ro'yxatning boshidan, o'rtasidan va oxiridan 20 ta qiymatni konsolga chiqaring.
-print(j_sonlar[0:21],"\n")
-print(j_sonlar[260:281],"\n")
-print(j_sonlar[520:541],"\n")
+# print(j_sonlar[0:21],"\n")
+# print(j_sonlar[260:281],"\n")
+# print(j_sonlar[520:541],"\n")
 
 #13 - taomlar degan ro'yxat yarating va ichiga istalgan 5ta taomni kiriting.
-foods = ['osh', 'somsa', 'kabob', 'shirguruch', 'shorva']
+# foods = ['osh', 'somsa', 'kabob', 'shirguruch', 'shorva']
 
 #14 - nonushta degan yangi ro'yxatga taomlardan nusxa oling.
-nonushta = foods[:]
+# nonushta = foods[:]
 
 #15 - Yangi ro'yxatda faqat nonushtaga yeyiladigan taomlarni qoldiring, va qo'shimcha 2 ta taom qo'shing.
-nonushta.remove('osh')
-nonushta.remove('kabob')
-nonushta.remove('shorva')
-nonushta.append('non va qaymoq')
-nonushta.append('m_kasha')
+# nonushta.remove('osh')
+# nonushta.remove('kabob')
+# nonushta.remove('shorva')
+# nonushta.append('non va qaymoq')
+# nonushta.append('m_kasha')
 
 
 #16 - Ikkala ro'yxatni ham (taomlar va nonushta) konsolga chiqaring
-print(foods,"\n")
-print(nonushta,"\n")
+# print(foods,"\n")
+# print(nonushta,"\n")
 
 #17 - Yuqoridagi nonushta ro'yxatini o'zgarmas ro'yxatga aylantiring va nonushta[0] = "qaymoq va non" deb qiymat
 # berib ko'ring.
@@ -761,20 +761,20 @@ print(nonushta,"\n")
 
 # Quyidagi misolni ko'ramiz.Bizda mehmonlar degan ro'yxat bor, har bir mehmonning ismini yangi qatordan
 # chiqarmoqchimiz. Buning uchun quyidagi kodni yozamiz. 
-mehmonlar = ['Ali', 'Vali', 'Hasan', 'Husan', 'Olim'] # Oddiy ro'yxat.
-for mehmon in mehmonlar: # Mehmonlar ro'yxatidagi har bir mehmon uchun quyidagi kodni bajar deyapmiz.
-    print(mehmon) # Natija.
+# mehmonlar = ['Ali', 'Vali', 'Hasan', 'Husan', 'Olim'] # Oddiy ro'yxat.
+# for mehmon in mehmonlar: # Mehmonlar ro'yxatidagi har bir mehmon uchun quyidagi kodni bajar deyapmiz.
+#     print(mehmon) # Natija.
 # Yuqoridagi tsikl toki mehmonlar ichidagi elementlar tugagunga qadar davom etadi.
 
 # FOR TSIKLI QANDAY ISHLAYDI. Keling yana bir misolga etibor beraylik.
-mehmonlar = ['Ali', 'Vali', 'Hasan', 'Husan', 'Olim']    
-for mehmon in mehmonlar: # Bu qator sikl sharti deyiladi va aynan shu qator kodni bir necha marta takrorlanishini
-# taminlaydi.
-    print(f"Hurmatli {mehmon}, ")
-    print("Sizni 20-mart kuni nahorgi oshga taklif qilamiz.")
-    print("Hurmat bilan, Palonchiyevlar oilasi.\n")
+# mehmonlar = ['Ali', 'Vali', 'Hasan', 'Husan', 'Olim']    
+# for mehmon in mehmonlar: # Bu qator sikl sharti deyiladi va aynan shu qator kodni bir necha marta takrorlanishini
+# # taminlaydi.
+    # print(f"Hurmatli {mehmon}, ")
+    # print("Sizni 20-mart kuni nahorgi oshga taklif qilamiz.")
+    # print("Hurmat bilan, Palonchiyevlar oilasi.\n")
 # Yuqoridagi 3ta qator sikl badani deyiladi va shart to'g'ri bo'lganda bajariladi.
-print("Dastur tugadi.\n") # Bu qator esa sikldan tashqarida va dasturga aloqasi yo'q.
+# print("Dastur tugadi.\n") # Bu qator esa sikldan tashqarida va dasturga aloqasi yo'q.
 
 # Quyidagi kod bilan yana bir misol ko'rgan bo'lamiz.
 # cars = ['nexia', 'tico', 'damas'] # Oddiy ro'yxat.
@@ -837,9 +837,9 @@ print("Dastur tugadi.\n") # Bu qator esa sikldan tashqarida va dasturga aloqasi 
 
 #3 - 10 dan 100 gacha bo'lgan toq sonlar ro'yxatini tuzing. Ro'yxatning xar bir elementining kubini yangi qatordan
 # konsolga chiqaring.
-t_sonlar = list(range(11,100,2))
-for son in t_sonlar:
-    print(f"{son}ning kubi {son**3}ga teng.")
+# t_sonlar = list(range(11,100,2))
+# for son in t_sonlar:
+#     print(f"{son}ning kubi {son**3}ga teng.")
     
 #4 - Foydalanuvchidan 5 ta eng sevimli kinolarini kiritshni so'rang, va kinolar degan ro'yxatga saqlab oling.
 # Natijani konsolga chiqaring.
@@ -849,25 +849,209 @@ for son in t_sonlar:
 #     kinolar.append(input(f"{k+1}-kinoni kiriting: "))
 # print(f"Foydalanuvchi yoqtirgan kinolar ro'yxati: {kinolar}")
 
-kinolar = []
-print("Beshta eng yoqtirgan kinoingiz qaysi?")
-for k in range(5):
-    kinolar.append(input(f"{k+1}-kinoni kiriting!"))
-print(f"Foydalanuvchi kiritgan kinolar ro'yxati: {kinolar}")
+# kinolar = []
+# print("Beshta eng yoqtirgan kinoingiz qaysi?")
+# for k in range(5):
+#     kinolar.append(input(f"{k+1}-kinoni kiriting!"))
+# print(f"Foydalanuvchi kiritgan kinolar ro'yxati: {kinolar}")
 
 #5 - Foydalanuvchidan bugun nechta odam bilan uchrashganini (suhbatlashganini) so'rang, va har bir suhbatlashgan
 # odamning ismini birma-bir so'rab ro'yxatga yozing. Ro'yxatni konsolga chiqaring.
-soni = int(input("Bugun necha kishi bilan suhbat qurdingiz? ")) # INPUT orqali foydalanuvchidan nechta odam bilan 
-# suhbat qurganini aniqlaymiz va uni soni degan o'zgaruvchi yuklaymiz.
-ismlar = [] # Ismlar degan bo'sh ro'yxat yaratamiz.
-for n in range(soni): # FOR oraqli foydalanuvchi kiritgan son range o'zlashtirilishini taminlaymiz.
-    ismlar.append(input(f"{n+1}-suhbat qurgan odamingiz kim? ")) # Yuqoridagi foydalanuvchi kiritgan son aslida nechta
-# ism ro'qyxatga qo'shilishini aniqlaydi.
-print(ismlar) # Ro'yxatni konsolga chiqaramiz.
+# soni = int(input("Bugun necha kishi bilan suhbat qurdingiz? ")) # INPUT orqali foydalanuvchidan nechta odam bilan 
+# # suhbat qurganini aniqlaymiz va uni soni degan o'zgaruvchi yuklaymiz.
+# ismlar = [] # Ismlar degan bo'sh ro'yxat yaratamiz.
+# for n in range(soni): # FOR oraqli foydalanuvchi kiritgan son range o'zlashtirilishini taminlaymiz.
+#     ismlar.append(input(f"{n+1}-suhbat qurgan odamingiz kim? ")) # Yuqoridagi foydalanuvchi kiritgan son aslida nechta
+# # ism ro'qyxatga qo'shilishini aniqlaydi.
+# print(ismlar) # Ro'yxatni konsolga chiqaramiz.
 
-soni = int(input("Bugun nechta odam bilan suhbat qurdingiz? "))
-ismlar = []
-for n in range(soni):
-    ismlar.append(input(f"{n+1}-ismni kiriting! ")) 
-    print(ismlar)
+# soni = int(input("Bugun nechta odam bilan suhbat qurdingiz? "))
+# ismlar = []
+# for n in range(soni):
+#     ismlar.append(input(f"{n+1}-ismni kiriting! ")) 
+#     print(ismlar)
     
+# 7 - DARS TUGADI.
+
+# 8 - DARS.
+# SHARTLAR VA TARMOQLANISH.
+# TAQQOSLASH OPERATORLARI.
+# Dastur tarmoqlanishi uchun, avvalo, biror shart bajarilishi kerak. Shart bajarilishini tekshirish uchun esa maxsus 
+# taqqoslash operatorlari mavjud. Bu operatorlar yordamida biz o'zgaruvchilarning ma'lum qiymatga tengligini yoki,
+# aksincha, teng emasligini yoxud ifodalarning natijasini berilgan qiymatdan katta yoki kichikligini va hokazo
+# shartlarni tekshirib ko'rishimiz mumkin.
+# Quyida Pythondagi taqqoslash operatorlarini ko'rib chiqamiz.
+
+# == (Tenglik) a == b.
+# != (Tengsizlik) a != b.
+# < (Kichik) a < b.
+# <= (Kichik yoki teng) a <= b.
+# > (Katta) a > b.
+# >= (Katta yoki teng) a >= b.
+
+# Taqqoslash operatorlari mantiqiy qiymat qaytaradi (bool). Mantiqiy qiymatlar True (Shart bajarildi) yoki
+# False (Shart bajarilmadi) bo'lishi mumkin.
+# True ingliz tiladan (To'g'ri), False esa (Yolg'on) deb tarjima qilinadi. Quyida bir misol bilan buni mustaxkamlaymiz.
+# a = 5
+# b = 6
+# print(a == b) # a teng(mi)? b ga. Natija False bo'ladi chunki teng emas.
+
+# Yana bitta boshqacharoq misol ko'ramiz.
+# a = 5
+# b = 6
+# print(a == (b - 1))
+
+# Matnlarni va sonlarni taqqoslash usullari.
+# print('anvar' == 'Anvar ') # Matnlarni taqqoslash.
+# print(10**2<2**10) # Sonlarni taqqoslash.
+
+# Taqqoslash qanday bajarilishini tushunish uchun quyidagi mashqlarni bajarib ko'ramiz.
+# ism = 'anvar' # O'zgaruvchiga yuklandi.
+# print(ism != 'Ahad') # ism da bosh harfli 'Ahad' teng emas kichik harfli 'ahad' ga (True) javob qaytadi.
+# print(ism.title() == 'Ahad') # Bu yerda endi title() metodidan foydalandik va endi mantiqiy qiymat (False) ga teng bo'ladi.
+
+# num1 = [1,2,3] # <- 1 - ro'yxat.
+# num2 = [1,2,4] # <- 2 - ro'yxat.
+
+# print(num1 != num2) # Ikkita ikki ro'yxatni teng emasligini so'rayapmi va bu (True) javob qaytaradi.
+# print(9**2 >= 7*9+18) # 9 ning kvadrati (81) katta yoki teng ifodadan, hisoblasak ifoda ham (81) ga teng bo'ladi.
+# Kelib chiqadiki (True) qiymat qaytaradi.
+
+#x = 10 # <- x ni 10ga tengalab olamiz va uni turli ifodalar oraqali turli ifodalarga tenglashga urunib ko'ramiz.
+# print(x*x < x**2) # 10 ko'paytirilgan 10ga va bu ifoda kichikmi 10 ning kvadratidan. (False) degan javob qaytaradi.
+# print(x*x >= float(f"{x**2}")) # Bu yerda ham huddi shunday ifoda boshqacharoq talqinda. (True) qiymat qaytaradi.
+
+# IF-ELSE OPERATORI.
+# Avvalgi bo'limda biz turli ifodalarni  taqqoslashni o'rgandik, keling, endi taqqoslashning natijasiga ko'ra
+# tarmoqlanishini ham ko'zdan kechiraylik. Buning uchun dasturlash tillarida maxsus "if" operatori mavjud. "if" so'zi 
+# ingliz tilidan "agar" deb tarjima qilinadi va ma'lum bir shart qanoatlantirilishiga qarab shu shartga bog'langan
+# kod ham bajariladi.
+# son = int(input("Istalgan son kiriting: ")) # Foydalanuvchidan istalgan son kiriting deb so'raymiz.
+# if son > 0: # "if" operatori orqali kiritilgan sonnig 0dan katta ekanini tekshiramiz. Bu qatorni "agar son 0 dan katta
+# bo'lsa" deb o'qish mumkin.
+    # print(son, "musbat son") # Bu qator "if" operatorining badani hisoblanadi va faqatgina yuqoridagi shart to'g'ri
+# (True) bo'lsa, bajariladi.
+
+# Agar yuqorida biz misol uchun: -10 sonini kiritganimizda kod bajarilmasdi va hech narsa konsolga chiqmasdi.
+# Keling endi buni tekshirishimiz uchun yangi "else" operatori bilan tanishamiz."else" so'zi ingliz tiladan "aks holda"
+# debn tarjima qilinadi va "if" operatorida bajarilgan shart qanoatlantirilmasa, "else" operatoridan keyingi kod
+# bajariladi.
+
+# yosh = int(input("Yoshingizni kiriting: "))
+# if yosh <= 7: # Agar yosh 7dan kichik yoki 7ga teng bo'lsa.
+#     print("Sizga aftobus bepul!")
+# else: # Aks holda.
+    # print("Sizga chipta 7000")
+    
+# Shart "badani" shartdan biroz o'nggasurib yozilgan har bir qator if/else shartining badani hisoblanadi.
+
+# BIR QATOR IF-ELSE
+# Qisqa kodlar uchun shart va uning badanini 1 qatorga jamlab yozishimiz ham mumkin. Agar shartimiz faqat "if" dan
+# iborat bo'lsa, uning badanini keyingi qatordan emas, ikki nuqtadan keyin yozish kifoya.
+# yosh = int(input("Yoshingizni kiriting: "))
+# if yosh > 65: print("Siz COVID-19 havf guruhida ekansiz.")
+
+# Deylik kodimizda "if-else" birgalikda qatnashsa, "if" ning badani undan oldin, "else" ning badani esa keyin yoziladi:
+# x, y = 50, 29 # x = 50, y = 29
+# print("x < y") if x < y else print("x > y") # Shu ko'rinishta.
+
+# MATNLARNI SOLISHTIRISH.
+# Matnlarni solishtirish bu yana bir muhim jihatlardan biri, buni biz birorbir satda yangi akkaunt ochyotgan odam
+# misolida ko'rishimiz mumkin.
+# Matnlarni solishtirishdan avval ularni lower metodidan foydalangan holda bir hil ko'rinishga olib kelib olish
+# maqsadga muvofiq bo'ladi.
+#ism = 'Ali' # O'zgaruvchi misolida ko'ramiz.
+#ism.lower() == 'ali' # Bu yerda biz bor o'zgaruvchini oldin bir ko'rinishga keltirib olyapmiz va endi natija (True).
+
+# AMALIYOT TOPSHIRIQLARI.
+#1 - Quyidagi dasturlarni Pythonda bajarib ko'ring.
+#1
+# avtolar = ['audi', 'bmw', 'volvo', 'kia', 'hyundai']
+# for avto in avtolar:
+#     if avto == 'bmw':
+#         print(avto.upper())
+#     else:
+#         print(avto.title())
+
+#2        
+# javob = float(input("12x6 nechiga teng? "))
+# if javob != 72:
+#     print("Javobingiz xato!")        
+# else:
+#     print("Siz to'g'ri javob berdingiz.")
+
+#3
+# yosh = int(input("Yoshingiz nechida? "))
+# if yosh >= 18:
+#     print("Xush kelibsiz!")
+# else:
+#     print("Sizga kirish mumkin emas!")
+
+#4
+# yil = int(input("Tug'ilgan yilingizni kiriting: ")) # Foydalanuvchidan tug'ilgan yilini so'raymiz.
+# if 2024 - yil < 18: # Agar joriy yoldan foydalanuvchi tug'ilgan yilini ayirilganda hosil bo'qlgan qiymat 18dan kichik
+# # bo'lsa.
+#     print(f"Yoshingiz {2021-yil}da ekan.") # Bu yerda foydalanuvchi kiritkan yilga qarab uning yoshi aniqlanadi.
+#     print("Kirishingiz mumkin emas.") # Shart bajarilsa shu habar chiqadi.
+# else: # Aks holda.
+#     print(f"Yoshingiz {2024-yil}da, Xus kelibsiz!") # Bu habar chiqariladi.
+
+#5
+# login = input("Yangi login kiriting: ")
+# if len(login) <= 5: # login uzunligini tekshiramiz.
+#     print("Login 5ta harfdan ko'proq bo'lishi shart!")
+# else:
+#     print("Login qabul qilindi.")
+
+
+#2 - Yangi cars = ['toyota', 'mazda', 'hyundai', 'gm', 'kia'] degan ro'yxat tuzing, ro'yxat elementlarining birinchi
+# harfini katta qilib konsolga chqaring. GM uchun ikkala harfni katta qiling. 
+# cars =  ['toyota', 'mazda', 'hyundai', 'gm', 'kia'] 
+# for car in cars:
+#     if car == 'gm':
+#         print(car.upper())
+#     else:
+#         print(car.title())
+        
+#3 - Yuqoridagi mashqni teng emas (!=) operatori yordamida bajaring.   
+# cars =  ['toyota', 'mazda', 'hyundai', 'gm', 'kia'] 
+# for car in cars:
+#     if car != 'gm':
+#         print(car.title())
+#     else:
+#         print(car.upper())
+        
+#4 - Foydalanuvchi login ismini so'rang. Agar login admin bo'lsa, "Xush kelibsiz, Admin. Foydalanuvchilar ro'yxatini
+# ko'rasizmi?" xabarini konsolga chiqaring. Aks holda, "Xush kelibsiz, {foydalanuvchi_ismi}!"  matnini konsolga
+# chiqaring.
+# login = input("Yangi login kiriting: ")
+# if login.lower() == 'admin':
+#     print(f"Xush kelibsiz, {login.title()}. \nFoydalanuvhcilar ro'yxatini ko'rasizmi?")
+# else:
+#     print(f"Salom {login}, Xush kelibsiz!")
+
+#5 - Foydalanuvchidan 2 ta son kiritishni so'rang. Agar ikki son bir-biriga teng bo'lsa, "Sonlar teng" ekan degan
+# yozuvni konsolga chiqaring.
+# print("Iltimos ikkita son kiriting!") 
+# son1 = int(input("Birinchi sonni kiriting: ")) 
+# son2 = int(input("Ikkinchi sonni kiriting: ")) 
+# if son1 == son2: 
+#     print(f"{son1} va {son2} sonlari bir-biriga teng.") 
+# else: 
+#     print(f"{son1} va {son2} sonlari bir-biriga teng emas.")
+     
+#6 - Foydalanuvchidan istalgan son kiritishni so'rang. Agar son manfiy bo'lsa konsolga "Manfiy son", agar musbat
+# bo'lsa "Musbat son" degan xabarni chiqaring. 
+# son = int(input("Istalgan son kiriting: "))
+# if son < 0:
+#     print(f"{son} soni manfiy")
+# else:
+#     print(f"{son} soni musbat")
+    
+#7 - Foydalanuvchidan son kiritishni so'rang, agar son musbat bo'lsa uning ildizini hisoblab konsolga chiqaring.
+# Agar son manfiy bo'lsa, "Musbat son kiriting" degan xabarni chiqaring. 
+son = float(input("Istalgan musbat son kiriting: "))
+if son < 0:
+    print("Musbat son kiriting!")
+else:
+    print(f"{son} ning ildizi {son**0.5}")
