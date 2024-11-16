@@ -1269,19 +1269,154 @@ b = False
 
 # NOT IN operatori.
 # NOT IN operatori yordamida esa biror element ro'yxatda yo'qligini tekshirishimiz mumkin.
-menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
-print('manti' not in menyu) # Menyuda 'manti' yo'qmi?    
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# print('manti' not in menyu) # Menyuda 'manti' yo'qmi?    
 # Natija True, chunki haqiqatdan ham 'manti' ro'yxatimizda yo'q. 
 
-menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
-print('osh' not in menyu) # Menyuda 'osh' yo'qmi?    
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# print('osh' not in menyu) # Menyuda 'osh' yo'qmi?    
 # Natija False, chunki 'osh' aslida ro'yxatimizda bor.
 
-menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
-ovqat = input('Nima ovqat yeysiz? ') # Foydalanuvchidan nima ovqat yeyishini so'raymiz.
-if ovqat.lower() not in menyu:
-    print(f"Afsuski, {ovqat} bizda yo'q.")
-else:
-    print("Buyurtma qabul qilindi.")
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# ovqat = input('Nima ovqat yeysiz? ') # Foydalanuvchidan nima ovqat yeyishini so'raymiz.
+# if ovqat.lower() not in menyu:
+#     print(f"Afsuski, {ovqat} bizda yo'q.")
+# else:
+#     print("Buyurtma qabul qilindi.")
 # Yuqoridagi dasturda chiqariladigan xabarlar o'rni almashadi shartga qarab.
+
+# NOT operatorini boshqa shartlar oldidan ham qo'yishimiz mumkin.Misol uchun, not a == 5 ifodasi a != 5 ifodasi bilan
+# bir hil natija qaytaradi.
+# a = 6 # a ni 6 ga tenglab oldik.
+# print(a != 5) # Endi so'raymiz a teng emasmi 5ga (True)
+# print(a == 5) # Endi so'raymiz a tengmi 5ga (False)
+# print(not False) # False emas demak, (True) 
+# print(not True) # True emas demak, (False)
+
+# IKKI RO'YXATNI SOLISHTIRISH.
+# Ikki ro'yxatni tarkibini tekshirish uchun FOR sikli va yuqoridagi IN operatoridan foydalanamiz:
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# buyurtmalar = ["osh", "somsa", "manti", "shashlik"]
+
+# for taom in buyurtmalar:
+#     if taom in menyu:
+#         print(f"{taom} bor.")
+#     else:
+#         print(f"{taom} yo'q.")
+        
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# buyurtmalar = ["osh", "somsa", "manti", "shashlik"]
+
+# for taom in buyurtmalar:
+#     if taom not in menyu:
+#         print(f"Kechirasiz, bizda {taom} yo'q")
+#     else:
+#         print(f"Menyuda {taom} bor.")
+
+# RO'YXAT BO'SH EMASLIGINI TEKSHIRISH.
+# Albatta biz yuqoridagi kodda foydalanuvchi buyurtma qildi deb tasavvur qilyapmiz. Lekin foydalanuvchidan bo'sh
+# ro'yxat kelsa-chi? Demak, FOR siklini bajarishdan oldin ro'yxat emasligiga amin bo'lishimiz kerak. Buning uchun
+# ro'yxat uzunligini tekshirib ko'ramiz. Agar ro'yxat uzunligi 0ga teng bo'lsa, bu bo'sh ro'yxatdir.
+# list1 = [1,2,3] # list1 degan o'zgaruvchiga ro'yxat orqali 3ta elementni yukladik.
+# print(len(list1) > 0) # lis1 ni uzunligini tekshiryapmiz uni 0 dan katta degan ifoda orqali. (True)
+
+# list2 = [] # Bo'sh ro'yxat.
+# print(len(list2) > 0) # Ro'yxat uzunligi 0dan katta bo'lmagani uchun yani u bo'sh. (False)
+
+# Lekin Pythonda ro'yxat bo'sh yoki bo'sh emasligini tekshirishning bundan ham oson yo'li bor. Buning uchun IF
+# operatoridan so'ng ro'yxat nomini yozish kifoya. Agar ro'yxatda bir dona element bo'lsa ham, bu ifoda TRUE
+# qiymatini, aks holda, FALSE qiymatini qaytaradi.
+# list1 = [1,2,3] # Ro'yxatga 3ta element qo'shdik.
+# if list1: # Bu ifoda TRUE qaytaradi, sababi, list1 bo'sh emas.
+#     print(f"Ro'ytxatda {len(list1)} ta elementlar bor") # Yuqoridagi ifoda natijasini chiqarish uchun print().
     
+# Yuqoridagi usuldan foydalanib avvalgi bo'limda ko'rgan dasturga o'zgartirish kiritamiz: 
+# menyu = ['osh', 'qozonkabob', 'shashlik', 'norin', 'somsa'] # Ro'yxatimizda quyidagi taomlar bor.
+# buyurtmalar = ["osh", "somsa", "manti", "shashlik"] # Buyurtma qilingan taomlar.
+
+# if buyurtmalar: # Yani buyurtmalar ro'yxati bo'sh bo'lmasa (ichida element bo'lsa)
+#     for taom in buyurtmalar: # buyurtmalar ro'yxatidagi har bir taom uchun. 
+#         if taom in menyu: # Agar taom menyu da bo'lsa.
+#             print(f"Menyuda {taom} bor.") # Shu xabarni konsolga chiqargin.
+#         else: # Aks holda.
+#             print(f"Kechirasiz, menyuda {taom} yo'q.") # Shu xabarni konsolga chiqargin.
+# else: # Aks holda bu eng yuqoridagi IF ga.
+#     print("Savat bo'sh!") # Shu xabarni konsolga chiqargin.
+    
+# AMALIYOT TOPSHIRIQLARI.
+#1 - Foydalanuvchidan juft son kiritishni so'rang. Agar foydalanuvchi juft son kiritsa "Rahmat!", agar toq son
+# kiritsa "Bu son juft emas" degan xabarni chiqaring.           
+# son = int(input("Iltimos juft son kiriting! ")) # Foydalanuvchidan juft son kiritishini so'raymiz.
+# if son % 2 == 0: # Agar kiritilgan sonni 2 ga bo'lingandagi qoldiq 0 ga teng bo'lsa demak son juft. (True)
+#     print("Rahmat!") # Shu xabar konsolga chiqadi.
+# else: # Aks holda.
+#     print("Siz kiritgan son juft emas.") # Shu xabar konsolga chiqadi.
+
+#2 - Foydalanuvchi yoshini so'rang, va muzeyga kirish uchun chipta narhini quyidagicha chiqaring:
+
+# Agar foydalanuvchi 4 yoshdan kichkina yoki 60 dan katta bo'lsa bepul
+
+# Agar foydalanuvchi 18 dan kichik bo'lsa 10000 so'm
+
+# Agar foydalanuvchi 18 dan katta bo'lsa 20000 so'm     
+
+# yosh = int(input("Iltimos yoshingizni kiriting! "))
+# if yosh < 4 or yosh > 60:
+#     price = 'bepul'
+
+# elif yosh <= 18:
+#     price = 10000
+    
+# elif yosh > 18 and yosh < 60:
+#     price = 20000
+    
+# print(f"Sizga kirish {price}")
+
+#3 - Foydalanuvchidan ikita son kiritishni so'rang, sonlarni solishtiring va ularning teng yoki katta/kichikligi
+# haqida xabarni chiqaring.
+# print("Iltimos ikkita son kiriting!")
+# son1 = float(input("Birinchi sonni kiriting: "))
+# son2 = float(input("Ikkinchi sonni kiriting: "))
+
+# if son1 > son2:
+#     print(f"{son1} > {son2}")
+    
+# elif son1 < son2:
+#     print("{son1} < {son2}")
+    
+# else:
+#     print(f"{son1}, {son2} bu ikki son teng.")
+    
+#4 - mahsulotlar degan ro'yxat yarating va kamida 10 ta turli mahsulotni kiriting. Yangi, savat degan bo'sh ro'yxat
+# yarating va foydalanuvchidan savatga kamida 5 ta mahsulot kiritishni so'rang. Savatdagi elementlarni, mahsulotlar
+# ro'yxati bilan solishtiring va qaysi biri ro'yxatda bo'lsa "Mahsulot do'konimizda bor" aks holda,
+# "Mahsulot do'konimizda yo'q" degan xabarlarni chiqaring.
+# mahsulotlar = ["olma","banan","sut","non","tuxum","shakar","guruch","yog'","choy","shokolad"]
+# savat = []
+# for n in range(5):
+#     savat.append(input(f"{n+1}-mahsulotni qo'shing: "))
+
+# for mahsulot in savat:
+#     if mahsulot in mahsulotlar:
+#         print(f"{mahsulot} do'konimizda bor.")
+#     else:
+#         print(f"Afsuski, {mahsulot} do'konimizda yo'q")
+        
+#5 - foydalanuvchilar degan ro'yxat tuzing, va kamida 5 ta login qo'shing. Foydalanuvchidan yangi login tanlashni
+# so'rang va foydalanuvchi kiritgan loginni foydalanuvchilar degan ro'yxatning tarkibi bilan solishtiring.
+# Agar ro'yxatda bunday login mavjud bo'lsa, "Login band, yangi login tanlang!" aks holda "Xush kelibsiz,
+# foydalanuvchi!" xabarini chiqaring.
+# users = ['anvar', 'kamol', 'abu', 'hoji', 'asad']
+# login = input("Iltimos, yangi login tanlang!: ")
+
+# if login in users:
+#     print("Afsuski, bu login band.")
+# else:
+#     print("Xush kelibsiz!")
+    
+#6 - Foydalanuvchidan biror butun son kiritishni so'rang. Foydalanuvchi kiritgan sonni 2 da 10 gacha bo'lgan
+# sonlardan qay biriga qoldiqsiz bo'linishini konsolga chiqaring.
+son = float(input("Iltimos butun son kiriting: "))
+for n in range(2,11):
+    if not (son%n):
+        print(f"{son} soni {n} ga qoldiqsiz bo'linadi!")
