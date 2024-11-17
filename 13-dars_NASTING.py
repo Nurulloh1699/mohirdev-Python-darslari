@@ -151,42 +151,42 @@ Created on Tue Oct 29 10:03:35 2024
 # AMALIYOT TOPSHIRIQLARI.
 #1 - Adabiyot (ilm-fan, san'at, internet) olamidagi 4 ta mashxur shaxslar haqidagi ma'lumotlarni lug'at ko'rinishida
 # saqlang. Lug'atlarni bitta ro'yxatga joylang, va har bir shaxs haqidagi ma'lumotni konsolga chiqaring.
-buxoriy = {
-        "ism_sh" : "abu abdulloh muhammad ibn ismoil",
-        "t_yil" : 810,
-        "v_yil" : 870,
-        "t_joyi" : "buxoro",
+# buxoriy = {
+#         "ism_sh" : "abu abdulloh muhammad ibn ismoil",
+#         "t_yil" : 810,
+#         "v_yil" : 870,
+#         "t_joyi" : "buxoro",
         
-        }
-qodiriy = {
-        "ism_sh" : "abdulla qodiriy",
-        "t_yil" : 1894,
-        "v_yil" : 1938,
-        "t_joyi" : "toshkent",
+#         }
+# qodiriy = {
+#         "ism_sh" : "abdulla qodiriy",
+#         "t_yil" : 1894,
+#         "v_yil" : 1938,
+#         "t_joyi" : "toshkent",
         
-        }
-vohidov = {
-        "ism_sh" : "erkin vohidov",
-        "t_yil" : 1936,
-        "v_yil" : 2016,
-        "t_joyi" : "farg'ona",
+#         }
+# vohidov = {
+#         "ism_sh" : "erkin vohidov",
+#         "t_yil" : 1936,
+#         "v_yil" : 2016,
+#         "t_joyi" : "farg'ona",
         
-        }
-navoiy = {
-        "ism_sh" : "alisher navoiy",
-        "t_yil" : 1441,
-        "v_yil" : 1501,
-        "t_joyi" : "xirot",
-        }
-shaxslar = [buxoriy, qodiriy, vohidov, navoiy]
+#         }
+# navoiy = {
+#         "ism_sh" : "alisher navoiy",
+#         "t_yil" : 1441,
+#         "v_yil" : 1501,
+#         "t_joyi" : "xirot",
+#         }
+# shaxslar = [buxoriy, qodiriy, vohidov, navoiy]
 
-for shaxs in shaxslar:
-    ism = shaxs['ism_sh']
-    tyil = shaxs['t_yil']
-    tjoy = shaxs['t_joyi']
-    vyil = shaxs['v_yil']
-    print(f"{ism} {tyil}-yilda {tjoy}da tavallud topgan. "
-          f"{vyil-tyil} yil umr ko'rgan.")
+# for shaxs in shaxslar:
+#     ism = shaxs['ism_sh']
+#     tyil = shaxs['t_yil']
+#     tjoy = shaxs['t_joyi']
+#     vyil = shaxs['v_yil']
+#     print(f"{ism} {tyil}-yilda {tjoy}da tavallud topgan. "
+#           f"{vyil-tyil} yil umr ko'rgan.")
 
 # print(f"{shaxs0['ism_sh'].title()}, {shaxs0['t_joyi'].title()} shahrida, {shaxs0['t_yil']}-yilda tug'ilgan,\
 # va {shaxs0['y_umri']} yoshida vafot etgan.")
@@ -241,16 +241,16 @@ for shaxs in shaxslar:
 
 #3 - Oila a'zolaringiz (do'stlaringiz) dan 3 ta sevimli kino-seriali haqida so'rang. Do'stingiz ismi kalit,
 # uning sevimli kinolarini esa ro'yxat ko'rinishida lug'artga saqlang.  Natijani konsolga chiqaring.
-kinolar = {
-    'ali' : ["avatar, rossamaha, deadpool"],
-    'vali' : ["ijtimoiy tarmoq, гадкий я"],
-    'shodi': ["don, alibobo va 40 qaroqchi"],
-    'avaz' : ["otkan kunlar, om shanti om"]
-    }
-for ism, kinolar in kinolar.items():
-    print(f"\n{ism.title()} ning sevimli kinolari:")
-    for kino in kinolar:
-        print(kino)
+# kinolar = {
+#     'ali' : ["avatar, rossamaha, deadpool"],
+#     'vali' : ["ijtimoiy tarmoq, гадкий я"],
+#     'shodi': ["don, alibobo va 40 qaroqchi"],
+#     'avaz' : ["otkan kunlar, om shanti om"]
+#     }
+# for ism, kinolar in kinolar.items():
+#     print(f"\n{ism.title()} ning sevimli kinolari:")
+#     for kino in kinolar:
+#         print(kino)
         
 #4 -  Davlatlar degan lug'at yarating, lug'at ichida bir nechta davlatlar haqida ma'lumotlarni lug'at ko'rinishida
 # saqlang. Har bir davlat haqida ma'lumotni konsolga chiqaring.       

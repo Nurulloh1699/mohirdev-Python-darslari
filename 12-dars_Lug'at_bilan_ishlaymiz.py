@@ -146,7 +146,7 @@ davlatlar = {
 # for poytaxt in sorted(davlatlar.values()):
 #     print(poytaxt.title())    
     
-#3 - Foydalanuvchidan istalgan davlatni kiritishni so'rang va shu davlatning poytaxtini
+# #3 - Foydalanuvchidan istalgan davlatni kiritishni so'rang va shu davlatning poytaxtini
 # konsolga chiqaring. Agar foydalanuvchi lug'atda yo'q davlatni kiritsa,
 # "Bizda bunday ma'lumot yo'q" degan xabarni chiqaring.    
 # country = input("Qaysi davlatning poytaxtini bilmoqchisiz? ").lower() # Davlat nomini kiritishni
@@ -154,36 +154,36 @@ davlatlar = {
 # capital = davlatlar.get(country) # capitalni davlatlar ichidagi elementlarga tenglab olmaqda.
 # if capital == None: # Agar kiritilgan davlat ro'yxatda yo'q bo'lsa yoki davlat haqida ma'lumot
 # yo'q bo'lsa. Quyidagi kodni konsolga chiqargin.
-    # print(f"Kechirasiz bizda {country} haqida ma'lumot yo'q")
+#     print(f"Kechirasiz bizda {country} haqida ma'lumot yo'q")
 # else:# Aks holda quyidagi kodni konsolga chiqargin.
-    # print(f"{country.upper()}ning poytaxti {capital.title()}")
+#     print(f"{country.upper()}ning poytaxti {capital.title()}")
     
-#4 - Restoran menusi lug'atini tuzing (kamida 10 ta taom-narh juftligini kiriting).
+# 4 - Restoran menusi lug'atini tuzing (kamida 10 ta taom-narh juftligini kiriting).
 # Foydalanuvchidan 3 ta ovqat buyurtma berishni so'rang. Foydalanuvchi kiritgan taomlarni
 # menu bilan solishtiring, agar taom menuda bo'lsa narhini ko'rsating, aks holda
 # "bizda bunday taom yo'q" degan xabarni chiqaring.    
-taomlar = {
-    'osh': 25000,
-    'somsa': 20000,
-    'manti': 7000,
-    'non': 3000,
-    'kompot': 4000,
-    'salat': 7000,
-    'assorti': 10000,
-    'choy': 2000,
-    'kabob': 12000,
-    'tuxum': 5000
-    }
+# taomlar = {
+#     'osh': 25000,
+#     'somsa': 20000,
+#     'manti': 7000,
+#     'non': 3000,
+#     'kompot': 4000,
+#     'salat': 7000,
+#     'assorti': 10000,
+#     'choy': 2000,
+#     'kabob': 12000,
+#     'tuxum': 5000
+#     }
 
-print("Iltimos 3ta ovqat buyurtma bering: ")
-buyurtmalar = []
-for n in range(3):
-    buyurtmalar.append(input(f"{n+1}-taom: ").lower())
+# print("Iltimos 3ta ovqat buyurtma bering: ")
+# buyurtmalar = []
+# for n in range(3):
+#     buyurtmalar.append(input(f"{n+1}-taom: ").lower())
 
-for buyurtma in buyurtmalar:
-    if buyurtma in taomlar:
-        print(f"{buyurtma.title()} {taomlar[buyurtma]} so'm")
-    else:
-        print(f"Kechirasiz bizda {buyurtma} yo'q")
+# for buyurtma in buyurtmalar:
+#     if buyurtma in taomlar:
+#         print(f"{buyurtma.title()} {taomlar[buyurtma]} so'm")
+#     else:
+#         print(f"Kechirasiz bizda {buyurtma} yo'q")
     
  

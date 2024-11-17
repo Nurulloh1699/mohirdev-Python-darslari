@@ -1195,8 +1195,8 @@ Created on Sat Oct 26 19:25:01 2024
 # Yuqorida taqqoslash operatorlari yordamida turli ifodalarni solishtirishda TRUE yoki FALSE qiymatlari qaytishini
 # ko'rdik. Bu qiymatlar BOOLEAN (mantiqiy) qiymatlar deb ataladi va dasturlashda juda keng qo'llaniladi.
 # BOOLEAN ma'lumot turini ham huddi son yoki matn kabi o'zgaruvchilarda saqlash mumkin.
-a = True
-b = False
+# a = True
+# b = False
 
 # Buni quyida yana misol orqali ko'rib chiqamiz.
 # narx = 15000 # Mijoz 15000 so'mga taom oldi.
@@ -1414,9 +1414,72 @@ b = False
 # else:
 #     print("Xush kelibsiz!")
     
-#6 - Foydalanuvchidan biror butun son kiritishni so'rang. Foydalanuvchi kiritgan sonni 2 da 10 gacha bo'lgan
+#6 - Foydalanuvchidan biror butun son kiritishni so'rang. Foydalanuvchi kiritgan sonni 2 dan 10 gacha bo'lgan
 # sonlardan qay biriga qoldiqsiz bo'linishini konsolga chiqaring.
-son = float(input("Iltimos butun son kiriting: "))
-for n in range(2,11):
-    if not (son%n):
-        print(f"{son} soni {n} ga qoldiqsiz bo'linadi!")
+# son = float(input("Istalgan butun son kiriting: "))
+# for n in range(2,11):
+#      if not (son%n):
+#          print(f"{son} soni {n} ga qoldiqsiz bo'linadi!")
+
+# 9 - DARS TUGADI.
+
+# 10 - DARS. LUG'AT VA TO'PLAM.
+# Lug'at bir obyektga bog'liq ma'lumotlarni kalit so'z va qiymat juftligi ko'rinishida saqalash imkonini beradi.
+# Misol uchun, biz biror avtomobilga oid lug'at yaratishimiz va lug'atda shu avtomobilga tegishli barcha
+# ma'lumotlarni saqlashimiz mumkin (avtomobilning nomi, rangi, yili, motori, narxi, va hokazo).
+
+# Nima uchun bu ma'lumot turi lug'at deyilishini tushinish uchun oddiy lug'atga qaraylik. Odatda, lug'atdagi
+# ma'lumotlar ikki qismdan iborat bo'ladi: KALIT SO'Z va IZOH (yoki TARJIMA). Xuddi oddiy lug'atlardagi kabi Python
+# lug'atidagi ma'lumotlar ham ikki qismdan iborat bo'ladi: KALIT SO'Z va QIYMAT (ingliz tilida bu "KEY-VALUE PAIR"), 
+# "KALIT-QIYMAT JUFTLIGI deyiladi."
+
+# Dasturlashda ko'p ishlatiladigan atamalarni ingliz tilida yodlab qolish juda muhim! Bu sizga kelajakda yangi
+# ma'lumotlar izlashda, xatolar ustida ishlashda, umuman ish faoliyatingizda ko'p asqatadi. Shuning uchun "veriable,
+# integer, float, string, list, tuple, dictionary, function, loop, key, key, value" va boshqa atamalarning ma'nosini
+# yaxshilab o'zlashtirib oling.
+
+# Pythonda lug'at yaratish uchunkatta {jingalak} qavsdan foydalanamiz. Qavs ichida har bir element uchun kalit so'z
+# va qiymat beramiz. Ularning orasi ikki nuqta (:) bilan, har bir element (juftlik) esa vergul (,) bilan ajratiladi.
+# car = {'model':'ferrari', 'rang':'qizil'}
+# print(car)  
+
+# Yuqorida car degan lug'at yaratdik. Lug'atda 2ta element bor: mashinaning modeli (ferrari) va rangi (qixzil).
+# Bu yerda 'model' va 'rang'kalit so'zlar, 'ferrari' va 'qizil' esa mos kelivchi kalit so'zlarning qiymatlaridir.
+
+# Lug'at ichidagi kalitlar takrorlanmasligi kerak. Agar lug'at yaratishda kalit so'zlar takrorlans, ulardan faqat
+# oxirgisining qiymati saqlanib qoladi. 
+        
+# LUG'AT BILAN ISHLASH.
+# Lug'atdagi biror elementni ko'rish uchun unga kalit so'z orqali murojaat qilamiz.
+# car = {'model':'ferrari', 'rang':'qizil'} # oddiy lug'at yaratib olamiz.
+# print(car['model']) # konsolga mashina modeli ni chiqaramiz.
+# # ferrari
+# print(car['rang']) # konsolga mashina rangi ni chiqaramiz.
+# # qizil
+
+# Lug'atdagi qiymatlar son (int, float), matn (string), ro'yxat (list, tuple), hattoboshqa lug'at ham bo'lishi mumkin.
+# talaba = {'ism_sh':'murod nazarov', 'yosh': 20, 't_yil': 2000}
+# print(f"{talaba['ism_sh'].title()},{talaba['t_yil']}-yilda tug'ilgan,{talaba['yosh']} yoshda.") 
+     
+# Uzun lug'atlarni bir necha qatorga bo'lib yozishimiz mumkin. Bunda har bir element alohida qatordan yoziladi va
+# qator oxirida vergul qo'yilib, yangi qatorga o'tiladi.
+car = {
+     "make":"GM",
+     "model":"Malibu",
+     "color":"Black",
+     "gear":"Automatic",
+     "year":"2020",
+     "price":"40000"
+     }  
+# print(car)
+
+# get() METODI.
+# Yuqorida biz lug'at elementiga kalit so'z orqali murojaat etishni o'rgandik.
+print(car['model'])
+# Malibu
+
+# Bu usulni kamchiligi shundaki, agar lug'atda siz so'ragan kalit topilmasa, dastur KEYERROR xatoligi bilan to'htab
+# qoladi.
+print(car['narx'])
+# KeyError 'narx'
+

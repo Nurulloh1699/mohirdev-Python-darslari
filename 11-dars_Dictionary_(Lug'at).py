@@ -108,14 +108,14 @@ Created on Wed Oct 23 08:41:28 2024
 
 #5 Yuqoridagi vazifani if-else yordamida qiling va natijani ham foydalanuvchiga tushunarli
 # ko'rinishda chiqaring.
-python = {'int':'Butun son','float':'O\'nlik son','str':'Matn','bool':'Mantiqiy',\
-'if':'Agar shart operatori','else':'Yoki shart operatori','elif':'Agar va yokini chachishgani',\
-'or':'Yoki operatori','and':'Va operatori','in':'Ro\'yxatlarni tekshiruvchi operator'}
+# python = {'int':'Butun son','float':'O\'nlik son','str':'Matn','bool':'Mantiqiy',\
+# 'if':'Agar shart operatori','else':'Yoki shart operatori','elif':'Agar va yokini chachishgani',\
+# 'or':'Yoki operatori','and':'Va operatori','in':'Ro\'yxatlarni tekshiruvchi operator'}
 
-soz = input("Birorta kalit so'z kiriting: ").lower()
-tarjima = python.get(soz)
-if tarjima == None:
-    print("Lug'atimizda bunday so'z yoq.")
-else:
-    print(f"{soz.title()} so'zi {tarjima} deb tarjima qilinadi.")
+# soz = input("Birorta kalit so'z kiriting: ").lower()
+# tarjima = python.get(soz)
+# if tarjima == None:
+#     print("Lug'atimizda bunday so'z yoq.")
+# else:
+#     print(f"{soz.title()} so'zi {tarjima} deb tarjima qilinadi.")
     
