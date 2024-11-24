@@ -5,7 +5,9 @@ Created on Sat Oct 26 19:25:01 2024
 @author: DavrServis
 """
 # UMUMIY TAKRORLASH.
-# 1-DARS BIRINCHI DASTURLAR.
+
+# 1-DARS
+# BIRINCHI DASTURLAR.
 
 # BIRINCHI DASTURLAR.
 # print("hello world!")
@@ -109,7 +111,9 @@ Created on Sat Oct 26 19:25:01 2024
 # 2 - DARS TUGADI.
 
 
-# 3 - DARS: MATN (STRING).
+# 3 - DARS.
+# MATN (STRING).
+
 # String matn Pythonda eng muhim ma'lumot turlaridan biri va ular ("") yoki ('') qo'shtirnoq yoki birtirnoq ichida yoziladi.
 # ism = "Abdurashidov"
 # avto = "Nexia"
@@ -235,7 +239,9 @@ Created on Sat Oct 26 19:25:01 2024
 
 # 3 - DARS TUGADI.
 
-# 4 - DARS: SONLAR.
+# 4 - DARS.
+# SONLAR.
+
 # Pythonda sonlarning bir necha turlari bor,quyida ular bilan birma-bir tanishamiz.
 
 # INTEGER (BUTUN SONLAR).
@@ -350,7 +356,8 @@ Created on Sat Oct 26 19:25:01 2024
 
 
 
-# 5 - DARS.RO'YXATLAR.
+# 5 - DARS.
+# RO'YXATLAR.
 
 # Bir vaqtning o'zida bitta o'zgaruvchi ichida birnechta elementlarni saqlash imkonini beruvchi ma'lumot turi
 # RO'YXATLAR (LIST) deyiladi. Quyida bunga misollar ko'rib chiqamiz.
@@ -524,8 +531,8 @@ Created on Sat Oct 26 19:25:01 2024
 # 5 - DARS TUGADI.
 
 # 6 - DARS.
-
 # RO'YXATLAR BILAN ISHLASH.
+
 # Bazi holatlarda ro'yxat elementlarini alifbo ketma-ketligida tartiblash talab qilinishi mumkin. Buning uchun maxsus 
 # .sort() metodidan foydalanamiz. 
 # cars = ['damas', 'jiguli', 'matiz', 'tico', 'nexia'] # <- oddiy ro'yxat.
@@ -755,6 +762,7 @@ Created on Sat Oct 26 19:25:01 2024
 
 # 7 - DARS.
 # FOR TSIKLI. 
+
 # Dasturlash davomida kodimizning biror bir qismini bir necha marta takrorlash talab etilishi mumkin.
 # Bunda bizga FOR operatori yordamga keladi. Bu operator yordamida biz kodlarimizni bir necha marta takrorlashimiz
 # mumkin. Dasturlashda bu TSIKL (LOOP) deyiladi.
@@ -875,6 +883,7 @@ Created on Sat Oct 26 19:25:01 2024
 
 # 8 - DARS.
 # SHARTLAR VA TARMOQLANISH.
+
 # TAQQOSLASH OPERATORLARI.
 # Dastur tarmoqlanishi uchun, avvalo, biror shart bajarilishi kerak. Shart bajarilishini tekshirish uchun esa maxsus 
 # taqqoslash operatorlari mavjud. Bu operatorlar yordamida biz o'zgaruvchilarning ma'lum qiymatga tengligini yoki,
@@ -1060,6 +1069,7 @@ Created on Sat Oct 26 19:25:01 2024
 
 # 9 - DARS.
 # BIR NECHTA SHARTLARNI TEKSHIRISH.
+
 # "if" yordamida biz faqatgina bitta shartni tekshira olamiz va uning natijasiga ko'ra (True/False) dasturimiz ma'lum bir
 # amalni bajaradi. Agar dastur davomida bir nechta shartlarni tekshirish talab qilinsa, if-elif,else ketma-ketligidan
 # foydalanamiz.
@@ -1424,6 +1434,7 @@ Created on Sat Oct 26 19:25:01 2024
 # 9 - DARS TUGADI.
 
 # 10 - DARS. LUG'AT VA TO'PLAM.
+
 # Lug'at bir obyektga bog'liq ma'lumotlarni kalit so'z va qiymat juftligi ko'rinishida saqalash imkonini beradi.
 # Misol uchun, biz biror avtomobilga oid lug'at yaratishimiz va lug'atda shu avtomobilga tegishli barcha
 # ma'lumotlarni saqlashimiz mumkin (avtomobilning nomi, rangi, yili, motori, narxi, va hokazo).
@@ -1639,6 +1650,7 @@ Created on Sat Oct 26 19:25:01 2024
 
 # 11- DARS.
 # LUG'AT ELEMENTLARI BILAN ISHLASH.
+
 # Avvalgi bo'limda lug'at elementlariga kalit so'z orqali murojaat qilishni o'rgandik. Lug'atlar katta yoki kichik
 # bo'lishi mumkin. Ba'zida lug'atdagi barcha kalitlarni yoki qiymatlarni bilmasligimiz mumkin. Bunday holatda qanday
 # yo'l tutamiz. 
@@ -1754,16 +1766,16 @@ Created on Sat Oct 26 19:25:01 2024
 # ko'p marta qaytarilsa,konsolga ham ko'p marta chiqadi.
 
 # Quyidagi misolni ko'ramiz: 
-phones = {
-    'ali':'iphone x',
-    'vali':'galaxy s9',
-    'olim':'mi 10 pro',
-    'orif':'nokia 3310',
-    'maryam':'galaxy s9',
-    'hamida':'huawei p30',
-    'tohir':'iphone x',
-    'hamdam':'iphone x'
-    } # Foydalanuvchilar haqida ma'lumotlarni o'zida jamlagan oddiy lug'at
+# phones = {
+#     'ali':'iphone x',
+#     'vali':'galaxy s9',
+#     'olim':'mi 10 pro',
+#     'orif':'nokia 3310',
+#     'maryam':'galaxy s9',
+#     'hamida':'huawei p30',
+#     'tohir':'iphone x',
+#     'hamdam':'iphone x'
+    # } # Foydalanuvchilar haqida ma'lumotlarni o'zida jamlagan oddiy lug'at
 # print("Foydalanuvchilarning telefonlari:") # Foydalanuvchiga yo'nalish.
 # for tel in phones.values(): # Tel ni har bir qiymatga tenglaymiz. 
 #     print(tel.title()) # Natijani olamiz.
@@ -1794,43 +1806,50 @@ phones = {
 #     'if':'Agar'
 #     }    
 # for kalit, qiymat in sorted(python.items()):
-#     print(f"Kalit: {kalit}\nQiymat: {qiymat}\n")
+#     print(f"Kalit: {kalit}")
+#     print(f"Qiymat: {qiymat}\n")
 
 #2 - Davlatlar va ularning poytaxtlari lug'atini tuzing. Avval lug'atdagi davlatlarni, keyin poytaxtlarni
 # alohida-alohida, alifbo ketma-ketligida konsolga chiqaring.
 # countrys = {
-#     "o'zbekiston":"toshkent",
+#     "ozbekiston":"toshkent",
 #     "rossiya":"moskva",
 #     "aqsh":"vashington",
 #     "germaniya":"berlin",
 #     "ispaniya":"madrid"
 #     } 
-# for kalit in sorted(countrys.keys()):
-#     if kalit == "aqsh":
-#         print(kalit.upper())
+# print("Davlatlar ro'yxati:")
+# for country in sorted(countrys.keys()):
+#     if country == 'aqsh':
+#         print(country.upper())
 #     else:
-#         print(f"{kalit.title()}")
+#         print(country.title())
         
-# for qiymat in sorted(countrys.values()):
-#     print(f"{qiymat.title()}")
+# print("\nDavlat poytaxtlari ro'yxati:")
+# for capital in sorted(countrys.values()):
+#     print(capital.title())
     
 #3 - Foydalanuvchidan istalgan davlatni kiritishni so'rang va shu davlatning poytaxtini konsolga chiqaring.
 # Agar foydalanuvchi lug'atda yo'q davlatni kiritsa, "Bizda bunday ma'lumot yo'q" degan xabarni chiqaring.
 # print("Istalgan 5ta davlatingizni poytaxtini bilishingiz mumkin:(AQSH, Germaniya, Ispaniya, O'zbekiston, Rossiya)")
 # countrys = {
-#     "o'zbekiston":"toshkent",
+#     "ozbekiston":"toshkent",
 #     "rossiya":"moskva",
 #     "aqsh":"vashington",
 #     "germaniya":"berlin",
 #     "ispaniya":"madrid"
 #     } 
-# country = input("Ro'yxatdagi istalgan davlatingizni kiriting: \n").lower()
+# print("Biz 5ta davlat poytaxtlari haqida ma'lumotlarni jamlaganmiz: UZB, RUS, AQSH, GER, ISP")
+# country = input('\nQaysi davlatning poytaxtini bilishni istaysiz? ').lower()
 # capital = countrys.get(country)
 # if capital == None:
-#     print(f"Bizda {country} haqida ma'lumot yo'q!")
+#     print(f"Kechirasiz, bizda {country.title()} haqida ma'lumot yo'q!")
 # else:
-#     print(f"{country.title()} ning poytaxti, {capital.title()} shahri.")
-    
+#     if country == 'aqsh':
+#         print(f"{country.upper()} ning poytaxti {capital.title()}")
+#     else:
+#         print(f"{country.title()} ning poytaxti {capital.title()}")
+ 
 #4 - Restoran menusi lug'atini tuzing (kamida 10 ta taom-narh juftligini kiriting). Foydalanuvchidan 3 ta ovqat
 # buyurtma berishni so'rang. Foydalanuvchi kiritgan taomlarni menu bilan solishtiring, agar taom menuda bo'lsa
 # narhini ko'rsating, aks holda "bizda bunday taom yo'q" degan xabarni chiqaring.
@@ -1846,15 +1865,705 @@ phones = {
 #         'mastava': 20000,
 #         'manti': 28000
 #         }
-# print("Marhamat buyurtma berishingiz mumkin!")
+# print("Marhamat, buyurtma berishingiz mumkin!")
 # buyurtmalar = []
 # for n in range(3):
-#     buyurtmalar.append(input(f"{n+1} - taomni kiriting: ".lower()))
+#     buyurtmalar.append(input(f"{n+1} - buyurtmani kiritng: ").lower())
     
 # for buyurtma in buyurtmalar:
 #     if buyurtma in menu:
-#         print("Buyurtmangiz qabul qilindi!")
+#         print(f"{buyurtma.title()} bor, narxi {menu[buyurtma]} so'm.")
 #     else:
-#         print(f"Kechirasiz, bizda {buyurtma} yo'q!")
+#         print(f"Afsuski, bizda {buyurtma} yo'q!")
     
+# 11 - DARS TUGADI.
+
+# 12 - DARS.
+# TO'PLAMLAR.
+
+# Pythonda to'plam (set) yana bir ma'lumot turi bo'lib, ro'yxat va lug'at kabi bir nechta elementlarmni saqlashda
+# qo'llaniladi. 
+# To'plam yaratish uchunha lug'atlardagi kabi katta (jingalak) qavsdan foydalanamiz.
+# sonlar = {1,2,3}
+# print(sonlar)
+
+# ismlar ={"Alijon", "Valijon", "Boqijon"}
+# print(ismlar)
+# To'plam bir xil elementni saqlamaydi.
+
+# sonlar = {1,2,2,3,4,5,1,1,9} # Bir hil sonlar ishtirok etkan to'plam.
+# print(sonlar) # Natija esa butkul boshqacha bo'ladi.
+
+# ETIBOR BERING! Yuqoridagi kodning 1 - qatorida biz 3, 4 va 5 qiymatlarini 2 martadan takrorlab yozganimizga
+# qaramay, to'plam ichida bu sonlar bir martadan saqlandi, xolos.
+# Bo'shto'plam yaratish uchun set() funksiyasidan foydalanamiz:
+# a = set() # Bo'sh to'plam yaratildi.
+
+# Ro'yxatdan farqli o'laroq, set ichidagi elementlar biror tartibda saqlanmaydi va ularga indeks orqali murojaat qilib
+# bo'lmaydi.
+# sonlar = {1,2,3,4,5,6} # Oddiy to'plam.
+# print(sonlar[0]) # Yuqoridagi to'plamni 1 - elementini chaqirishga urunsak. Xatolik beradi.
+
+# Avvalgi bo'limda ko'rganimizdek, to'plamlar biror ro'yxatdan qaytarilgan elementlarni o'chirib tashlash uchun
+# juda qulay:
+# mevalar = ['olma', 'anjir', 'olma', 'uzum', 'olma', 'uzum'] # Elementlar bir necha bor qaytarilgan ro'yxat. 
+# mevalar = set(mevalar) # Mevalar ro'yxatimizni set() ga o'zgartirdik.
+# print(mevalar) # Bu ro'yxatni set() orqali konsolga chiqarsak barcha qaytarilgan elementlardan faqat bittadan 
+# element qoldi.
+
+# Yuqoridagi misolda mevalar ro'yxatida olma va uzum bir necha bor takrorlangan edi, biz set() funksiyasi yordamida 
+# ro'yxatni to'plamga o'zgartirdik va ortiqcha elementlardan xolos bo'ldik.
+# Agar to'plamni yana ro'yxatga o'tkazish talab qilinsa, list() funksiyasiga murojaat qilamiz:
+# mevalar = list(mevalar) # Qaytadan mevalar ro'yxatimizni asl holiga qaytaramiz.
+# print(mevalar) # Natija.
+
+# TO'PLAMGA ELEMENT QO'SHISH.
+# To'plamga yagona element qo'shish uchun .add() metodidan, bir nechta element qo'shish uchun esa .update() 
+# metodidan foydalanamiz.
+# mevalar = {'anjir', 'olma', 'uzum'} # Oddiy to'plam yaratib olamiz.
+# mevalar.add('banan') # Bittagina element qo'shamiz.
+# print(mevalar) # Natijani chiqaramiz.
+
+# mevalar.update(['anor', 'qovun']) # To'plamimizga bir nechta element qo'shamiz.
+# print(mevalar) # Natijani ko'ramiz.
+
+# .update() metodidan foydalanganda parametr sifatida ro'yxat yoki lug'at uzatishimiz mumkin.
+
+# TO'PLAMDAN ELEMENT O'CHIRISH.
+# To'plamdan element o'chirish uchun .discard() va .remove() metodlari mavjud.
+# mevalar = {'olma', 'banan', 'anjir', 'olma', 'uzum', 'olma', 'uzum'} # Oddiy to'plam.
+# mevalar.discard('anjir') # .discard() metodi orqali bitta elementni o'chiramiz.
+# print(mevalar) # Natija.
+
+# mevalar.remove('banan') # .remove() metodi orqali bitta elementni o'chiramiz.
+# print(mevalar) # Natija
+
+# Yuqoridagi ikki metod bir vazifani bajaradi, ularning o'rtasidagi farq shundaki, agar biz o'chirmoqchi bo'lgan
+# element to'plamda mavjud bo'lmasa .remove() metodi xato qaytaradi, .discard() esa xato qaytarmaydi.
+# sonlar = {1,2,3,4,5,6} # Sonlar to'plami.
+# sonlar.remove(7) # Yo'q sonni kiritkanimiz uchun xato qaytaradi.
+
+# sonlar = {1,2,3,4,5,6} # Sonlar to'plami.
+# sonlar.discard(7) # Yuqoridagi natijadan farqli o'laroq bunda xato qaytarmaydi.
+
+# To'plamdan element o'chirishning (sug'urib olishning) yana bir usuli .pop() metodidir. Lekin to'plam elementlari
+# indeksi mavjid bo'lmagani sababli .pop() metodi to'plamdan tasodifiy elementni sug'urib oladi:
+# sonlar = {1,2,3,4,5,6,7} # Oddiy to'plam.
+# son = sonlar.pop() # .pop() metodi orqali to'plamimizdan tasodifiy raqamni o'chiramiz (Sug'urib olamiz).
+# print(son) # Natija.
+
+# TO'PLAMALAR USTIDA AMALLAR.
+# To'plamalar matematikada ham keng qo'llanilgani uchun ularning ustida  o'ziga xos matematik amallar bajarish mumkin.
+# Misol uchun, ikki to'plamni birlashtirish uchun | operatori yoki .union() metodidan foydalanamiz.
+# A = {1,2,3,4} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# B = {3,4,5,6} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# C = A|B # Endi ularni | operatori yordamida birlashtiramiz.
+# print(C) # Natijani ko'ramiz.
+
+# A = {1,2,3,4} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# B = {3,4,5,6} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# D = A.union(B) # Endi ularni .union() metodi bilan birlashtiramiz.
+# print(D) # Natija.
+
+# Ikki to'plamning kesishmasini (bir xil elementlarini) topish uchun esa & operatori yoki .intersection() metodidan
+# foydalanamiz:
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# c = a&b # Endi ularni & operatori orqali ikki to'plamning bir xil elementlarini topamiz.
+# print(c) # Natija.
+
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# d = a.intersection(b) # .intersection() metodi yordamida ikki to'plamning bir xil elementlarini topamiz.
+# print(d) # Natija.
+
+# Ikki to'plam o'rtasidagi farqni topish uchun esa ayirish (-) operatori yoki .difference metodidan foydalanamiz.
+# B to'plamning A to'plamdan farqi deganda (A-B) Ato'plamga kiruvchi, lekin B to'plamda yo'q elementlar tushuniladi.
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# print(a-b) # Natija a-b yani aytib o'tkanimizday a da bor b da esa yo'q elementlar tushuniladi.
+
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# print(b.difference(a)) # Natija, endi esa b da bor a da esa yoq elementlar chiqadi.
+
+# To'plamlar o'rtasidagi simmetrik farqni topish uchun ^ operatori yoki .symmetric_difference() metodidan foydalanamiz.
+# Simmetrik farq deb A va B to'plamga kiradigan, lekin bir vaqtda ikkalasiga kirmaydigan elementlar tushuniladi.
+# Quyidagi misolda {3,4} elementlari ikkala to'plamda bo'lgani uchun simmetrik farqqa kirmaydi.
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# c = a^b
+# print(c)
+
+# a = {1,2,3,4,5} # 1 - Oddiy raqamlar to'plamini yaratib olamiz.
+# b = {3,4,5,6,7} # 2 - Oddiy raqamlar to'plamini yaratib olamiz.
+# d = a.symmetric_difference(b)
+# print(d)
+
+# AMALIYOT TOPSHIRIQLARI.
+#1 - uch xil ranglar saqlangan to'plam yarating.
+# colors = {'sariq', 'qizil', 'qora'}
+# print(colors)
+
+#2 - To'plamga .add() va .update() metodlari yordamida ranglar qo'shing.
+# colors.add('yashil')
+# colors.update(['kumush', 'binafsha'])
+# print(colors)
+
+#3 - Quyidagi ikki to'plam uchun umumiy elementlarni ajratib olib, yangi to'plam yarating:
+# set1 = {10,20,30,40,50}
+# set2 = {30,40,50,60,70}
+# set3 = set1 & set2
+# print(set3)
+
+#4 - Yuqoridagi ikki to'plam orasidagi farqlarni konsolga chiqaring.
+# set1 = {10,20,30,40,50}
+# set2 = {30,40,50,60,70}
+# set3 = set1 - set2
+# print(set3)
+# set4 = set2 - set1
+# print(set4)
+
+#5 - Ikki to'plam orasidagi simmetrik farqni toping.
+# set1 = {10,20,30,40,50}
+# set2 = {30,40,50,60,70}
+# set3 = set1 ^ set2
+# print(set3)
+
+#6 - Sizdaquyidagi ro'yxat bor:
+# bozorlik = ['choy', 'non', 'kortoshka', 'tuxum', 'sut']
+# mahsulotlar = ['non', 'sut', 'tuxum', 'olma', 'un', 'tuz']
+# bozorlik - siz sotib olishingiz kerak bo'lgan narsalar;
+# mahsulotlar - do'kondagi mavjud mahsulotlar.
+
+#7 - Sotib olishingiz kerak bo'lgan mahsulotlarning qay biri do'konda bor ekanini alohida ro'yxat (list) saqlang.
+# obm = []
+# for n in bozorlik:
+#     if n in mahsulotlar:
+#         obm.append(n)
+# print(f"Do'konda bor mahsulotlar quyidagilar: {obm}")
+        
+#8 - Do'konda mavjud bo'lmagan mahsulotlar ro'yxatini yarating.
+# dmbm = []
+# for n in bozorlik:
+#     if n not in mahsulotlar:
+#         dmbm.append(n)
+# print(f"Do'konda mavjud bo'lmagan mahsulotlar quyidagilar: {dmbm}")
+ 
+#9 - Do'kon egasi siz so'ragan mahsulotlarni olib keldi. Mahsulotlar ro'yxatiga yangi mahsulotlarni qo'shing.
+# mahsulotlar.append('choy')
+# mahsulotlar.append('kortoshka')
+# print(mahsulotlar)
+
+# 12 - DARS TUGADI.
+
+# 13 - DARS.
+# NESTING.
+
+# Ba'zida dasturlash jarayonida lug'atning ichida ro'yxatlar yo boshqa lug'atni yoki, aksincha, ro'yxat ichida
+# lug'atni saqlash ham qo'l kelishi mumkin. Bu ingliz tilida NESTING deyiladi. Nesting Pythondagi foydali
+# xususiyatlardan biridir. Kelin, bunga bir nechta misollarni ko'rib chiqamiz.
+
+# LUG'ATLAR RO'YXATI.
+# Biz avvalgi darsimizda talabarning ma'lumotlarni lug'at shaklida saqlashni ko'rgan edik. Shunday talabalardan yuzlab bo'lganda
+# ularning har biriga alohida lug'at qilishimiz tabiiy, lekin bu lug'atlar bilan ishlash qiyinchilik tug'dirishi mumkin.
+# Shunday holatda barcha lug'atlarni (talabalarni) bitta ro'yxatga joylab, ular ustida turli amallar bajarish mumkin.
+
+# Quyidagi misolda 3ta alohida lug'atda 3ta avtomobil haqida ma'lumotlar saqlangan:
+# car0 = {
+#         'model':'jentra', 'rang':'qora',
+#         'yil':2018, 'narx':13000,
+#         'km':50000, 'korobka':'avtomat'
+#         }
+# car1 = {
+#         'model':'cobalt', 'rang':'oq',
+#         'yil':2020, 'narx':15000,
+#         'km':62000, 'korobka':'avtomat'
+#         }
+# car2 = {
+#         'model':'nexia3', 'rang':'qizil',
+#         'yil':2021, 'narx':12500,
+#         'km':5760, 'korobka':'mexanika'
+#         }
+# Agar biz har bir avtomobil haqida ma'lumot olmoqchi bo'lsak, har bir lug'atga alohida murojaat etishimiz talab qilinadi:
+# car = car0
+# print(f"{car['model'].title()},\
+#  {car['rang']} rang,\
+#  {car['yil']}-yil, {car['narx']}$")
+# car = car1
+# print(f"{car['model'].title()},\
+#  {car['rang']} rang,\
+#  {car['yil']}-yil, {car['narx']}$")
+# car = car2
+# print(f"{car['model'].title()},\
+#  {car['rang']} rang,\
+#  {car['yil']}-yil, {car['narx']}$")
+
+# Yuqoridagi natijani chiqarishning osonroq usuli barcha avtolarni bitta ro'yxarga joylab, for siklidan foydalanishdir:
+# cars = [car0,car1,car2] # Lug'atlar ro'yxati.
+# for car in cars:
+#     print(f"{car['model'].title()},\
+#       {car['rang']} rang,\
+#       {car['yil']}-yil, {car['narx']}$")
+# Ishimiz birmuncha yengillashdi, kodimiz ham qisqardi.
+# Natija esa bir xil.
+
+# Ro'yxat ichidagi istalgan lug'atga indeks bo'yicha murojaat etishimiz ham mumkin (lug'at nomini yodlab qolish ham shart emas).
+# print(cars[0])
+
+# Biror lug'atdagi elementga murojaat qilish uchun esa quyidagi usuldan foydalanishimiz mumkin:
+# print(cars[0] ['model'])
+
+# print(f"{cars[2]['rang'].title()}"
+#       f" {cars[2]['model'].title()}")
+
+# for sikli orqali biz bo'sh lug'atlar ro'yxatini ham yaratib olishimiz mumkin:
+# malibus = [] # Malibu mashinalari uchun bo'sh ro'yxat yaratdik.
+# for n in range(10): # Range orqali 10 element yaratib olamiz va n ni ularning har biriga tenglaymiz.
+#     n = { # Har bir n ni lug'at shakliga keltirib olamiz.
+#         'model':'malibu',
+#         'rang':None,
+#         'yil':2024,
+#         'narx':None,
+#         'km':0,
+#         'korobka':'avto'
+#                 } 
+#     malibus.append(n) # Yuqoridagi lug'atni ro'yxatga qo'shamiz.
+# # Yuqoridagi misolda biz 10ta Malibu mashinasidan iborat ro'yxat tuzdik. ETIBOR QILING, 'rang' kalitiga qiymat bermadik va None 
+# # deb qoldirdik.
+# # Endi ishlab chiqarish jarayonida mashinalarga turli ranglarni berishimiz mumkin. Misol uchun, birinchi 3ta mashinaga qizil rang
+# # beramiz:
+# for malibu in malibus[:3]: # Malibus ro'yxatidagi birinchi 3ta Malibu uchun:
+#     malibu['rang'] = 'qizil' # Rngini qizil qilgin.
+# # Keyingi 3tasiga qora:
+# for malibu in malibus[3:6]:
+#     malibu['rang'] = 'qora'
+
+# # Oxirgi 4ta Malibuni rangini qora, korobkasini esa mexanika qilamiz:
+# for malibu in malibus[6:]:
+#     malibu['rang'] = 'qora'
+#     malibu['korobka'] = 'mexanika'
     
+# # Kelin endi mashinalarni korobkasidan kelib chiqqan holda narx belgilaymiz:
+# for malibu in malibus: # Malibus ro'yxatidagi har bir Malibu uchun:
+#     if malibu['korobka'] == 'avto': # Agar korobkasi avtomat bo'lsa.
+#         malibu['narx'] = 40000 # Narxi 40000$ bo'lsin.
+#     else:
+#         malibu['narx'] = 35000
+# # Mashinalar ro'yxatini konsolga chiqaramiz.
+# for malibu in malibus:# Malibus ro'yxatidagi har bir Malibu uchun:
+#     print(malibu.values()) # Har bir Malibuni qiymatlarini konsolga chiqargin. Va biz shuncha yozgan kodlarimiz natijasini ko'ramiz.
+    
+# LUG'AT ICHIDA RO'YXAT.
+# Bir kalitga bir nechta qiymatlar berish talab qilinganda qiymatlarni ro'yxat ko'rinishida yozish o'rinlidir. Misol uchun,
+# bir tashkilotda bir nechta tashkilotda bir nechta dasturchilar ishlaydi va har bir dasturchi turli dasturlash tillarini biladi.
+# Keling, dasturchilar lug'atini tuzamiz va har bir dasturchi haqidagi ma'lumotni konsolga chiqaramiz:
+# dasturchilar = {
+#     'ali':['python', 'c++'],
+#     'vali':['html', 'css'],
+#     'hasan':['php', 'sql'],
+#     'husan':['python', 'php'],
+#     'maryam':['c++', 'c#']
+#     }
+# for ism, tillar in dasturchilar.items():
+#     print(f"\n{ism.title()}: ", end='')
+#     for til in tillar:
+#         print(f"{til.upper()} ", end='')
+
+# print() funksiyasi har bir matndan so'ng yangi qator tashlaydi. Buning oldini olish uchun quyidagi usuldan foydalanish mumkin:
+# print(string, end='') 
+
+# LUG'AT ICHIDA LUG'AT.
+# Bunday qilish tavsiya qilinmaydi, istisno holatlarda lug'at ichidagi qiymatlarni lug'at ko'rinishida ham saqlash mumkin.
+# Misol uchun, ish joyingizdagi hamkasblaringiz haqidagi ma'lumotlarni saqlashda hamkasblaringizning ismi kalit, u haqidagi
+# ma'lumotlar esa lug'at ko'rinishida berilishi mumkin.
+
+# hamkasblar = {
+#     'ali':{
+#         'familya':'valiyev',
+#         'tyil':1995,
+#         'malumot':'oliy',
+#         'tillar':['python','c++']
+#         },
+#     'vali':{
+#         'familya':'aliyev',
+#         'tyil':2000,
+#         'malumot':'orta',
+#         'tillar':['html','css']
+#         },
+#     'hasan':{
+#         'familya':'husanov',
+#         'tyil':1998,
+#         'malumot':'oliy',
+#         'tillar':['python','php']
+#         }
+#     }
+# print(hamkasblar)
+
+# # Hamkasblar to'g'risidagi ma'lumotlarni esa quyidagicha ko'rish mumkin:
+# for ism, info in hamkasblar.items():
+#     print(f"\n{ism.title()} {info['familya'].title()}, "
+#           f"{info['tyil']}-yilda tug'ilgan.\n"
+#           f"Malumoti: {info['malumot']}. \n"
+#           "Quyidagi dasturlash tillarini biladi: ")
+#     for til in info['tillar']:
+#         print(til.upper())
+        
+# Lug'at ichidagi lug'atlar bir xil tuzilishga ega bo'lgani ishingizni ancha yengillashtiradi, aks hold, kodingiz murakkablashib
+# ketishi mumkin.
+
+# AMALIYOT TOPSHIRIQLARI:
+#1 - Adabiyot (ilm-fan, san'at, internet) olamidagi 4 ta mashxur shaxlar haqidagi ma'lumotlarni lug'at ko'rinishida saqlang.
+# Lug'atlarni bitta ro'yxatga joylang, va har bir shaxs haqidagi ma'lumotni konsolga chiqaring.
+# buxoriy = {
+#         'ism':'Abu Abduloloh Muhammad ibn Ismoil',
+#         'tyil':810,
+#         'tjoy':'buxoro',
+#         'vyil':870
+#         }
+# qodiriy = {
+#         'ism':'Abdulla Qodiriy',
+#         'tyil':1894,
+#         'tjoy':'toshkent',
+#         'vyil':1938
+#         }
+# vohidov = {
+#         'ism':'Erkin Vohidov',
+#         'tyil':1936,
+#         'tjoy':'fargona',
+#         'vyil':2016
+#         }
+# navoiy = {
+#         'ism':'Alisher Navoiy',
+#         'tyil':1441,
+#         'tjoy':'xirot',
+#         'vyil':1501
+#         }
+# shaxslar = [buxoriy, qodiriy, vohidov, navoiy]
+# for shaxs in shaxslar:
+#     ism = shaxs['ism']
+#     tyil = shaxs['tyil']
+#     vyil = shaxs['vyil']
+#     tjoy = shaxs['tjoy']
+#     print(f"\n{ism} {tyil}-yilda {tjoy.title()}da tug'ilgan, "
+#           f"{vyil - tyil} yil umr ko'rgan."
+#           )
+#2 - Yuqoridagi lug'atlarga har bir shaxsning mashxur asarlari ro'yxatini ham qo'shing. For tsikli yordamida muallifning ismi va
+# uning asarlarini konsolga chiqaring.
+# buxoriy = {
+#         'ism':'Abu Abduloloh Muhammad ibn Ismoil',
+#         'tyil':810,
+#         'tjoy':'buxoro',
+#         'vyil':870,
+#         'asarlari':['al-jome as-sahih', 'al-adab al-mufrad', 'at-tarix al-kabir', 'at-tarix as-sag\'ir']
+#         }
+# qodiriy = {
+#         'ism':'Abdulla Qodiriy',
+#         'tyil':1894,
+#         'tjoy':'toshkent',
+#         'vyil':1938,
+#         'asarlari':['o\'tkan kunlar', 'mehrobdan chayon', 'obid ketmon']
+#         }
+# vohidov = {
+#         'ism':'Erkin Vohidov',
+#         'tyil':1936,
+#         'tjoy':'fargona',
+#         'vyil':2016,
+#         'asarlari':['tong nafasi', 'qo\'shiqlarim sizga', 'o\'zbegim', 'qiziquvchan matmusa']
+#         }
+# navoiy = {
+#         'ism':'Alisher Navoiy',
+#         'tyil':1441,
+#         'tjoy':'xirot',
+#         'vyil':1501,
+#         'asarlari':['xamsa', 'lison ut-tayr', 'mahbub al-qulub', 'munojot']
+#         }
+# shaxslar = [buxoriy, qodiriy, vohidov, navoiy]
+# for shaxs in shaxslar:
+#     ism = shaxs['ism']
+#     tyil = shaxs['tyil']
+#     vyil = shaxs['vyil']
+#     tjoy = shaxs['tjoy']
+#     print(f"\n{ism}ning sevimli asarlari quyidagilar:")
+#     for asar in shaxs['asarlari']:
+#         print(f"{asar.title()}")
+        
+#3 - Oila a'zolaringiz (do'stlaringiz) dan 3 ta sevimli kino-seriali haqida so'rang. Do'stingiz ismi kalit, uning sevimli
+# kinolarini esa ro'yxat ko'rinishida lug'artga saqlang.  Natijani konsolga chiqaring.
+# kinolar = {
+#     'abdurahmon':['shapka', 'oltin devor', 'sevgi'],
+#     'nurulloh':['king kong', 'omar va xanna', 'qasoskorlar'],
+#     'mavluda':['shabnam', 'om shanti om', 'baxt']
+#     }
+# for ism, kinolar in kinolar.items():
+#     print(f"\n{ism.title()}ning sevimli kinolari:")
+#     for kino in kinolar:
+#         print(kino.title())
+#4 - Davlatlar degan lug'at yarating, lug'at ichida bir nechta davlatlar haqida ma'lumotlarni lug'at ko'rinishida saqlang.
+# Har bir davlat haqida ma'lumotni konsolga chiqaring.
+# davlatlar = {
+#     'aqsh':{
+#         'poytaxti':'vashington',
+#         'axolisi': 327000000,
+#         'maydoni': '9631418 kv.km',
+#         'pul birligi':"dollar"
+#         },
+#     'rossiya':{
+#         'poytaxti':'moskva',
+#         'axolisi': 144000000,
+#         'maydoni': '17098246 kv.km',
+#         'pul birligi':"rubl"
+#         },
+#     "o'zbekiston":{
+#         'poytaxti':'toshkent',
+#         'axolisi': 33000000,
+#         'maydoni': '448978 kv.km',
+#         'pul birligi':"so'm"
+#         }
+#     }
+# for davlat, info in davlatlar.items():
+#     print(f"\n{davlat.title()}ning poytaxti {info['poytaxti'].title()}")
+#     print(f"Axolisi: {info['axolisi']}")
+#     print(f"Maydoni: {info['maydoni']}")
+#     print(f"Pul birligi: {info['pul birligi']}")
+    
+#5 - Yuqoridagi dasturga o'zgartirish kiriting: konsolga barcha davlatlarni emas, foydalanuvchi so'ragan davlat haqida ma'lumot
+# bering. Agar davlat sizning lug'atingizda mavjud bo'lmasa, "Bizda bu davlat haqida ma'lumot yo'q" degan xabarni chiqaring.
+# davlatlar = {
+#     'aqsh':{
+#         'poytaxti':'vashington',
+#         'axolisi': 327000000,
+#         'maydoni': '9631418 kv.km',
+#         'pul birligi':"dollar"
+#         },
+#     'rossiya':{
+#         'poytaxti':'moskva',
+#         'axolisi': 144000000,
+#         'maydoni': '17098246 kv.km',
+#         'pul birligi':"rubl"
+#         },
+#     "o'zbekiston":{
+#         'poytaxti':'toshkent',
+#         'axolisi': 33000000,
+#         'maydoni': '448978 kv.km',
+#         'pul birligi':"so'm"
+#         }
+#     }
+# print("Biz 3ta davlat haqidagi ma'lumotlarni jamlaganmiz: AQSH, ROSSIYA, O'ZBEKISTON")
+# davlat = input("Iltimos davlat nomini kiriting: ").lower()
+# if davlat in davlatlar:
+#     info = davlatlar[davlat]
+#     print(f"\n{davlat.upper()}ning poytaxti {info['poytaxti'].title()}")
+#     print(f"Axolisi: {info['axolisi']}")
+#     print(f"Maydoni: {info['maydoni']}")
+#     print(f"Pul birligi: {info['pul birligi']}")
+# else:
+#     print(f"Bizda {davlat} haqida ma'lumot yo'q!")
+
+# 13 - DARS TUGADI.
+
+# 14 - DARS.
+# WHILE SIKLI.
+
+# Biz 3 - bobda for sikli yoerdamida kodning ma'lum qismini bir necha bor takrorlashni o'rgangan edik. Ushbu bobda esa while sikli
+# bilan tanishamiz. Bu ikkisining o'rtasidagi farq shudaki, for siklining takrorlanishi biror ro'yxat (lug'at, to'plam) elementlari soniga
+# bog'langan bo'lsa, WHILE siklining takrorlanishi biror shartning qanoatlanishiga bo'g'langan bo'ladi.
+
+# WHILE so'zi ingliz tilidan "toki" deb tarjima qilinadi.
+
+# WHILE QANDAY ISHLAYDI?
+# WHILE sikli badanidagi kodning necha marta takrorlanishi biror shartga bog'langan bo'ladi. Tushunarli bo'lishi uchun qiyidagi misolni
+# ko'zdan kechiramiz:
+# son = 1 
+# while son <= 5: # TOKI son 5dan kichik yoki teng ekan....
+#     print(son, end=' ') # sonni konsolga chiqaramiz va 
+#     son = son + 1 # songa 1ni qo'shamiz.
+# Yuqoridagi dasturni tahli qilamiz:
+#   1 - qatorda. Avval son degan o'zgaruvchi yaratdik va unga 1 qiymatini berdik.
+#   2 - qatorda. "Toki son 5dan kichik yoki teng ekan" keyingi qatorda bajar dedik.
+#   3 - qatorda. Sonni konsolga chiqardik.
+#   4 - qatorda. Songa 1 qo'shdik.
+# 4 - qatordan so'ng kod yana 2 - qatorga qaytadi va son <= 5 shartini tekshiradi, agar shart bajarilsa (True), 3 - 4 qatorlar
+# takrorlanadi.
+# 5 - qadamdan so'ng son = 5 bo'lganida while sikli to'htaydi.
+
+# Pythonda += operatori bor. Bu operator o'ng tarafdagi qiymatni chap tarafdagi qiymatga qo'shadi. Misol uchun, son = son + 1
+# ifodasini son += deb yozdik.
+
+# WHILE va INPUT().
+# WHILE sikli yordamida dasturni to'xtatish imkoniyatini foydalanuvchiga berishimiz mumkin.
+# print("Kiritilgan sonning kvadratini hisoblovchi dastur. ")
+# savol = "Istalgan soningizni kiriting"
+# savol += ("Dasturni to'xtatish uchu 'exit' deb yozing!")
+# qiymat = ''
+# while qiymat != 'exit':
+#     qiymat = input(savol)
+    
+#     if qiymat != 'exit':
+#         print(f"{qiymat} ning kvadrati {float(qiymat)**2} ga teng!")
+# Yuqoridagi dastur toki foydalanuvchu 'EXIT' deb yozmaguniga qadar takrorlanaveradi.
+
+# ISHORA - FLAG/
+# Yuqoridagi misolda dasturni to'xtatish uchun yagona shartni tekshirdik (qiymat != 'exit). Katta dasturlarda bir shartni emas,
+# bir nechta shartlarni tekshirish  va ulardan biri bajarilgan taqdirda dasturni to'xtatish talab qilinishi mumkin.
+# Bunday holatlarda biror o'zgaruvchidan ishora (flag) sifatida foydalanishimiz mumkin. Agar dastur bajarilishi davomida dasturni
+# to'xtatish shartlaridan biri bajarilganda ishora o'zgaruvchining qiymatini o'zgartiramiz va dastur o'z-o'zidan to'xtaydi.
+
+# print("Kiritilgan sonning kvadratini qaytaruvchi dastur.")
+# savol = "Istalgan son kiriting " # Foydalanuvchiga habar.
+# savol += ("To'xtatish uchun 'exit' deb yozing!") # Yuqoridagi habarga qo'shimcha (+=) ishorasi orqali qo'shilgan.
+# ishora = 1 # Ishorani 1ga yani True gatenglab olamiz. 
+# while ishora: # Toki ishora = True (1) ekan.
+#     qiymat = input(savol) # Yangi qiymat degan o'zgaruvchi, va unga input orqali foydalanuvchiga yuzlanyapmiz.
+#     if qiymat == 'exit': # Agar foydalanuvchi 'exit' deb yozadigan bo'lsa sodda qilib aytganda.
+#         ishora = 0 # Ishorani 0ga yani False ga tenglagin (va bu holatda dasturdan chiqib ketiladi shartlar bajarilmaydi.)
+#     else: # Aks holda 
+#         print(f"{qiymat} ning kvadrati, {float(qiymat)**2} ga teng!") # Kiritilgan sonni kvadratini hisobla.
+
+# BREAK OPERATORI.
+# BREAK operatori yordamida sikl bajarilishini saikl badanidan to'xtatishimiz mumkin. Ya'ni sikl to'xtashi WHILE dan so'ng
+# yozilgan shartga emas, sikl ichidagi boshqa shartga bog'lanishi mumkin:
+# print("Kiritilgan sonning kvadratini qaytaruvchi dastur!") # Foydalanuvchi uchun ma'lumot.
+# savol = "Istalgan soningizni kiriting!" # Savol degan yangi o'zgaruvchiga foydalanuvchi qilishi mumkin bo'lgan ishni yozdik.
+# savol += ("Dasturni to'xtatish uchun 'exit' deb yozing! ") # Dasturni tugatish uchun foydalanuvchi qilishi kerak bo'lgan amal.
+
+# while True: # Abadiy sikl. # Siklni boshladik 
+#     qiymat = input(savol) # Yangi qiymat degan o'zgaruvchiga yuqoridagi birlashtirilgan savolni yuklaymiz va input orqali
+# # foydalanuvchiga taqdim qilamiz.
+#     if qiymat == 'exit': # Agar qiymat 'exit' ga teklansa 
+#         break # Dasturni to'htatish.
+#     else: # Aks holda.
+#         print("{qiymat} ning kvadrati, {float(qiymat)**2}") # Kiritilgan qiymatni kvadratini hisoblash uchun kod.
+# print("Dastur tugadi!") # Foydalanuvchi tomonidan 'exit' deb yozilganda dastur tugagani haqidagi habar.
+
+# BREAK operatori for siklini to'xtatish uchun ham ishlatiladi:
+# sonlar = list(range(1,11)) # Range oraqli yangi list ro'yxat (1dan 10gacha) yaratib olamiz.
+# for son in sonlar: # Sonlar ichidagi har bir son uchun.
+#     if son == 5: # Agar son 5ga teng bo'lsa.
+#         break # Dasturni to'htatkin.
+#     print(f"{son} ning kvadrati {son**2}") # Yo'q bo'lsa shu kodni bajar.
+    
+# Sikl ichida bir nechta break operatorlari bo'lishi mumkin.
+    
+# CONTINUE OPERATORI.
+# CONTINUE operatori esa, aksincha, ma'lum bir shart bajarilganda qadam tashlab o'tish uchun mo'ljallangan
+# (operator qo'yilgan o'sha qadamni tashlab o'tib ketadi.)
+# sonlar = list(range(1,11)) # 1dab 11gacha (11 kirmaydi) sonlar ro'yxati tuzdik.
+# for son in sonlar: # sonlar ichidagi har bir son uchun.
+#     if son == 5: # Agar son 5ga teng bo'lsa.
+#         continue
+#     print(f"{son} ning kvadrati {son**2} ga teng")
+    
+# Natijaga e'tibor bering, son 5ga teng bo'lganda siklimiz 1 qadam tashlab o'tib ketdi va 5 ning kvadratini konsolga chiqarmadi:
+    
+# WHILE sikliga ham misol ko'ramiz, Quyidagi kod 0 dan 10gacha Bo'lgan juft sonlarni konsolga chiqaradi:
+# son = 1 # Son ning birinchi qiymati 1ga teng.
+# while son < 10: # While sikli orqali son 10dan kichik bo'lsa yani o'shanga qadar.
+#     son += 1 # Bu kodda songa 1 qo'shib boramiz.
+#     if son%2 != 0: # Agar son toq bo'lsa.
+#         continue # Agar son toq bo'lsa uni tashlab o'tib ketkin.
+#     else: # Aks holda (juft bo'lsa)
+#         print(son, end=' ') # Uni konsolga chiqargin.
+        
+# Sikl ichida bir nechta continue operatorlari bo'lishi mumkin.
+
+# ABADIY SIKL TUZOG'I.
+# Sikllar bilan ishlashda abadiy sikl yaratib qo'yishdan ehtiyot bo'lishimiz kerak. Abadiysiklga turli mantiqiy xatolar sabab 
+# bo'lishi mumkin: noto'g'ri shart, 'zgarmas qiymat, kodlar ketma-ketligida xatolik va hokazo.
+
+# Dasturlaringiz abadiy siklga tushib qolganda dasturni to'htatish uchun konsolda (terminalda) Ctrl+C tugmalarini bosing.
+
+# Keling ba'zi misollarni ko'ramiz. DIQQAT, Quyidagi kodni ehtiyotkorlik bilan bajaring.
+# son = 0 
+# while son < 10:
+# #   son += 1 # ESDAN CHIQARILGAN QATOR.
+#     if son%2 != 0:
+#         continue
+#     else:
+#         print(son)
+# Yuqoridagi kod abadiy davom etadi, sababi, biz sonning qiymatini o'zgartirishni unutdik.
+
+# Yana bir misol ko'ramiz:
+# son = 0 
+# while son < 10:
+#     if son%2 != 0:
+#         continue
+#     else:
+#         print(son)
+#    # son += 1 # Qatorlar ketma-ketligida xatoga yo'l qo'yildi.
+# Yuqoridagi kod ham abadiy siklga misol bo'la oladi.
+
+# son = 1 
+# while son > 0: # Shart berishdagi xatolik tufayli abadiy siklga tushib qolinadi.
+#     son += 1
+#     if son%2 != 0:
+#         continue
+#     else:
+#         print(son)
+# Yuqoridagi sikl ham abadiy davom etadi.
+
+# AMALIYOT TOPSHIRIQLARI:
+#1 - Foydalanuvchidan yaxshi ko'rgan kitoblarini kiritishni so'rang. Foydalanuvchi stop so'zini yozishi bilan dasturni to'xtating.
+# print("Foydalanuvchidan yoqtirgan kitoblari haqida so'raydigan dastur.")
+# savol = "Yoqtirgan kitoblariz bormi! Bo'lsa ular qaysilar: "
+# savol += ("Dasturni to'htatish uchun esa 'stop' deb yozing! ")
+# kitoblar = []
+# ishora = 1
+# while ishora:
+#     qiymat = input(savol)
+#     if qiymat == 'stop':
+#         break
+#     else:
+#         print("Rahmat!")
+        
+#2 - Muzeyga chipta narhi foydalanuvchining yoshiga bog'liq: 7 dan yoshlarga - 2000 so'm, 7-18 gacha 3000 so'm, 18-65 gacha
+# 10000 so'm, 65 dan kattalarga bepul. Shunday while tsikl yozingki, dastur foydalanuvchi yoshini so'rasin va chipta narhini
+# chiqarsin. Foydalanuvchi exit yoki quit deb yozganda dastur to'xtasin (ikkita shartni ham tekshiring).
+# print("Foydalanuvchini yoshiga qarab chipta narxini chiqaruvchi dastur!") # Dastur haqida ma'lumot.
+# savol = "Iltimos yoshingizni kiriting! " # Foydalanuvchi qilishi kerak bo'lgan amal haqida ma'lumot.
+# while True: # while True teng.
+#     qiymat = input(savol) # Yangi qiymat degan o'zgaruvchi input orqali foydalanuvchiga savol beryapti.
+#     if qiymat == 'exit' or qiymat == 'stop': # Agar goydalanuvchi 'exit' yoki 'stop' deb yozadigan bo'lsa.
+#         break # Dasturni tugatkin.
+#     yosh = int(qiymat) # Yosh degan qiymatga foydalanuvchi kiritkan qiymatni integer (butun son)qilib yukladik.
+#     if yosh <= 7: # Agar foydalanuvchini yoshi 7dan kichik bo'lsa.
+#         narh = 2000 # Kirish narxi 2000.
+#     elif 7 < yosh <= 18:
+#         narh = 3000
+#     elif 18 < yosh <= 65:
+#         narh = 10000
+#     else: # Aks holda.
+#         narh = 0 # Kirish tekin.
+#     if narh == 0: # Agar narh teng bo'lsa 0ga.
+#         print("Sizga kirish bepul!") # Foydalanuvchiga chiquvchi habar.
+#     else: # Aks holda.
+#         print(f"Sizga kirish {narh} so'm!") # Shu habar chiqsin.
+# print("Dastur tugadi foydalangangiz uchun rahmat!") # Dastur tugatilgan holatda shu habarni chiqar.
+
+# Yuqoridagi dasturni boshqa usullarda ham (break, ishora yoki shart) yozib ko'ramiz.
+# print("Foydalanuvchilarga muzeyga kirish narxini bellgilab beradigan dastur!")
+# savol = "Iltimos yoshingizni kiritint! "
+# ishora = True
+# while ishora:
+#     qiymat = input(savol)
+#     if qiymat == 'exit' or qiymat == 'stop':
+#         ishora = False
+#         break
+#     yosh = int(qiymat)
+#     if yosh <= 7:
+#         narh = 2000
+#     elif 7 < yosh <= 18:
+#         narh = 3000
+#     elif 18 < yosh <= 65:
+#         narh = 10000
+#     else: 
+#         narh = 0
+#     if narh == 0:
+#         print("Sizga kirish bepul!")
+#     else:
+#         print(f"Sizga kirish {narh} so'm!")
+# print("Dastur tugadi!")
+
+# 14 - DARS TUGADI.
+
+# 15 - DARS.
