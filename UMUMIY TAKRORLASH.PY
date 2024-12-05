@@ -3049,11 +3049,347 @@ Created on Sat Oct 26 19:25:01 2024
 # qilishimiz to'g'ri emas. 
 
 # To'g'ri usuli - avval xatoga tekshirish va xato yuz bermaganda bajariladigan ifodani alohida, ELSE blokida yozish:
-yosh = input("Yoshingizni kiriting: ")
-try:
-    yosh = int(yosh)
-except:
-    print("Butun son kiritmadingiz!")
-else:
-    print(f"Siz {2024-yosh} yilda tug'ilgansiz!")
+# yosh = input("Yoshingizni kiriting: ")
+# try:
+#     yosh = int(yosh)
+# except:
+#     print("Butun son kiritmadingiz!")
+# else:
+    # print(f"Siz {2024-yosh} yilda tug'ilgansiz!")
+    
+# Yoshingizni kiriting: 21
+# Siz 2003 yilda tug'ilgansiz!
+
+# MA'LUM TURDAGI XATOLARNI USHLASH.
+# Xatolarning turlari ko'p, EXCEPT operatori yordamida biz aynan qaysi xatolarni ushlamoqchi ekanimizni ham ko'rsatishimiz mumkin.
+# Misol uchun, yuqoridagi misolda int() funksiyasi ValueError xatosini qaytardi. Agar biz faqatgina shu turdagi xatolarni
+# ushlamoqchi bo'lsak, EXCEPT operatoridan so'ng xatolik nomini ham ko'rsatamiz:
+# yosh = input("Yoshingizni kiriting: ")
+# try:
+#     yosh = int(yosh)
+# except ValueError:
+#     print("Butun son kiritmadingiz")
+# else:
+#     print(f"Siz {2024 - yosh} yilda tug'ilgansiz!")
+# Natija: Butun son kiritmadingiz
+# Shu yo'sinda boshqa xatolarni ham tutib olish mumkin.
+
+# ZeroDivisionError.
+# x, y = 5, 10
+# try:
+#     y/(x-5)
+# except ZeroDivisionError:
+#     print("0ga bo'lib bo'lmaydi!")
+# Natija: 0ga bo'lib bo'lmaydi!
+
+# IndexError.
+# mevalar = ['olma', 'anor', 'anjir', 'uzum']
+# try:
+#     print(mevalar[7])
+# except IndexError:
+#     print(f"Ro'yxatda {len(mevalar)} ta meva  bor xolos!")
+# Natija: Ro'yxatda 4 ta meva  bor xolos!
+
+# KeyError.
+# Bu xatolik lug'atda mavjud bo'lmagan kalitga murojaat etishda kelib chiqadi:
+# user = {"username":"sariqdev",
+#         "status":"admin",
+#         "email":"admin@sariq.dev",
+#         "phone":"998971234567"}
+# key = "tel"
+# try:
+#     print(f"Foydalanuvchi: {user[key]}")
+# except KeyError:
+#     print("Bunday kalit mavjud emas!")
+# Natija: Bunday kalit mavjud emas!   
+
+# FileNotFoundError.
+# Bu xatolik Pythonda fayllar bilan ishlashda mavjud bo'lmagan faylga murojaat etish ortidan kelib chiqadi. Biz fayllar bilan 
+# ishlash haqida kelgusi boblarda to'xtalamiz, bu bo'limda esa shunday xatolikni ushlashni ko'ramiz, xolos:
+# fayl = "data.txt" # Bunday fayl aslida mavjud emas.
+# try: # Faylni ochishga harakat qilamiz.
+#     f = open(fayl)
+# except FileNotFoundError:
+#     print(f"{fayl} fayli mavjud emas!")
+# Natija: data.txt fayli mavjud emas!
+
+# BIR NECHTA XATOLARNI USHLASH.
+# TRY-EXCEPT ketma-ketligida bir nechta EXCEPT operatorlari ham bo'lishi mumkin. Ularning har biri ma'lum turdagi xatolik uchun
+# javobgar bo'ladi:
+# n = input("Butun son kiriting: ")
+# try:
+#     n = int(n)
+#     x = 20 / n
+# except ValueError: # Foydalanuvchi butun son kiritmasa.
+#     print("Butun son kiritmadingiz!")
+# except ZeroDivisionError: # Foydalanuvchi 0 sonini kiritsa.
+#     print("0ga bo'lib bo'lmaydi!")
+# else:
+#     print(f"x = {x}")
+# Natija: Butun son kiriting: 2.4
+# Butun son kiritmadingiz!    
+
+# Natija: Butun son kiriting: 0
+# 0ga bo'lib bo'lmaydi!
+
+# Natija: Butun son kiriting: 10
+# x = 2.0 
+
+# XATOLARNI KO'RSATMAY O'TISH.
+# Yuqoridagi misollarda kodimiz xato qaytarganida dasturimiz foydalanuvchiga xatolik haqida ma'lumot ko'rsatyapti. Agar dastur 
+# hech qanday ma'lumot ko'rsatmay, dasturni davom etishi talab qilinsa except badanida pass operatorini yozamiz.
+# user = {"username":"sariqdev",
+#         "status":"admin",
+#         "email":"admin@sariq.dev",
+#         "phone":"998971234567"}
+# key = "tel"
+# try:
+#     print(f"Foydalanuvchi: {user[key]}")
+# except KeyError:
+#     pass
+
+# Umuman olganda, pass hech narsa bajarmasa-da, juda foydali operator. Bu operator yordamida biz funksiyalar, sikllar yoki IF-ELSE
+# shartlarining badanini vaqtincha to'ldirib turishimiz mumkin. Misol uchun, siz dasturning skeletini o'ylab qo'ydingiz, qanday 
+# sikllar yoki shartlar bo'lishini reja qildingiz, lekin bevosita sikl yoki funksiya badanini yozishga yetib kelmagan bo'lsangiz,
+# IndentationError xatoligining oldini olish uchun pass operatoridan foydalanasiz.
+# if yosh < 20:
+#     pass
+# else:
+#     pass
+
+# if yosh < 20:
+
+# else:
+
+# XATOLARNING OLDINI OLISH.
+# Yuqoridagi xatolar yuz berganda ularni ushlash va dastur to'xtashining oldini olishni ko'rib chiqtik. Lekin TRY-EXCEPT
+# ketma-ketligi xatolarning oldini olishga yordam bera olmaydi. Xatolarning oldini olish uchun IF-ELSE va WHILE sikllaridan
+# foydalanganimiz afzal. 
+
+# Avvalgi bo'limdagi misolimizga qaytsak:
+# yosh = input("Yoshingizni kiriting: ")
+# try:
+#     yosh = int(yosh) # Xato qaytargan kod.
+#     print(f"Siz {2024 - yosh} - yilda tug'ilgansiz!")
+# except: # Xato yuz berganda bajariluvchi kod.
+#     print("Butun son kiritmadingiz.")
+    
+# Biz foydalanuvchi yoshini so'radik va foydalanuvchi butun son kiritmagani sababli dasturni to'xtatdik. Aslida, bunday holatda
+# WHILE sikli yordamida foydalanuvchi to'g'ri qiymat kiritgunga qadar uning yoshini qayta qayta so'rash to'g'riroq yechim bo'ladi:
+# while True:
+#     yosh = input("Yoshingizni kiriting: ")
+#     if yosh.isdigit():
+#         yosh = int(yosh)
+#         break
+# print(f"Siz {2024 - yosh} - yilda tug'ilgansiz!")
+# Natija: Yoshingizni kiriting: 32.5
+# Natija: Yoshingizni kiriting: 12.4
+# Natija: Yoshingizni kiriting: 24.9
+# Natija: Yoshingizni kiriting: 25
+# Siz 1999 - yilda tug'ilgansiz!
+
+# .isdigit() metodi = foydalanuvchi kiritgan matn yoki oldindan o'zgaruvchiga yuklangan matn faqatgina sonlardan iborat ekanini
+# tekshiradi.
+
+# ETIBOR BERING, foydalanuvchi kiritgan matn faqatgina sonlardan iborat ekanligini tekshirish uchun .isdigit() metodidan
+# foydalandik.
+        
+# Ko'rib turganingizdek, biz dastavval 32.5 qiymatini kiritdik va matn tarkibida nuqta belgisi bo'lgani uchun .isdigit("32.5")
+# metodi False qaytardi va siklimiz bishiga qaytdi. Biz yana 2 marta xato qiymat kiritdik va har gal sikl boshidan takrorlandi.
+# 4 - urunishda 25 qiymatini kiritganimiz sababli .isdigit("25") metodi True qaytardi, siklimiz to'xtadi va "Siz 1999 - yilda 
+# tug'ilgansiz!" degan natija konsolga chiqdi.
+
+# Albatta yuqoridagi usul barcha xatolar ushlamaydi. Shunday xatolar bo'lishi mumkinki, biz ularni oldindan to'g'irlay olmasligimiz 
+# mumkin yoki xato foydlanuvchiga bog'liq bo'lmasligi mumkin. Shunday holatlarda TRY-EXCEPT operatorlari bizning xaloskorimizga 
+# aylanadi.
+
+# AMALIYOT TOPSHIRIQLARI.
+#1 - Quyidagi kod bajarilishida yuzaga kelishi mumkin bo'lgan xatolarni ushlab, xatoga mos matnni konsolga chiqaring:
+# x = int(input("Son kiriting: "))
+# y = int(input("Yana bir son kiriting: "))
+# print(x, '/', y, '=', x/y)
+
+# x = input("Son kiriting: ")
+# y = input("Yana son kiriting: ")
+# try: # Kod to'g'ri ishlaganda bajariladigan soha.
+#     x = int(x)
+#     y = int(y)
+#     result = x/y # Bo'linish shu yerda amalga oshadi va RESULT ga yuklanadi.
+# except ValueError: # Agar butun son kiritilmasa.
+#     print("Butun son kiritmadingiz!")
+# except ZeroDivisionError: # Agar 0 soni kiritilsa.
+#     print("0ga bo'lib bo'lmaydi")
+# else:
+#     print(x, '/', y, '=', 'result')
+    
+# Yuqoridagi kodni while sikli yordamida xato qiymat qaytarilganda takrorlanadigan qiling:
+# while True: # Doimiy ishlovchi sikl
+#     x = input("Son kiriting: ")
+#     y = input("Yana son kiriting: ")
+#     try:
+#         x = int(x)
+#         y = int(y)
+#         result = x/y # Bo'linish natijasi
+#     except ValueError: 
+#         print("Butun son kiritmadingiz qaytadan urunib ko'ring!")
+#         continue# Siklni qayta boshlash
+#     except ZeroDivisionError: 
+#         print("0ga bo'lib bo'lmaydi!")
+#         continue # Siklni qayta boshlash
+#     else:
+#         print(f"x / y = {result}")
+#         break # Muvaffaqiyatli hisoblashdan so'ng siklni tugatish
+
+# 17 - DARS TUGADI.
+
+
+# 18 - DARS.
+# FUNKSIYA.
+# Funksi deb ma'lum vazifani bajarishga mo'ljallangan kodlar yeg'indisidir. Funksiyalar, odatda, ma'lumotlarni qabul qilib oladi,
+# ularni qayta ishlaydi va biror natija qaytaradi.
+
+# Biz darslarimiz davomida bi nechta funksiyalardan foydalanib keldik. Misol uchun, print() funksiyasi matn yoki ifoda qabul qiladi
+# va uni konsolga chiqaradi, range() funksiyasi esa ma'lum oraliqdagi sonlarni yaratish uchun ishlatiladi.
+
+# Aslida, har qanday funksiyaning ortida ham bir nechta qatordan iborat kod bo'ladi, lekin biz funksiyaga murojaat qilganimizda 
+# uning nomini yozamiz, holos. Funksiya ortidagi kod esa biz uchun yashirin bo'lib qolaveradi. Funksiyalarning qilayligi ham shunda.
+# Dastur davomida ma'lum bir kodlarni qayta qayta yozmaslik uchun biz ularni jamlab, bitta funksiya ichiga joylashimiz va dastur
+# davomida bu kodlarga funksiya nomi orqali murojaat etishimiz mumkin.
+
+# Funksiyalar turlicha bo'ladi, ba'zi funksiyalar sizdan qiymat qabul qilib, konsolga biror ma'lumot chiqaradi, ba'zilari esa
+# sizdanqabul qilgan qiymat ustida turli amallar bajarib yangi qiymat qaytaradi. Foydalanuvchidan mutlaqo qiymat qabul qilmaydigan
+# funksiyalar ham mavjud.
+
+# Ushbu bobda biz Pythonda yangi funksiya yaratish, unga murojaat etish, tekshirish va to'g'irlashni o'rganamiz. Shuningdek,
+# darsimiz yakunida dasturimizni bir nechta fayllarga ajratishni va funksiyalarni alohida modullarga joylashni ham o'rganamiz.
+
+
+# FUNKSIYA YARATAMIZ.
+# Boshlanishiga oddiy, hech qanday qiymat qabul qilmaydigan funksiya yaratishni ko'rib chiqaylik. Bu funksiyaga murojaat
+# etkanimizda konsolga "Assalomu Aleykum" degan habarni chiqarsin.
+# def salom_ber():
+#     """Salomlashuvchi funksiya"""
+#     print("Assalomu Aleykum!")
+    
+# Yuqoridagi kodni tahlil qilamiz:
+#   1. Avvalo, DEF operatori yordamida Pythonda funksiya yaratayotganimizni bildirdik. DEF dan so'ng esa funksiyamizga nom nom
+# berdik va qavslarni ochib yopdik. Bizning funksiyamiz foydalanuvchidan hech qanday qiymat qabul qilmaydi, shuning uchun ham qavs
+# ichi bo'sh. Keyingi misollarda foydalanuvchidan qiymat qabul qiluvchi funksiyalarni ham ko'ramiz.
+#   2. DEF qatoridan keyin o'ngga surib yozilgan har qanday funksiyaning badani hisoblanadi. 2 - qatorda biz uchta ketma-ket
+# qo'shtirnoq ichida funksiya haqida bilmoqchi bo'lganda aynan shu matnni ko'rsatadi.
+#   3. Oxirgi qatorimizda esa "Assalomu Aleykum!" matnini konsolga chiqarishni buyurdik. Sodda funksiyamizning asosiy vazifasi ham
+# shu.
+
+# Mana funksiya tayyor. Endi bu funksiyadan foydalanish uchun uni CHAQIRAMIZ. Buning uchun funksiya nomini yozamiz va qavslarni
+# ochib-yopamiz. Funksiyamiz hech qanday qiymat qabul qilmaydi, shuning uchun qavslar ichini bo'sh qoldiramiz.
+
+# salom_ber()
+# Natija: Assalomu Aleykum!
+
+# ETIBOR BERING! Funksiyaga nom berishta fe'l, ya'ni harakatni bildiruvchi so'zlar yoki jumlalardan foydalaning. Bu bilan siz
+# o'zgaruvchi va funksiya va funksiya o'rtasini farqlashingiz oson bo'ladi. Misol uchun, yuqorida biz funksiyamizni salom emas,
+# salom_ber deb nomladik.
+
+
+# QIYMAT QABUL QILUVCHI FUNKSIYA.
+# Avvalgi sodda funksiyamiz foydalanuvchidan hech qanday qiymat olmaydi va barchaga birday "Assalomu Aleykum!" deb javob qiladi.
+# Keyingi funksiyaga o'zgartirish kiritamiz, funksiya foydalanuvchi ismini qabul qilib, unga ismi bilan bilan murojaat etsin. 
+# Buning uchun funksiya nomidan keyin qavs ichida foydalanuvchi berishi kerak bo'lgan qiymatni ko'rsatamiz.
+# def salom_ber(ism):
+#     """Foydalanuvchiga ismi orqali salom beruvchi funksiya."""
+#     print(f"Assalomu Aleykum, hurmatli {ism.title()}!")
+# Bunday funksiyaga murojaat etish uchun qavs ichida so'ralgan qiymatni berish talab qilinadi:
+# salom_ber("nurulloh")
+# Natija: Assalomu Aleykum, hurmatli Nurulloh!
+
+# Agar funksiyaga murojaat etishda unga qiymat bermasak, xatolik vujudga keladi:
+# salom_ber()
+# Natija: TypeError: salom_ber() missing 1 required positional argument: 'ism'.
+
+# Funksiya yaratishning asl maqsadlaridan biri - biz unga qayta-qayta, yangi qiymatlar bilan murojaat etishimiz mumkin.
+# salom_ber("hasan")
+# Natija: Assalomu Aleykum, hurmatli Hasan!
+# salom_ber("olim")
+# Natija: Assalomu Aleykum, hurmatli Olim!
+
+
+# DOCSTRING.
+# Funksiyani yaratishda funksiya qanday ishlashi haqida qisqacha ma'lumot berib ketish o'zimiz uchun ham, kelajakda bizning
+# funksiyamizni ishlatadigan boshqa dasturchilar uchun ham juda foydali bo'ladi. Bunday ma'lumotlar DOCSTRING deb ataladi va
+# funksiya badaninnig ilk qatorida uchta qo'shtirnoq ichida yoziladi:
+# def salom_ber(ism):
+#     """Foydalanuvchiga ismi orqali salom beruvchi funksiya.""" # <- DOCSTRING.
+#     print(f"Assalomu Aleykum, hurmatli {ism.title()}!")    
+ 
+# Murakkab funksiyalar DOCSTRINGni bir nechta qatorga bo'lib yozish mumkin:
+# def salom_ber(ism):
+#     """Foydalanuvchini ismini qabul qilib,
+#         unga salom beruvchi funksiya.""" # <- DOCSTRING.
+#     print(f"Assalomu Aleykum, hurmatli {ism.title()}!")  
+
+# DOCSTRINGni konsolga chiqarish uchun quyidagi buyruqni yozamiz: (funksiya_nomi.__doc__).
+# print(salom_ber.__doc__)
+# Natija: Foydalanuvchini ismini qabul qilib, unga salom beruvchi funksiya.
+
+# Odatda, dasturlash muhitlari funksiya nomini yozishingiz bilan DOCSTRING ichidagi matnni ko'rsatadi:
+# salom_ber() shu ko'rinishda funksiya nomi yozilishi bilan, ekranda mini oyna paydo bo'ladi va unda funksiya haqidagi
+# ma'lumotlarni ko'rish mumkin.
+
+
+# ARGUMENT VA PARAMETR.
+# Funksiya yaratishda qavs ichida berilgan, funksiya to'g'ri ishlashi uchun uzatiladigan qiymat PARAMETR deb ataladi.
+# Sodda bir misol keltiramiz:
+# def salom_ber(ism):
+#     """Foydalanuvchi ismini qabul qilib,
+#         unga salom beruvchi funkiya"""
+#     print(f"Assalomu Aleykum, hurmatli {ism.title()}!")
+
+# Yuqoridagi misolda ism - salom ber funksiyasining parametri. Parametrlarga mazmunli nom berishni odat qiling:
+#   ❎ salom_ber(n)
+#   ✅ salom_ber(name)
+#   ✅ salom_ber(ism)
+# Foydalanuvchi funksiyaga murojaat etishda funksiyaga uzatgan qiymat ARGUMENT deb ataladi. salom_ber('hasan') kodida
+# 'hasan' - ARGUMENT.
+
+# Demak parametr va argument bitta narsaga ikki xil qarash ekan, xolos.
+
+# ETIBOR BERING! Ba'zi manbalarda ARGUMENT va PARAMETR so'zlari almashtirib ishlatilishi ham kuzatiladi.
+
+
+# FUNKSIYAGA BIR NECHTA ARGUMENT UZATISH.
+# Ba'zi funksiyalar bir emas, bir nechta parametr talab qilinishi mumkin, foydalanuvchi esa, o'z navbatida, bir nechta argumentlar
+# taqdim qilishi kerak. Funksiyaga argument uzatishning bir necha usuli bor, keling ular bilan birma-bir tanishamiz.
+
+# TO'G'RI TARTIBDA UZATISH.
+# Bu usulda funksiya parametrlari qaysi tartibda yozilgan bo'lsa, argumentlar ham aynan shu ketma- ketlikda uzatilishi shart. Bitta
+# misol keltiramiz. Quyidagi funksiyha foydalanuvchining ismi va familyasini parametr sifatida qabul qilib, ularni jamlab habar chiqaradi.
+def toliq_ism(ism, familya):
+    """Ism va familyani jamlab chiqaruvchi funksiya."""
+    print(f"Foydalanuvchining ismi: {ism.title()}\n"
+          f"Foydalanuvchining familyasi: {familya.title()}")
+# Yuqoridagi funksiya to'g'ri natija chiqarishi uchun argumentlarni ism va familya ketma-ketligida kiritishimiz lozim.
+toliq_ism("nurulloh", "abdurashidov")
+# Natija: Foydalanuvchining ismi: Nurulloh
+#         Foydalanuvchining familyasi: Abdurashidov
+
+# Agar argumentlarni noto'g'ri  ketma-ketlikda bersak natija ham biz kutkanday chiqmaydi:
+toliq_ism("abdurashidov", "nurulloh")
+# Natija: Foydalanuvchining ismi: Abdurashidov
+#         Foydalanuvchining familyasi: Nurulloh
+
+# Ko'p holatlarda esa argumentlarni noto'g'ri tartibda uzatish xatolikka ham olib kelishi mumkin.
+def yosh_hisobla(ism, tugilgan_yil):
+    """Foydalanuvchini yoshini hisoblovchi funksiya."""
+    print(f"{ism.title()} {2024 - tugilgan_yil} yoshda")
+# Funksiyani chaqiramiz:
+yosh_hisobla("olim", 1999)
+# Natija: Olim 25 yoshda
+
+# Endi argumentlarni o'rnini almashtirib yozib ko'ramiz:
+yosh_hisobla(1999, "olim")
+# Natija: AttributeError: 'int' object has no attribute 'title'
+
+# PARAMETR NOMI BILAN UZATISH.
+
+    
     
