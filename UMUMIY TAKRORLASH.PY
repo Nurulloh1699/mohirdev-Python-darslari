@@ -4049,3 +4049,12 @@ Created on Sat Oct 26 19:25:01 2024
 
 # Keling, yuqoridagi modulimizdagi avto_info() va info_print() funksiyalariga murojaat etamiz. Buning uchun asosiy dasturimizni 
 # (main.py) quyidagicha yozamiz:
+# import avto_info_mod # avto_info_mod modulini chaqiramiz.
+# avto1 = avto_info_mod.avto_info("gm", "jentra", "qora", "avtomat", 2022, 15000)
+# avto_info_mod.info_print(avto1)   
+# Natija: Qora GM JENTRA, avtomat korobka, 2022-yil, 15000$
+
+# ETIBOR BERING! impor modul_nomi komandasi bir marta, dastur boshida yoziladi.
+
+# MODULGA QISQA NOM BERISH.
+  
