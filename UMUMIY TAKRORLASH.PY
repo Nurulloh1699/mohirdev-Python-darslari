@@ -4057,4 +4057,486 @@ Created on Sat Oct 26 19:25:01 2024
 # ETIBOR BERING! impor modul_nomi komandasi bir marta, dastur boshida yoziladi.
 
 # MODULGA QISQA NOM BERISH.
-  
+# Yuqoridagi usul modulni chaqirib olishda fayl nomi uzun bol'sa, bu o'ziga yarasha noqulayliklar tug'dirishi mumkin. Buning oldini 
+# olish uchun esa modulni chaqirganda unga as operatori yordamida qisqa nom berish va modulga qisqa nom orqali murojaat etish mumkin.
+# Quyidagi misolda avto_info_mod ni qisqa qilib aim deb nomlab oldik va 3-4 qatorlarda modulga murojaat etishda qisqa nomidan 
+# foydalandik.
+
+# import avto_info_mod as aim 
+
+# avto_info funksiyasini chaqiramiz
+# avto1 = aim.avto_info("gm", "malibu", "qora", "avtomat", 2023, 40000)
+
+# info_print funksiyasi yordamida ma'lumotlarni chiqaramiz
+# aim.info_print(avto1)
+
+# Modulga nom berganingizda bunday nomli boshqa o'zgaruvchi yoki funksiya yo'qligiga amin bo'ling, Shuningdek, dastur davomida bu
+# nomni boshqa o'zgaruvchilarga yoki funksiyalarga berib yubormang.
+
+
+# MODUL ICHIDAN MA'LUM FUNKSIYALARNI CHAQIRIB OLISH.
+# Agar asosiy dasturimizda modul ichidagi muayyan funksiyalarga murojaat etish kerak bo'lsa, quyidagi ko'rinishdagi koddan
+# foydalanamiz: from mudul_nomi import funksiya1, funksiya2.
+
+# Bu usulning qulayligi shundaki, chaqirilgan funksiyalarga to'g'ridan-to'g'ri, modul nomini yozmasdan murojaat etish mumkin.
+# Misol uchun, avvalgi kodimizda biz faqatgina avto_info va info_print funksiyalaridan foydalandik. Shu funksiyalarni asosiy
+# dasturimizga chaqirib olamiz:
+# from avto_info_mod import avto_info, info_print
+# avto1 = avto_info("gm", "malibu", "qora", "avtomat", 2020, 40000)
+# info_print(avto1)
+# Natija: Qora GM MALIBU, avtomat korobka, 2020-yil, 40000$
+
+# FUNKSIYALARGA QISQA NOM BERISH.
+# AS operatori yordamida chaqirib olgan funksiyamizga ha qisqa nom berishimiz mumkin:
+# from avto_info_mod import avto_info as ainfo
+# from avto_info_mod import info_print as iprint
+# avto1 = ainfo ("gm", "malibu", "qora", "avtomat", 2020, 40000)
+# iprint(avto1)
+# Natija: Qora GM MALIBU, avtomat korobka, 2020-yil, 40000$
+
+
+# MODUL ICHIDAGI BARCHA FUNKSIYALARNI CHAQIRIB OLISH.
+# Modul ichidagi barcha funksiyalarni asosiy dasturga ko'chirib olish uchun from mudul_nomi import * komandasidad foydalanamiz.
+# from avto_info_mod import * 
+# avto1 = avto_info("gm", "malibu", "qora", "avtomat", 2020, 40000)
+# info_print(avto1)
+# Natija: Qora GM MALIBU, avtomat korobka, 2020-yil, 40000$
+
+# ETIBOR BERING! Bir necha sabablarga ko'ra bu usuldan foydalanish tavsiya etilmaydi. Katta modullarda yuzlab funksiyalar bo'lishi
+# mumkin va funksiya nomi dasturimizdagi boshqa funksiya yoki o'zgaruvchi bilan bir xil nomga ega bo'lsa, dastur xato ishlashiga
+# olib keladi.
+
+
+# MODULDA O'ZGARUVCHI SAQLASH.
+# Modullarning ichida nafaqat funksiyalar, balki turli o'zgaruvchilarni ham saqlash mumkin. Modul ichidagi o'zgaruvchilarga ham
+# xuddi yuqoridagi usullar bilan murojaat etamiz.
+
+
+# PYTHON MODULLARI.
+# Python dasturlash tili tayyor modullar bilan keladi, ulardan ba'zilari bilan tanishamiz.
+
+# math MODULI.
+# Bu modulda matematik hisob-kitoblarni bajaruvchi funksiyalar va o'zgaruvchilar joylashgan, jumladan:
+# sqrt() - qavs ichida berilgan qiymatning kvadrat ildizini qaytaradi:
+# import math
+# x = 400
+# print(math.sqrt(x))
+# Natija: 20.0
+
+# pow(x, n) - x ning n-darajasini qaytaruvchi funksiya:
+# import math
+# print(math.pow(5, 5))
+# Natija: 3125.0
+
+# pi - π ning qiymatini saqlovchi o'zgaruvchi:
+# from math import pi
+# print(pi) 
+# Natija: 3.141592653589793
+
+# log2(x) va log10(x) - x ning 2 lik va 10 lik logarifmini aytaruvchi funksiyalar.
+# print(math.log2(8)) 
+# Natija: 3.0
+# print(math.log10(100))
+# Natija: 2.0
+
+# math moduliga kelgusida yana qaytamiz.
+
+#  random MODULI.
+# RANDOM moduli tasodifiy sonlar bilan ishlash uchun qulay funksiyalarga boy. Ulardan ayrimlari bilan tanishamiz.
+
+# randint(a, b) funksiyasi a va b oralig'idagi tasodifiy butun sonni qaytaradi.
+# import random as r  # random modulini r deb chaqiramiz.
+# son = r.randint(0, 100)
+# print(son) # bu natija endi har safar har hil bo'ladi va 0 dan 100 gacha bo'lgan sonlar ichidan birontasini qaytaradi.
+# Natija: 48 # aytkanimizdek har safar har hil natija qaytaradi.
+
+# choice(x) - berilgan x argumentining ichida tasodifiy elementni qaytaruvchi funksiya. Bunda x bir necha elementdan iborat
+# o'zgaruvchi (matn, ro'yxat, to'plam, va hokazo) bo'lishi kerak.
+# ismlar = ["olim", "anvar", "hasan", "husan"]
+# ism = r.choice(ismlar) # Tasodifiy ism tanlaymiz.
+# print(ism)
+# Natija: hasan # Bu yerda ham har safar har hil natija qaytadi.
+
+# Yana bir misol ko'ramiz:
+# x = list(range(0, 51, 5)) # Ro'yxat yaratamiz (0 dan 50 gacha 5ta oraliq bilan).
+# print(x)
+# print(r.choice(x)) # Tasodifiy elementni tanlaymiz.
+# Natija: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50] # 1 - print ni natijasi.
+# Natija: 35 # 2 - print ni natijasi (tasodifiy tanlangan son).
+
+# shuffle(x) - x ichidagi elementlarni tasodifiy tartibda qaytaruvchi funksiya. Bunda x bir necha elementlardan iborat o'zgaruvchi
+# (mat, ro'yxat) bo'lishi kerak.
+# x = list(range(11)) # Ro'yxat yaratamiz (0 dan 11 gacha)
+# print(x)
+# r.shuffle(x)
+# print(x)
+# Natija1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Natija2: [6, 1, 8, 9, 5, 3, 7, 2, 0, 4, 10]
+
+# sample(x,k) - x ro'yxat ichidan tasodifiy k ta element ajratib olish:
+# from random import sample
+# x = list(range(0, 100)) # 0 dan 100 gacha sonlar ro'yxati.
+# y = sample(x, k = 10) # x ro'yxatidan tasodifiy 10ta elementni ajratib olamiz.
+# print(y)
+# Natija: [7, 70, 59, 82, 84, 85, 1, 89, 79, 60]
+
+# math va random modullari ichidagi boshqa funksiyalar haqida Python rasmiy sahifasidagi (docs.python.org) ma'lumot olishingiz
+# mumkin.
+
+# 22 - DARS TUGADI.
+
+
+# 23 - DARS.
+# lambda - NOMSIZ FUNKSIKYA.
+# Pythonnig o'ziga xos xususiyatlaridan biri nomsiz, vaqtinchalik funksiyalar yaratish imkoniyatidir. Bunday funksiyalarni
+# yaratishda DEF operatori o'rniga LAMBDA operatori ishlatilgani uvhun ham LAMBDA funksiyalar deb ataladi.
+
+# Nomsiz funksiyalar quyidagicha yaratiladi:
+# lambda argument: ifoda
+
+# LAMBDA funksiyalari istalgan miqdordagi argumentlarga ega bo'lishi mumkin, ammo funksiya badanida faqat bitta ifoda mavjud
+# bo'ladi. Ifoda bajariladi va qaytariladi (return operatori yozilmaydi).
+
+# Nomsiz funksiyalar biror ifodani tezda hisoblab olishda juda qulay. Misol uchun, quyidagi lambda funksiya ikkita argument qabul
+# qiladi (pi, r) va aylana uzunligini qaytaradi:
+# import math
+# uzunlik = lambda pi, r : 2 * pi * r
+# print(uzunlik(math.pi, 10))
+# Kodni tahlil qilamiz:
+# 1 - qatorda math modulini chiqarib oldik.
+# 2 - qatorda lambda funksiyani yaratdik.
+# Funksiyamiz pi va r argumentlarini qabul qilib 2 * pi * r qiymatni qaytaradi. Funksiyaga nom beramdik, ;ekin unga uzunlik
+# identifikatori orqali murojaat etishimiz mumkin. U uzunlik qayoqdan keldi deyilsa (uzunlik = lambda pi, r : 2 * pi * r).
+
+# 3 - qatorda funksiyamizga murojaat etdik va natijani konsolga chiqardik.
+
+# Yana bir misol, toping_chi, quyidagi funksiyaning vazifasi nima?
+# product = lambda x, y : x**y # Bu lambda funksiyasini daraja topish deb atasak bo'ladi (x sonining y darajasi desak bo'ladi)
+# print(product(3, 2)) # 3 ning 2 - darajasi so'ralyapti.
+# Natija: 9
+
+# Shu yerda so'rashingiz mumkin, nima uchun lambda nomsiz deb ataladi, axir, unga hozirgina product nomi bilan murojaat etdik-ku.
+
+# Gap shundaki, lambda funksiyalarning asl mohiyati boshqa funksiyalar bilan birga ishlaganda ko'rinadi. Keling, tushunarli
+# bo'lishi uchun soddaroq misolni ko'rib chiqamiz.
+
+# Quyidagi dasturda biz avval daraja degan funksiya yasadik, bu funksiyamiz n degan o'zgaruvchi qabul qilib oladi va funksiya
+# ichidagi noma'lum x ning n - darajasini qaytaradi.
+
+# Ya'ni daraja funksiya yasaydigan funksiya hosil bo'ldi. Xo'sh undan qanday foydalanamiz? 4 - 5-qatorlarga e'tibor bering, biz
+# daraja funksiyasidan yana 2ta funksiya yasadik: kvadrat kiritlgan sonning kavadratini hisoblaydi, kub kiritilgan sonning
+# kvadratini hisoblaydi, kub kiritilgan sonning kubini hisoblaydi.
+# def daraja(n):
+#     return lambda x : x**n
+# kvadrat = daraja(2)
+# kub = daraja(3)
+# print(f"3 ning kvadrati {kvadrat(3)} ga teng.")
+# print(f"3 ning kubi {kub(3)} ga teng.")
+# Natija: 3 ning kvadrati 9 ga teng.
+#         3 ning kubi 27 ga teng.
+
+# Lambda funksiyalaridan argument sifatida boshqa funksiyani qabul qiluvchi funksiyalar bilan ishlashda ham keng foydalaniladi
+# Misol uchun, map() va filter() funksiyalari.
+
+# Quyida ularni ko'rib o'tamiz:
+    
+# map() FUNKSIYASI.
+# Bu funksiya argument sifatida ro'yxat (yoki lug'at) va boshqa bir funksiyani qabul qilib, ro'yxat elementlariga qabul qilingan
+# funksiya yordamida ishlov beradi. Tushunarli bo'lishi uchun quyidagi misolni ko'rib chiqamiz:
+# from math import sqrt
+# sonlar = list(range(11)) # 0 dan 10 gacah sonla ro'yxati.
+# ildizlar = list(map(sqrt, sonlar))
+# print(ildizlar)
+# Natija: [0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0, 2.23606797749979, 2.449489742783178, 2.6457513110645907,
+#         2.8284271247461903, 3.0, 3.1622776601683795]
+
+# Yuqoridagi misolda avval 0 dan 10 gacha sonlar ro'yxatini tuzib oldik, keyin esa MAP funksiyasiga ro'yxat va sqrt funksiyasini
+# uzatib, ro'yxatdagi barcha sonlarning ildizini hisoblab oldik. map() funksiyasi obyekt qaytargani sababli qaytgan obyektni
+# ro'yxatga o'tkazib olish uchun list() funksiyasidan foydalandik (obyektlar haqida kelgusi bobda batafsil gaplashamiz).
+
+# Yana bir misol:
+# sonlar = list(range(11)) # 0 dan 10 gacah sonla ro'yxati.
+# def daraja2(x):
+#     """Berilgan sonning kvadratini qaytaruvchi funksiya"""
+#     return x*x
+# print(sonlar)
+# print(list(map(daraja2, sonlar)))
+# Natija: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#         [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Yuqoridagi misolda biz avval berilgan sonning kvadratini hisoblovchi funksiya yaratdik, undan keyin esa map yordamida sonlar
+# ro'yxatidagi elementlarining kvadratini ham hisoblab oldik.
+
+# Endi, keling, xuddi shu misolni lambda yordamida yozamiz:
+# kvadratlar = list(map(lambda x:x*x, sonlar))
+# print(kvadratlar)
+# Natija: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Bu safar daraja degan funksiyani yaratib o'tirmasdan, map funksiyasiga to'g'ridan to'gri darajani hisoblovchi lambda funksiyasini
+# uzatdik.
+
+# map() funksiyasi bo'lmaganida, biz bunday dasturlarni for yordamida yozishimiz kerak bo'lar edi:
+# kvadratlar = []
+# for son in sonlar:
+#     kvadratlar.append(son*son)
+# print(kvadratlar)
+# Natija: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# map() funksiyasiga bir nechta ro'yxatlar ham uzatish mumkin:
+# a = [4,5,6]
+# b = [7,8,9]
+# a_plus_b  = list(map(lambda x,y:x+y, a, b))
+# print(a_plus_b)     
+# # Natija: [11, 13, 15]
+# # map() istalgan ko'rinishdagi ma'lumot turlari bilan ishlaydi.
+# ismlar = ['hasan', 'olim', 'husan', 'umid']
+# print(list(map(lambda matn:matn.upper(), ismlar)))
+# Natija: ['HASAN', 'OLIM', 'HUSAN', 'UMID']
+
+# filter() FUNKSIYASI.
+# Bu funksiya ham argument sifatida ro'yxat va boshqa funksiyani qabul qilib oladi va berilgan ro'yxat elementlarini berilgan
+# funksiya yordamida saralaydi (filter). Bunda argument sifatida uzatiladigan funksiya mantiqiy qiymat qaytarishi kerak
+# (True/False).
+
+# Keling bunga bir misol keltiramiz: tasodifiy sonlar ro'yxatidan juft sonlarni ajratib oluvchi dastur yozamiz. Dastur 3 qismdan
+# iborat:
+
+# 1. Avvalo, random modulidagi sample() funksiyasi yordamida 0 - 99 oralig'idagi 10ta tasodifiy sonlar ro'yxatini tuzamiz. 
+
+# 2. Berilgan son juft (True) yoki juft emas (False) ekanligini qaytaruvchi funksiya yozamiz.
+
+# 3. filter() funksiyasiga yangi yaratgan juftmi funksiyasi va tasodifiy sonlar ro'yxatini uzatib, yangi juft_sonlar ro'yxatini 
+# shakllantiramiz.
+# import random as r 
+# sonlar = r.sample(range(100),10)
+# def juftmi(x):
+#     """x juft bo'lsa, True, aks hold, False qaytaramiz"""
+#     return x%2 == 0
+
+# juft_sonlar = list(filter(juftmi, sonlar))
+# print(sonlar)
+# print(juft_sonlar)
+# Natija: [62, 29, 61, 35, 81, 48, 37, 59, 54, 57]
+#         [62, 48, 54]
+
+# Keling, endi shu daturni lambda yordamida yozamiz:
+# import random as r # random funksiyasini import qilib uni as orqali r ga tenglab oldik.
+
+# sonlar = r.sample(range(100), 10) # sonlar degan o'zgaruvchiga range(100) orqali 100 gacha sonlarni oldil, r.sample orqali esa
+# # shu 100ta son ichidan tasodifiy 10tasini ajratamiz va sonlar degan o'zgaruvchiga qo'shamiz.
+# juft_sonlar = list(filter(lambda son: son%2 == 0, sonlar)) # juft_sonlar degan yangi o'zgaruvchiga list bilan ro'yxat yaratamiz
+# # filter orqali saralaymiz lambda orqali esa aynan qanday sonlarni saralashni aytamiz vu holatda faqat juft sonlarni.
+
+# print(sonlar)
+# print(juft_sonlar)
+# Natija: [28, 64, 27, 89, 93, 39, 65, 11, 79, 98]
+#         [28, 64, 98]
+
+# Ko'rib turganingizdek, lambda funksiya yordamida dastur birmuncha qisqaroq chiqadi. Agar juftmi funksiyasi kelajakda shart
+# bo'lmasa, alohida funksiya yaratib o'tirmasdan, bir martalik lambda funksiyasidan foydalangan afzal.
+
+# Keling, endi filter() funksiyasi yordamida matnlarni saralashga ha misollar keltiraylik:
+
+# Quyidagi dastur mevalar ro'yxatidan b harfi bilan boshlanuvchi mevalarni ajratib oladi. Bu yerda biz matnlarga tegishli bo'lgan
+# .startswith() metodidan foydalandik. Bu metod berilgan matn shu harfdan boshlanadimi yoki yo'qligini teksgiradi va True yoki
+# False qiymat qaytaradi.
+# mevalar = ['olma', 'anor', 'anjir', "o'rik", 'qovun', 'banan']
+# mevb = list(filter(lambda meva:meva.startswith('b'), mevalar))
+# print(mevb)
+# Natija: ['banan']
+
+# Quyidagi dastur esa mevlar ro'yxatidan nomi yoki undan kam harfdan iborat mevalarni saralab oladi.
+# mevalar2 = list(filter(lambda meva:len(meva) <= 4, mevalar))
+# print(mevalar2)
+# Natija: ['olma', 'anor']
+
+# Toping-chi quyidagi kod qanday vazifani bajaradi?
+# mevalar3 = list(filter(lambda meva:meva.startswith('a') and meva.endswith('r'), mevalar)) # Bu kod mevalar ichidan bosh harfi 'a'
+# va ohirgi harfi 'r' bo'lgan mevalarni saralab oladi.
+# print(mevalar3)
+# Natija: ['anor', 'anjir']
+
+
+# AMALIY TOPSHIRIQLAR.
+#1 - Berilgan sonno 10ga ko'paytiruvchi lambda funksiyasi yozing.
+# numbers = [1,2,3,4,5]
+# result = list(map(lambda x: x * 10, numbers))
+# print("Asl ro'yxat:", numbers)
+# print("10ga ko'paytirilgan:", result)
+# Natija: Asl ro'yxat: [1, 2, 3, 4, 5]
+#         10ga ko'paytirilgan: [10, 20, 30, 40, 50]
+
+#2 - Ikki son qabul qilib, ularning yig'indisini qaytaruvchi lambda funksiya yozing.
+# son1 = float(input("Birinchi sonni kiriting: ")) # Kiritilgan sonni o'nlik son qilib olamiz.
+# son2 = float(input("Ikkinchi sonni kiriting: ")) # Kiritilgan sonni o'nlik son qilib olamiz.
+# result = lambda x, y: x + y # Lambda ikki sonni qo'shadi
+# print("Natija:", result(son1, son2)) # Lambda funktsiyasini argumentlar bilan chaqiramiz
+
+#3 - random moduli ichidagi sample funksiyasi yordamida 0 dan 1000 gacha sonlar oralig'idagi
+# tasodifiy 10ta sonlar ro'yxatini tuzing.
+# import random 
+# tasodifiy_sonlar = random.sample(range(1001), 10)
+# print(tasodifiy_sonlar)
+
+# map() va lambda funksiya yordamida sonlarning kvadratini hisoblang.
+# sonlar_kvadrati = list(map(lambda x: x*x , tasodifiy_sonlar))
+# print(sonlar_kvadrati)
+
+# filter() va lambda funksiya yordamida ro'yxatdan toq sonlarni ajratib oling.
+# toq_sonlar = list(filter(lambda x: x%2!=0 , tasodifiy_sonlar))
+# print(toq_sonlar)
+
+#4 - Berilgan son tub bo'lsa, True, aks holda False qaytaruvchi funksiya yozing.
+# def tub_sonmi(son):
+#     if son < 2:
+#         return False
+#     for i in range(2, int(son**0.5) + 1):
+#         if son % i == 0:
+#             return False
+#     return True
+
+# son = int(input("Istalgan son kiriting: "))
+# if tub_sonmi(son):
+#     print(f"{son} tub son.")
+# else:
+#     print(f"{son} tub emas.")
+
+# # filter() va yuqoridagi funksiya yordamida 1 dan 10000 gacha oraliqdagi bo'lgan
+# # tub sonlar ro'yxatini tuzing.
+# tub_sonlar = list(filter(tub_sonmi, range(10001)))
+# print(tub_sonlar)
+
+# 23 - DARS TUGADI.
+
+
+# 24 - DARS.
+# OBYEKTGA YO'NALTIRILGAN DASTURLASH.
+# Dasturlashni o'rganar ekanmiz, albatta, object oriented programming (OOP), ya'ni obyektga yo'naltirilgan dasturlash tushunchasiga 
+# kelamiz. Ko'pchilik uchun bu bosqich biroz tushunarsiz va murakkabdek tuyuladi. Aslida, unday emas. Ushbu bobda object oriented
+# programming va unga tegishli tamoyillar haqida gaplashamiz.
+
+
+# OOP NIMA?
+
+# KLASSIK YOXUD CHIZIQLI DASTURALSH.
+# OOPni tushunish uchun avval klassik dasturlashni ko'zdan kechiraylik. Gap shundaki, ilk kompyuterlar va dasturlar matematik muammolarni
+# hal etishga qaratilgan. Bunday dasturlar foydalanuvchidan biror ma'lumotni qabul qilib olgan va qat'iy ketma-ketlik, ya'ni tartibga amal
+# qilgan holda turli arifmetik amallarni bajarib, Shuning uchun ham bunday dasturlar chiziqli yoki tartibli dasturlar deb ataladi.
+
+# Siz ham dasturlashga ilk qadam qo'yganingizda mana shunday chiziqli dasturlani yozishnio'rganishdan boshlaysiz. Sizning dasturingiz bir
+# nechta o'zgarivchilar va funksiyalardan iborat bo'ladi. Bu o'zgaruvchilar va funksiyalar ma'lum ketma-ketlikda bir-biri bilan
+# munosabatga kiradi va dastur yakunida esa siz kutkan natijani beradi.
+
+
+# Dastur kattalashgani sari o'zgaruvchilar va funksiyalar soni ortib boradi. Ular o'rtasidagi munosabatlar ham chigallashib, kodingiz 
+# murakkab va tushunishga qiyin bo'lib ketadi. Dasturlash jarayonida bitta funksiyaga o'zgartirish kiritishingiz esa unga bog'liq boshqa
+# funksiyalarning ishdan chiqishiga va dasturingiz xato natija berishiga olib kelishi ham mumkin.
+
+# Chiziqli dasturlashning afzalliklari:
+    # 1. Dasturlashni o'rganishga qulay.
+    # 2. Sodda va tushunarli kod.
+    # 3. Dastur algoritmini kuzatish oson.
+    # 4. Dastur xotirada kamroq joy egallaydi.
+# Chiziqli dasturlashning kamchiliklari:
+    # 1. Murakkab dasturlarni chiziqli usulda yozish qiyin (ilojsiz).
+    # 2. Bir dastur uchun yozilgan koddan boshqa dasturda qayta foydalanib bo'lmaydi.
+    # 3. Dastur ichidagi ma'lumotlar (o'zgaruvchilar) barcha funksiyalar uchun ochiq. 
+    # 4. ZAMONAVIY DASTURLAR CHIZIQLI EMAS.
+# Vaqt o'tib dasturlarga qo'yilgan talablar murakkablashib borgani sababli chiziqli dasturlash tamoyili zamon talabiga javob bermay qo'ydi
+# va 1970-yillarda OOP tamoyili olg'a surila boshlandi.
+
+
+# OBYEKT NIMA?
+# Object oriented dasturlashda o'zaro bog'liq bo'lgan o'zgaruvchilar va funksiyalar bitta konteynerga jamlanadi, bunday konteynerlar 
+# obyekt deb ataladi. Bir obyektga tegishli o'zgaruvchilar uning xususiyatlari, unga tegishli funksiyalar esa metodlari deb ataladi.
+
+# Keling misol tariqasida avtomobil degan obyektni ko'rib chiqamiz. Avtomobilning modeli, rangi va narxi uning xususiyatlari. Avtomobilga
+# tegishli bo'lgan start(), stop() va tezlashish() kabi amallar esa uning metodlari deyiladi.
+
+# Agar real dasturdam misol keltiradigan bo'lsak, istalgan dastur ichidagi tugma - bu obyekt. Uning shakli, rangi va matni esa
+# xususiyatlari bo'ladi. Tugma ustida bajariladigan amallar tugmaning metodlari deyiladi. Misol uchun, tugmani bosish, uzoq bosish,ustiga
+# sichqonchani olib borish va hokazo.
+
+# Object oriented dasturlar o'nlab, balki, yuzlab obyektlardan iborat bo'ladi va bunday dasturlar uchun dastur boshiyoki oxiri degan 
+# tushunchalar nisbiy.
+
+# Object oriented dasturlar bajarilishida qat'iy ketma-ketlikka amal qilmaydi. Foydalanuvchi istalgan obyektga murojaat etishi, uning
+# ustida turli amallar bajarishi mumkin. O'z navbatida, bitta obyektga murojaat ortidan boshqa obyektlar ham faollashishi mumkin.
+
+# Misol uchun, mobil ilovalarda obyektlar dastur ichidagi tugmalar, matnlar, rasmlar va boshqa elementlardir. Foydalanuvchi istalgan
+# tugmani bosishi, istalgan matnni ajratib olishi va boshqa amallarni istalgan tartibda bajarishi mumkin. Bunda bitta tugma (ya'ni obyektni)
+# bosish bilan boshqa obyekt (masalan, rasm) o'zgarishi mumkin.
+
+# Zamonaviy kompyuter o'yinlari ham minglab obyektlardan iborat. Foydalanuvchi esa virtual o'zyin olamida erkin harakat qilishi, istalgan
+# tarafga yurishi, istalgan vaqtda turli obyektlar turli amallar bajarishi mumkin.
+
+
+# KLASS NIMA?
+# Object oriented programming haqida gaplashar ekanmiz, uning fundamental tushunchalaridan biri - klass haqida gapirib o'tmaslikning iloji 
+# yo'q. Klass obyekt yaratish uchun shablon yoki qolipdir Bitta klassdan istalgancha nusxa olishimiz va yangi obyektlar yaratishimiz
+# mumkin. Demak, obyekt - bu biror klassning xususiy ko'rinishi. Odatda, klasslarning nomi o'zgarmas, undan yaratilgan obyektlar esa 
+# istalgancha nomlanishimumkin.
+
+# Dasurimiz yuzlab obyektlardan iborat bo'lishi mumkin. Klasslar esa bizga obyektlarni yaratishni yengillashtiradi. Xoh dastur
+# innterfeysidagi o'nlab turli xil tugmalar bo'lsin, xoh komyuter o'yinidagi qahramonlar bo'lsin. Har bir tugma yoki o'yin qahramoni
+# va uning harakatlarini qayta-qayta yozmasdan, bir marta yaratilgan klassdan nusxa olib, o'nlab obyektlarni yaratishimiz mumkin.
+
+# 24 - DARS TUGADI.
+
+# 25 - DARS.
+# OOP TAMOYILLARI.
+
+# INKAPSULYATSIYA.
+# Biz object oriented dasturlash haqida gapira turib ma'lum bir obyektga tegishli bo'lgan xususiyatlar va metodlarni bitta konteynerga
+# joylaylmiz dedik. Bu jarayon INKAPSULYATSIYA (ya'ni kapsulaga solish) deb ataladi. Inkapsulyatsiya bizga klasslar yaratish va
+# keyinchalik bu klasslardan boshqa obyektlarni yaratishga yordam beradi.
+
+# ABSTRAKSIYA. 
+# Abstraksiya yordamida biz kodimizning ichki tuzilishini yashiramiz. Ya'ni tashqaridan obyektimiz 2ta parametr va 2ta metoddan iborat
+# bo'lish mumkin, lekin obyekt to'g'ri ishlashi uchun uning ichida o'nlab boshqa o'zgaruvchilar va funksiyalar yashirin bo'ladi. Klassdan
+# foydalanishda esa uning ichki tuzilishi va qanday ishlashini bilish talab etilmaydi. Bu o'zimizga ham, boshqa dasturchilarga ham mazkur
+# klassdan foydalanishda qulayliklar yaratadi.
+
+# VORISLIK.
+# Dasturlash jarayonida biz bir klassdan boshqa klasslar yaratishimiz mumkin. Misol uchun, bizda transport klassi bor, biz bi klassdan
+# qo'shimcha avtomobil, avtobus, kema, poyezd kabi klasslarni yaratishimiz mumkin. Bundabizning asl klassimiz ota yoki super-klass deb
+# ataladi, undan yaratilgan klasslar esa voris klasslar deyiladi.
+
+# ETIBOR BERING! Voris klasslar ota klassning va'zi yoki barcha xususiyatlari va metodlariga ega bo'ladi.
+
+# POLIMORFIZM.
+# Voris klass super-klassdan o'zlashtirgan metodning nomini saqlagan holda uning ishlashini o'zgartirishi POLIMORFIZ deyiladi.
+
+# Keling, bie misol ko'raylik, Biz kompyuter o'yini yaratish jarayonida o'yin qahramoni uchun super-klass yaratamiz. Qahramon bir nechta
+# xususiyatlarga va metodlarga ega. Jumladan attack(), ya'ni hujum qilish metodi qahramonni hujum qilishga undaydi. Endi biz bu 
+# super-klassdan boshqa voris klasslarni yaratamiz.
+    # 1. Birinchi qahramonimiz - Qilichboz, u hujum qilganda qilichdan foyalanadi.
+    # 2. Ikkinchi qahramonimiz - Jangchi, u qurolsiz bo'lgani sababli qo'l va oyoqlari bilan hujum qiladi.
+    # 3. Uchunchi qahramonimiz - Pistolet bilan qurollangan.
+    # 4. To'rtinchi qahramonimiz - kamon va yoylar bilan qurollangan 
+# To'rt qahramonimiz ham super-klassdan attack() metodini meros oladi, lekin bu metodni biz har bir qahramonlar va turli hujum turlari
+# uchun alohida metodlar yozishdan qutqaradi.
+
+# Manashu yuqorida keltirilgan ma'lumotlar OOPning asosiy tamoyillari ekan.
+
+# OOP AFZALLIKLARI VA KAMCHILIKLARI.
+# Keling darsimiz yakunida OOPning afzalliklari va kamchiliklariga to'htalib o'taylik.
+
+# Afzalliklari:
+    # 1. Parallel dasturlash - bir loyihaning turli qismlari bir vaqtda yaratilishi mumkin.
+    # 2. Vorislik tamoyili klasslardan qayta foydalanish imkonini beradi.
+    # 3. Polimorfizm tamoyili klasslarni moslashuvchan qiladi.
+    # 4.Klasslardan boshqa dastur va loyihalarda qayta-qayta foydalanish mumkin.
+# Kamchiliklari.
+    # 1. Dasturlashga yangi qadam qo'yganalr uchun biroz tushunarsiz.
+    # 2. Har doim ham samarali emas.
+    # 3. Ba'zida dasturimizni haddan tashqari murakkablashtirib yuborishi mumkin.
+    
+# OOP bilan qisqacha tanishuvimiz shundan iborat edi. Endi esa Python OOP bilan tanishuvni boshlasak ham bo'ladi.
+
+# 25 - DARS TUGADI.
+
+
+# 26 - DARS.
+# KLASSLAR.
+
