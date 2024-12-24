@@ -4795,12 +4795,154 @@ talaba1 = Talaba ("Nurulloh", "Abdurashidov", 1999)
 print(talaba1.get_info())
 # Natija: Nurulloh Abdurashidov. 1-bosqich talabasi.
 
+# STANDART QIYMATNI O'ZGARTIRISH.
+# Obyektning standart qiymatiga ham boshqa xususiyatlar kabi nuqta orqali murojaat etishimiz va uningqiymatini almashtirishimniz mumkin:
+talaba1.bosqich = 2
+print(talaba1.bosqich)
+# Natija: 2
+
+# Yana boshqa usuli - obyekt xususiyatini yangilovchi metod yozish.
+class Talaba:
+    """Talaba nomli klass yaratamiz"""
+    def __init__(self, ism, familiya, tyil):
+        self.ism = ism
+        self.familiya = familiya
+        self.tyil = tyil
+    
+    def get_info(self):
+        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
+    
+    def set_bosqich(self, bosqich):
+        """Talabaning kursini yangilovchi metod"""
+        self.bosqich = bosqich
+# Metodga murojaat etamiz:
+talaba1 = Talaba("Nurulloh", "Abdurashidov", 1999)
+talaba1.set_bosqich(3)
+print(talaba1.get_info())
+# Natija: Nurulloh Abdurashidov. 3-bosqich talabasi.
+
+# Umuman olganda, xususiyatlarni yangilashda turli usullardan foydalanish mumkin. Misol uchun,talabaning bosqichi, odatda, 1 tadan
+# ko'payib boradi, shuning uchun quyidagicha metod ham yozishimiz mumkin:
+class Talaba:
+    def __init__(self, ism, familiya, tyil):
+        self.ism = ism
+        self.familiya = familiya
+        self.tyil = tyil
+        self.bosqich = 1
+    def get_info(self):
+        return f"{self.ism} {self.familiya}. {self.tyil}-yilda tug'ilgan, {2024 - self.tyil} yoshda. {self.bosqich}-bosqich talabasi."
+    def set_bosqich(self, bosqich):
+        """Talabaning kursini yangilovchi metod."""
+        self.bosqich = bosqich
+    def update_bosqich(self):
+        """Talabaning bosqichini bittaga ko'tarish."""
+        self.bosqich += 1
+# update_bosqich() metodiga murojaat etganimizda talabaning bosqichi oshib boradi:
+talaba1 = Talaba("Olim", "Olimov", 1995)
+talaba2 = Talaba("Husan", "Akbarov", 2004)
+talaba3 = Talaba("Hasan", "Akbarov", 2004)
+print(talaba1.get_info())
+# Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 1-bosqich talabasi.
+
+talaba1.update_bosqich()
+print(talaba1.get_info())
+# Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 2-bosqich talabasi. 
+
+talaba1.update_bosqich()
+print(talaba1.get_info())
+# Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 3-bosqich talabasi.
 
 
+# OBYEKTLAR O'RTASIDAGI MUSOSABAT.
+# Obyektga yo'nlatirilgan dasturlashning afzalligi turli obyektlar o'rtasida o'zaro munosabatlarni oson yo'lga qo'yish mumkinligidadir.
+# Kleing,yangi Fan degan klass yaratamiz va fanimizga talabalar qo'shish uchun add_student() metodini yozamiz:
+class Fan:
+    def __init__(self, nomi):
+        self.nomi = nomi
+        self.talabalar_soni = 0
+        self.talabalar = []
+        
+    def add_student(self, talaba):
+        """Fanga talabalar qo'shish"""
+        self.talabalar.append(talaba)
+        self.talabalar_soni += 1
+        
+# ETIBOR BERING! Fan klassi faqatgina yagona nomi degan parametrga ega. Qolgan xususiyatlariga esa standart qiymat berilgan:
+# talabalar_soni = 0, talabalar ro'yxati bo'sh.
 
+# Fanimizga talaba qo'shish uchun add_student() metodini chaqiramiz. Bu metod parametr sifatida Talaba klassiga oid obyektni qabul qiladi
+# va unitalabalar ro'yxatiga qo'shadi. Shuningdek, bu metod yangi talaba qo'shilganda talabalar_soni ni bittaga oshirib qo'yadi.
 
+# Keling, boshlanishiga yangi fan obyektini va bir nechta talabalarni yaratamiz:
+matematika = Fan("Oliy Matematika")
+talaba1 = Talaba("Olim", "Olimov", 1995)
+talaba2 = Talaba("Husan", "Akbarov", 2004)
+talaba3 = Talaba("Hasan", "Akbarov", 2004)
 
+# Talabalarni yangi fanimizga qo'shamiz:
+matematika.add_student(talaba1)
+matematika.add_student(talaba2)
+matematika.add_student(talaba3)
 
+# Mana fanimiz tayyor, talabalar qo'shildi. Keling, endi fan haqida ma'lumotlarni olamiz:
+print(matematika.talabalar_soni)
+# Natija: 3
+
+# Fanimizga 3ta talaba qo'shilibti. Talabalar haqida ma'lumot olsak bo'ladimi?
+print(matematika.talabalar)
+# Natija: [<__main__.Talaba object at 0x0000025598EDB3E0>,
+          # <__main__.Talaba object at 0x0000025598B47BF0>,
+          # <__main__.Talaba object at 0x0000025598D76060>]     
+    
+# Talabalarning ism-familiyasi o'rniga qandaydir tushunarsiz ma'lumorlar. Aslida, hammasi to'g'ri, yuqorida fanimizga yangi talabalarni
+# obyekt sifatida qo'shgan edik, yuqoridagi natija esa matemarika.talabalar ro'yxatida Talaba klassiga oid 3ta obyekt borligini
+# ko'rsatmoqda.
+
+# Fanimizga yozilgan talabalar haqida tushunarli ma'lumot olish uchun Fan klassiga yangi get_students() metodini qo'shamiz. Bu metod
+# talabalar ichidagi har bir talaba obyektiga murojaat etib, get_info() metodi yordamida talabaning ma'lumotlarini oladi, ro'yxatga
+# qo'shadi va shu ro'yxatni qaytaradi:
+class Fan:
+    def __init__(self, nomi):
+        self.nomi = nomi
+        self.talabalar_soni = 0
+        self.talabalar = []
+        
+    def add_student(self, talaba):
+        """Fanga talabalar qo'shish"""
+        self.talabalar.append(talaba)
+        self.talabalar_soni += 1
+    
+    def get_students(self):
+        return [talaba.get_info() for talaba in self.talabalar]
+    
+matematika = Fan("Oliy Matematika")
+talaba1 = Talaba("Olim", "Olimov", 1995)
+talaba2 = Talaba("Husan", "Akbarov", 2004)
+talaba3 = Talaba("Hasan", "Akbarov", 2004)
+
+# Talabalarni yangi fanimizga qo'shamiz:
+matematika.add_student(talaba1)
+matematika.add_student(talaba2)
+matematika.add_student(talaba3)
+# Shu o'rinda Pythonda ro'yxatlar bilan ishlashning qulayliklaridan birini ham ko'rsatib o'tsak. get_students() metodiga e'tibor
+# bersangiz, biz yangi ro'yxat shakllantirishda 1 qator koddan foydalandik:
+# [talaba.get_info() for talaba in self.talabalar]
+
+# Kodimizni tahlil qilsak, self.talabalar ichidagi har bir talaba uchun get_info() metodini bajar degan ma'no kelib chiqadi. Kodni 
+# kvadrat qavslar ichiga olganimiz uchun har bir sikl natijasi avtomatik ravishda ro'yxatga qo'shib boriladi.
+
+# Mana, endi metodga murojaat etib, talabalar haqida ma'lumot olishimiz mumkin:
+mat_talabalar = matematika.get_students()
+print(mat_talabalar)
+# Natija: ["Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 1-bosqich talabasi.",
+          # "Husan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi.",
+          # "Hasan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi."]
+
+    
+    
+    
+    
+    
 #  - DARS.
 # LOYIHALAR. 
 # "SON TOPISH" VA "SO'Z TOPISH" O'YINLARI.
