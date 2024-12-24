@@ -4938,11 +4938,171 @@ print(mat_talabalar)
           # "Husan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi.",
           # "Hasan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi."]
 
+# Shunday qilib, ikki bir-biriga bog'liq bo'lmagan obyektlar ustida turli munosabatlar o'rnatishimiz mumkin
+
+
+# NUQTA YOKI METOD ?
+# Pythondagi obyektlarning o'ziga xos xususiyatlarridan biri - obyektning xususiyatiga nuqta orqali to'g'ridan to'g'ri murojaat etish
+# mumkin. Misol uchun, avval yaratilgan talaba1 obyektining ismini bilish uchun talaba1.ism deb yozish kifoya.
+
+# Bu ancha qulay bo'lsa-da, mazkur usuldan foydalanishtavsiya etilmaydi. Sababi, vaqt o'tib klassingiz takomillashishi, uning ba'zi
+# xususiyatlari o'zgarishi, o'chirilishi yoki almashishi mumkin. Shunday holatlarda nuqta orqali murojaat etish siz kutkan natijani
+# bermasligi va dastur xato ishlashiga olib kelishi tabiiy. Bunday holatlarning oldini olish uchun esa obyektning xususiyatlariga
+# murojaat etish yoki ularni o'zgartirishni metod orqali  yo'lga qo'yishni odat qilish kerak.
+
+# ETIBOR BERING! Umuman olganda, obyektning xususiyatlariga to'g'ridan to'g'ri murojaat etishni taqiqlash uchun inkapsulyatsiyadan 
+# foydalanamiz. Bu haqida kelgusi bo'limda batafsil to'xtalamiz. Bu haqida kelgusi bo'limda batafsil to'xtalamiz.
+
+# Dasturchilar orasida obyektning xususiyatlarini o'zgartiradigan metodlarni set(o'zgartirish) so'zi bilan, xususiyatlarni qaytaradigan
+# metodlarni esa get (olish) so'zi bilan boshlash qoida qilib olingan. Masalan: set_name() va get_name() kabi.
+
+# Agar yuqoridagi qoidalarga amal qilgan holda Talaba klassimizni yangilaydigan bo'lsak, u shunday ko'rinishga ega bo'ladi:
+class Talaba:
+    """Talaba nomli klass yaratamiz""" 
+    def __init__(self, ism, familiya, tyil):
+        """Talabaning xususiyatlari"""
+        self.ism = ism
+        self.familiya = familiya
+        self.tyil = tyil 
+        self.bosqich = 1
+    def set_bosqich(self, bosqich):
+        """Talabaning kursini yangilovchi metod"""
+        self.bosqich = bosqich
+    def update_bosqich(self):
+        """Talabaning bosqichini 1 taga ko'paytirish"""
+        self.bosqich += 1
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
+    def get_name(self):
+        """Talabaning ismini qaytaradi."""
+        return self.ism
+    def get_lastname(self):
+        """Talabaning familiyasini qaytaradi."""
+        return self.familiya
+    def get_fullname(self):
+        """Talabaning ism-familiyasini qaytaradi."""
+        return f"{self.ism} {self.familiya}."
+    def get_age(self, jyil):
+        """Talabaning yoshini qaytaruvchi dastur."""
+        return jyil - self.tyil
     
+# Xuddi shu kabi, Fan klassimizning yakuniy ko'rinishi quyidagicha bo'ladi:
+class Fan():
+    """Fan nomli klass"""
+    def __init__(self, nomi):
+        self.nomi = nomi
+        self.talabalar_soni = 0
+        self.talabar = []
+    def add_students(self, talaba):
+        """Fanga talabalar qo'shish"""
+        self.talabalar.append(talaba)
+        self.talabalar_soni += 1
+    def get_name(self):
+        """Fan nomi"""
+        return self.nomi 
+    def get_students(self):
+        """Fanga yozilgan talabalar haqida ma'lumot."""
+        return [x.get_info() for x in self.talabar]
+    def get_students_num(self):
+        """Fanga yozilgan talabalar soni"""
+        return self.talabalar_soni
     
-    
-    
-    
+# OBYEKTNING XUSUSIYATLARI VA METODLARINI KO'RISH.
+# Obyektlar bilan ishlaganda, o'z-o'zidan, shu obyektga tegishli xususiyatlar va metodlarni bilish talab qilinadi. Agar obyekt tegishli
+# bo'lgan klassni o'zimiz yaratgan bo'lsak, istalgan payt klass ichini ko'rib olishimiz mumkin. Lekin klass juda ham uzun bo'lsa yoki
+# boshqalar yaratgan klass haqida ma'lumot olish talab qilinsa, buning bir nechta yo'li bor.
+
+# dir() FUNKSIYASI.
+# dir() funksiyasi yordamida istalgan obyekt yoki klassning metodlarini ko'rib olishimiz mumkin:
+# print(dir(Talaba))
+# Natija: ['__class__',
+          # '__delattr__',
+          # '__dict__',
+          # '__dir__',
+          # '__doc__',
+          # '__eq__',
+          # '__format__',
+          # '__ge__',
+          # '__getattribute__',
+          # '__getstate__',
+          # '__gt__',
+          # '__hash__',
+          # '__init__',
+          # '__init_subclass__',
+          # '__le__',
+          # '__lt__',
+          # '__module__',
+          # '__ne__',
+          # '__new__',
+          # '__reduce__',
+          # '__reduce_ex__',
+          # '__repr__',
+          # '__setattr__',
+          # '__sizeof__',
+          # '__str__',
+          # '__subclasshook__',
+          # '__weakref__',
+          # 'get_age',
+          # 'get_fullname',
+          # 'get_info',
+          # 'get_lastname',
+          # 'get_name',
+          # 'set_bosqich',
+          # 'update_bosqich']
+          
+# Lekin bunda har bir klass bilan keluvchi maxsus DUNDER METODLAR ham chiqib keldi. Dunder metodlar ikki pastki chiziq (__) bilan 
+# boshlanadi va maxsus holatlar uchun sqlab qo'yilgan. Biz hozircha faqat __init__ metodi bilan tanishdik, qolganlari bilan keyingi
+# darslarimizda yana ko'rishamiz. Dunder metodlardan keyin esa biz murojaat etishimiz mumkin bo'lgan metodlar ro'yxati kelgan.
+
+# Kelin, dunder metodlarni tashlab, bizga kerak metodlarni qaytaruvchi sodda funksiya yozamiz:
+def see_methods(klass):
+    return [method for method in dir(klass) if method.startswith('__') is False]
+# Funksiya yordamida Talaba klassining metodlarini ko'ramiz:
+print(see_methods(Talaba))
+# Natija: ['get_age',
+          # 'get_fullname',
+          # 'get_info',
+          # 'get_lastname',
+          # 'get_name',
+          # 'set_bosqich',
+          # 'update_bosqich']
+# Agar dir() funksiyasiga klass emas, obyekt uzatsak, metodlardan tashqari xususiyatlar ham chiqib keladi:
+print(see_methods(talaba1))
+# Natija: ['get_age',
+          # 'get_fullname',
+          # 'get_info',
+          # 'get_lastname',
+          # 'get_name',
+          # 'set_bosqich',
+          # 'update_bosqich']
+
+     #    ['bosqich',
+     # 'familiya',
+     # 'get_info',
+     # 'ism',
+     # 'set_bosqich',
+     # 'tyil',
+     # 'update_bosqich']
+     
+     
+# __dict__ METODI.
+# Yuqorida zikr qilingan dunder metodlardan biri __dict__ metodi bo'lib, bu metod OBYEKTNING xususiyatlarini lug'at ko'rinishida
+# qaytaradi:
+print(talaba1.__dict__)
+# Natija: {'ism': 'Olim', 'familiya': 'Olimov', 'tyil': 1995, 'bosqich': 1}
+
+# Natijadan faqatgina kalitlarni ajratib olsak, obyektning xususiyatlari chiqadi:
+print(talaba1.__dict__.keys())
+# Natija: dict_keys(['ism', 'familiya', 'tyil', 'bosqich'])
+
+# AMALIYOT TOPSHIRIQLARI.
+#1 - 
+
+        
+        
+        
+        
 #  - DARS.
 # LOYIHALAR. 
 # "SON TOPISH" VA "SO'Z TOPISH" O'YINLARI.
