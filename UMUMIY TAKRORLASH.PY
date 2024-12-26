@@ -4735,35 +4735,35 @@ Created on Sat Oct 26 19:25:01 2024
 # AMALIYOT TOPSHIRIQLARI:
 #1 - Web sahifangiz uchun foydalanuvchi (user) klassini tuzing. Klassning xususiyatlari sifatida odatda ijtimoiy tarmoqlar talab
 # qiladigan ma'lumotlarni kiriting (ism, foydalanuvchi ismi, email, va hokazo).
-class User:
-    def __init__(self, username, login, password, email):
-        self.username = username
-        self.login = login
-        self.password = password
-        self.email = email
+# class User:
+#     def __init__(self, username, login, password, email):
+#         self.username = username
+#         self.login = login
+#         self.password = password
+#         self.email = email
         
 #2 - Klassga bir nechta metodlar qo'shing, jumladan get_info() metodi foydalanuvchi haqida yig'ilgan ma'lumotlarni chiroyli qilib
 # chiqarsin (masalan: "Foydalanuvchi: alijon1994, ismi: Alijon Valiyev, email: alijon1994@gmail.com).        
 
-    def get_info(self):
-        return f"Foydalanuvchi {self.username}ning logini:{self.login}, paroli:{self.password} va emaili: {self.email}."
+    # def get_info(self):
+    #     return f"Foydalanuvchi {self.username}ning logini:{self.login}, paroli:{self.password} va emaili: {self.email}."
 # user1 = User("Nurulloh", "nur", "n1282754N", "nurik9.99@bk.ru")
 # print(user1.get_info())
 
 #3 - Klassdan bir nechta obyektlar yarating va uning xususiyatlari va metodlariga murojat qiling.
-    def get_username(self):
-        return f"Foydalanuvchining username mi:{self.username}."
+#     def get_username(self):
+#         return f"Foydalanuvchining username mi:{self.username}."
     
-    def get_login(self):
-        return f"{self.username} userining logini: {self.login}"
+#     def get_login(self):
+#         return f"{self.username} userining logini: {self.login}"
 
-user1 = User("Nurulloh", "nur", "n1282754N", "nurik9.99@bk.ru")
-user2 = User("Mavluda", "mav", "m2730209N", "mav9.99@bk.ru")
-user3 = User("Abdurahmon", "abu", "a1276464A", "abu9.99@bk.ru")
+# user1 = User("Nurulloh", "nur", "n1282754N", "nurik9.99@bk.ru")
+# user2 = User("Mavluda", "mav", "m2730209N", "mav9.99@bk.ru")
+# user3 = User("Abdurahmon", "abu", "a1276464A", "abu9.99@bk.ru")
     
-print(user1.get_info())
-print(user2.get_username())
-print(user3.get_login())
+# print(user1.get_info())
+# print(user2.get_username())
+# print(user3.get_login())
 
 # 26 - DARS TUGADI.
 
@@ -4779,93 +4779,93 @@ print(user3.get_login())
 # Keling, Talaba klassimizga qaytamiz. Bu klassimiz 3ta xususiyatga ega edi: ism, familiya, tyil. Biz yana bitta qo'shimcha bosqich nomli
 # xususiyat qo'shamiz, va unga standart qiymat sifatida 1 beramiz, e'tibor qiling, bu xususiyat obyekt yaratilishida parametr sifatida
 # uzatilmaydi:
-class Talaba:
-    """Talab nomli klass yaratamiz"""
-    def __init__(self, ism, familiya, tyil):
-        self.ism = ism
-        self.familiya = familiya
-        self.tyil = tyil
-        self.bosqich = 1
+# class Talaba:
+#     """Talab nomli klass yaratamiz"""
+#     def __init__(self, ism, familiya, tyil):
+#         self.ism = ism
+#         self.familiya = familiya
+#         self.tyil = tyil
+#         self.bosqich = 1
 
-    def get_info(self):
-        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
+#     def get_info(self):
+#         return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
 # Endi Talaba klassidan yangi obyekt yaratganimizda har bir yangi talabaning kursi 1ga teng bo'ladi.
 
-talaba1 = Talaba ("Nurulloh", "Abdurashidov", 1999)
-print(talaba1.get_info())
+# talaba1 = Talaba ("Nurulloh", "Abdurashidov", 1999)
+# print(talaba1.get_info())
 # Natija: Nurulloh Abdurashidov. 1-bosqich talabasi.
 
 # STANDART QIYMATNI O'ZGARTIRISH.
 # Obyektning standart qiymatiga ham boshqa xususiyatlar kabi nuqta orqali murojaat etishimiz va uningqiymatini almashtirishimniz mumkin:
-talaba1.bosqich = 2
-print(talaba1.bosqich)
+# talaba1.bosqich = 2
+# print(talaba1.bosqich)
 # Natija: 2
 
 # Yana boshqa usuli - obyekt xususiyatini yangilovchi metod yozish.
-class Talaba:
-    """Talaba nomli klass yaratamiz"""
-    def __init__(self, ism, familiya, tyil):
-        self.ism = ism
-        self.familiya = familiya
-        self.tyil = tyil
+# class Talaba:
+#     """Talaba nomli klass yaratamiz"""
+#     def __init__(self, ism, familiya, tyil):
+#         self.ism = ism
+#         self.familiya = familiya
+#         self.tyil = tyil
     
-    def get_info(self):
-        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
+#     def get_info(self):
+#         return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
     
-    def set_bosqich(self, bosqich):
-        """Talabaning kursini yangilovchi metod"""
-        self.bosqich = bosqich
+#     def set_bosqich(self, bosqich):
+#         """Talabaning kursini yangilovchi metod"""
+#         self.bosqich = bosqich
 # Metodga murojaat etamiz:
-talaba1 = Talaba("Nurulloh", "Abdurashidov", 1999)
-talaba1.set_bosqich(3)
-print(talaba1.get_info())
+# talaba1 = Talaba("Nurulloh", "Abdurashidov", 1999)
+# talaba1.set_bosqich(3)
+# print(talaba1.get_info())
 # Natija: Nurulloh Abdurashidov. 3-bosqich talabasi.
 
 # Umuman olganda, xususiyatlarni yangilashda turli usullardan foydalanish mumkin. Misol uchun,talabaning bosqichi, odatda, 1 tadan
 # ko'payib boradi, shuning uchun quyidagicha metod ham yozishimiz mumkin:
-class Talaba:
-    def __init__(self, ism, familiya, tyil):
-        self.ism = ism
-        self.familiya = familiya
-        self.tyil = tyil
-        self.bosqich = 1
-    def get_info(self):
-        return f"{self.ism} {self.familiya}. {self.tyil}-yilda tug'ilgan, {2024 - self.tyil} yoshda. {self.bosqich}-bosqich talabasi."
-    def set_bosqich(self, bosqich):
-        """Talabaning kursini yangilovchi metod."""
-        self.bosqich = bosqich
-    def update_bosqich(self):
-        """Talabaning bosqichini bittaga ko'tarish."""
-        self.bosqich += 1
+# class Talaba:
+#     def __init__(self, ism, familiya, tyil):
+#         self.ism = ism
+#         self.familiya = familiya
+#         self.tyil = tyil
+#         self.bosqich = 1
+#     def get_info(self):
+#         return f"{self.ism} {self.familiya}. {self.tyil}-yilda tug'ilgan, {2024 - self.tyil} yoshda. {self.bosqich}-bosqich talabasi."
+#     def set_bosqich(self, bosqich):
+#         """Talabaning kursini yangilovchi metod."""
+#         self.bosqich = bosqich
+#     def update_bosqich(self):
+#         """Talabaning bosqichini bittaga ko'tarish."""
+#         self.bosqich += 1
 # update_bosqich() metodiga murojaat etganimizda talabaning bosqichi oshib boradi:
-talaba1 = Talaba("Olim", "Olimov", 1995)
-talaba2 = Talaba("Husan", "Akbarov", 2004)
-talaba3 = Talaba("Hasan", "Akbarov", 2004)
-print(talaba1.get_info())
+# talaba1 = Talaba("Olim", "Olimov", 1995)
+# talaba2 = Talaba("Husan", "Akbarov", 2004)
+# talaba3 = Talaba("Hasan", "Akbarov", 2004)
+# print(talaba1.get_info())
 # Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 1-bosqich talabasi.
 
-talaba1.update_bosqich()
-print(talaba1.get_info())
+# talaba1.update_bosqich()
+# print(talaba1.get_info())
 # Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 2-bosqich talabasi. 
 
-talaba1.update_bosqich()
-print(talaba1.get_info())
+# talaba1.update_bosqich()
+# print(talaba1.get_info())
 # Natija: Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 3-bosqich talabasi.
 
 
 # OBYEKTLAR O'RTASIDAGI MUSOSABAT.
 # Obyektga yo'nlatirilgan dasturlashning afzalligi turli obyektlar o'rtasida o'zaro munosabatlarni oson yo'lga qo'yish mumkinligidadir.
 # Kleing,yangi Fan degan klass yaratamiz va fanimizga talabalar qo'shish uchun add_student() metodini yozamiz:
-class Fan:
-    def __init__(self, nomi):
-        self.nomi = nomi
-        self.talabalar_soni = 0
-        self.talabalar = []
+# class Fan:
+#     def __init__(self, nomi):
+#         self.nomi = nomi
+#         self.talabalar_soni = 0
+#         self.talabalar = []
         
-    def add_student(self, talaba):
-        """Fanga talabalar qo'shish"""
-        self.talabalar.append(talaba)
-        self.talabalar_soni += 1
+#     def add_student(self, talaba):
+#         """Fanga talabalar qo'shish"""
+#         self.talabalar.append(talaba)
+#         self.talabalar_soni += 1
         
 # ETIBOR BERING! Fan klassi faqatgina yagona nomi degan parametrga ega. Qolgan xususiyatlariga esa standart qiymat berilgan:
 # talabalar_soni = 0, talabalar ro'yxati bo'sh.
@@ -4874,22 +4874,22 @@ class Fan:
 # va unitalabalar ro'yxatiga qo'shadi. Shuningdek, bu metod yangi talaba qo'shilganda talabalar_soni ni bittaga oshirib qo'yadi.
 
 # Keling, boshlanishiga yangi fan obyektini va bir nechta talabalarni yaratamiz:
-matematika = Fan("Oliy Matematika")
-talaba1 = Talaba("Olim", "Olimov", 1995)
-talaba2 = Talaba("Husan", "Akbarov", 2004)
-talaba3 = Talaba("Hasan", "Akbarov", 2004)
+# matematika = Fan("Oliy Matematika")
+# talaba1 = Talaba("Olim", "Olimov", 1995)
+# talaba2 = Talaba("Husan", "Akbarov", 2004)
+# talaba3 = Talaba("Hasan", "Akbarov", 2004)
 
-# Talabalarni yangi fanimizga qo'shamiz:
-matematika.add_student(talaba1)
-matematika.add_student(talaba2)
-matematika.add_student(talaba3)
+# # Talabalarni yangi fanimizga qo'shamiz:
+# matematika.add_student(talaba1)
+# matematika.add_student(talaba2)
+# matematika.add_student(talaba3)
 
 # Mana fanimiz tayyor, talabalar qo'shildi. Keling, endi fan haqida ma'lumotlarni olamiz:
-print(matematika.talabalar_soni)
+# print(matematika.talabalar_soni)
 # Natija: 3
 
 # Fanimizga 3ta talaba qo'shilibti. Talabalar haqida ma'lumot olsak bo'ladimi?
-print(matematika.talabalar)
+# print(matematika.talabalar)
 # Natija: [<__main__.Talaba object at 0x0000025598EDB3E0>,
           # <__main__.Talaba object at 0x0000025598B47BF0>,
           # <__main__.Talaba object at 0x0000025598D76060>]     
@@ -4901,29 +4901,29 @@ print(matematika.talabalar)
 # Fanimizga yozilgan talabalar haqida tushunarli ma'lumot olish uchun Fan klassiga yangi get_students() metodini qo'shamiz. Bu metod
 # talabalar ichidagi har bir talaba obyektiga murojaat etib, get_info() metodi yordamida talabaning ma'lumotlarini oladi, ro'yxatga
 # qo'shadi va shu ro'yxatni qaytaradi:
-class Fan:
-    def __init__(self, nomi):
-        self.nomi = nomi
-        self.talabalar_soni = 0
-        self.talabalar = []
+# class Fan:
+#     def __init__(self, nomi):
+#         self.nomi = nomi
+#         self.talabalar_soni = 0
+#         self.talabalar = []
         
-    def add_student(self, talaba):
-        """Fanga talabalar qo'shish"""
-        self.talabalar.append(talaba)
-        self.talabalar_soni += 1
+#     def add_student(self, talaba):
+#         """Fanga talabalar qo'shish"""
+#         self.talabalar.append(talaba)
+#         self.talabalar_soni += 1
     
-    def get_students(self):
-        return [talaba.get_info() for talaba in self.talabalar]
+#     def get_students(self):
+#         return [talaba.get_info() for talaba in self.talabalar]
     
-matematika = Fan("Oliy Matematika")
-talaba1 = Talaba("Olim", "Olimov", 1995)
-talaba2 = Talaba("Husan", "Akbarov", 2004)
-talaba3 = Talaba("Hasan", "Akbarov", 2004)
+# matematika = Fan("Oliy Matematika")
+# talaba1 = Talaba("Olim", "Olimov", 1995)
+# talaba2 = Talaba("Husan", "Akbarov", 2004)
+# talaba3 = Talaba("Hasan", "Akbarov", 2004)
 
 # Talabalarni yangi fanimizga qo'shamiz:
-matematika.add_student(talaba1)
-matematika.add_student(talaba2)
-matematika.add_student(talaba3)
+# matematika.add_student(talaba1)
+# matematika.add_student(talaba2)
+# matematika.add_student(talaba3)
 # Shu o'rinda Pythonda ro'yxatlar bilan ishlashning qulayliklaridan birini ham ko'rsatib o'tsak. get_students() metodiga e'tibor
 # bersangiz, biz yangi ro'yxat shakllantirishda 1 qator koddan foydalandik:
 # [talaba.get_info() for talaba in self.talabalar]
@@ -4932,8 +4932,8 @@ matematika.add_student(talaba3)
 # kvadrat qavslar ichiga olganimiz uchun har bir sikl natijasi avtomatik ravishda ro'yxatga qo'shib boriladi.
 
 # Mana, endi metodga murojaat etib, talabalar haqida ma'lumot olishimiz mumkin:
-mat_talabalar = matematika.get_students()
-print(mat_talabalar)
+# mat_talabalar = matematika.get_students()
+# print(mat_talabalar)
 # Natija: ["Olim Olimov. 1995-yilda tug'ilgan, 29 yoshda. 1-bosqich talabasi.",
           # "Husan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi.",
           # "Hasan Akbarov. 2004-yilda tug'ilgan, 20 yoshda. 1-bosqich talabasi."]
@@ -4957,56 +4957,56 @@ print(mat_talabalar)
 # metodlarni esa get (olish) so'zi bilan boshlash qoida qilib olingan. Masalan: set_name() va get_name() kabi.
 
 # Agar yuqoridagi qoidalarga amal qilgan holda Talaba klassimizni yangilaydigan bo'lsak, u shunday ko'rinishga ega bo'ladi:
-class Talaba:
-    """Talaba nomli klass yaratamiz""" 
-    def __init__(self, ism, familiya, tyil):
-        """Talabaning xususiyatlari"""
-        self.ism = ism
-        self.familiya = familiya
-        self.tyil = tyil 
-        self.bosqich = 1
-    def set_bosqich(self, bosqich):
-        """Talabaning kursini yangilovchi metod"""
-        self.bosqich = bosqich
-    def update_bosqich(self):
-        """Talabaning bosqichini 1 taga ko'paytirish"""
-        self.bosqich += 1
-    def get_info(self):
-        """Talaba haqida ma'lumot"""
-        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
-    def get_name(self):
-        """Talabaning ismini qaytaradi."""
-        return self.ism
-    def get_lastname(self):
-        """Talabaning familiyasini qaytaradi."""
-        return self.familiya
-    def get_fullname(self):
-        """Talabaning ism-familiyasini qaytaradi."""
-        return f"{self.ism} {self.familiya}."
-    def get_age(self, jyil):
-        """Talabaning yoshini qaytaruvchi dastur."""
-        return jyil - self.tyil
+# class Talaba:
+#     """Talaba nomli klass yaratamiz""" 
+#     def __init__(self, ism, familiya, tyil):
+#         """Talabaning xususiyatlari"""
+#         self.ism = ism
+#         self.familiya = familiya
+#         self.tyil = tyil 
+#         self.bosqich = 1
+#     def set_bosqich(self, bosqich):
+#         """Talabaning kursini yangilovchi metod"""
+#         self.bosqich = bosqich
+#     def update_bosqich(self):
+#         """Talabaning bosqichini 1 taga ko'paytirish"""
+#         self.bosqich += 1
+#     def get_info(self):
+#         """Talaba haqida ma'lumot"""
+#         return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi."
+#     def get_name(self):
+#         """Talabaning ismini qaytaradi."""
+#         return self.ism
+#     def get_lastname(self):
+#         """Talabaning familiyasini qaytaradi."""
+#         return self.familiya
+#     def get_fullname(self):
+#         """Talabaning ism-familiyasini qaytaradi."""
+#         return f"{self.ism} {self.familiya}."
+#     def get_age(self, jyil):
+#         """Talabaning yoshini qaytaruvchi dastur."""
+#         return jyil - self.tyil
     
 # Xuddi shu kabi, Fan klassimizning yakuniy ko'rinishi quyidagicha bo'ladi:
-class Fan():
-    """Fan nomli klass"""
-    def __init__(self, nomi):
-        self.nomi = nomi
-        self.talabalar_soni = 0
-        self.talabar = []
-    def add_students(self, talaba):
-        """Fanga talabalar qo'shish"""
-        self.talabalar.append(talaba)
-        self.talabalar_soni += 1
-    def get_name(self):
-        """Fan nomi"""
-        return self.nomi 
-    def get_students(self):
-        """Fanga yozilgan talabalar haqida ma'lumot."""
-        return [x.get_info() for x in self.talabar]
-    def get_students_num(self):
-        """Fanga yozilgan talabalar soni"""
-        return self.talabalar_soni
+# class Fan():
+#     """Fan nomli klass"""
+#     def __init__(self, nomi):
+#         self.nomi = nomi
+#         self.talabalar_soni = 0
+#         self.talabar = []
+#     def add_students(self, talaba):
+#         """Fanga talabalar qo'shish"""
+#         self.talabalar.append(talaba)
+#         self.talabalar_soni += 1
+#     def get_name(self):
+#         """Fan nomi"""
+#         return self.nomi 
+#     def get_students(self):
+#         """Fanga yozilgan talabalar haqida ma'lumot."""
+#         return [x.get_info() for x in self.talabar]
+#     def get_students_num(self):
+#         """Fanga yozilgan talabalar soni"""
+#         return self.talabalar_soni
     
 # OBYEKTNING XUSUSIYATLARI VA METODLARINI KO'RISH.
 # Obyektlar bilan ishlaganda, o'z-o'zidan, shu obyektga tegishli xususiyatlar va metodlarni bilish talab qilinadi. Agar obyekt tegishli
@@ -5056,10 +5056,10 @@ class Fan():
 # darslarimizda yana ko'rishamiz. Dunder metodlardan keyin esa biz murojaat etishimiz mumkin bo'lgan metodlar ro'yxati kelgan.
 
 # Kelin, dunder metodlarni tashlab, bizga kerak metodlarni qaytaruvchi sodda funksiya yozamiz:
-def see_methods(klass):
-    return [method for method in dir(klass) if method.startswith('__') is False]
-# Funksiya yordamida Talaba klassining metodlarini ko'ramiz:
-print(see_methods(Talaba))
+# def see_methods(klass):
+#     return [method for method in dir(klass) if method.startswith('__') is False]
+# # Funksiya yordamida Talaba klassining metodlarini ko'ramiz:
+# print(see_methods(Talaba))
 # Natija: ['get_age',
           # 'get_fullname',
           # 'get_info',
@@ -5068,7 +5068,7 @@ print(see_methods(Talaba))
           # 'set_bosqich',
           # 'update_bosqich']
 # Agar dir() funksiyasiga klass emas, obyekt uzatsak, metodlardan tashqari xususiyatlar ham chiqib keladi:
-print(see_methods(talaba1))
+# print(see_methods(talaba1))
 # Natija: ['get_age',
           # 'get_fullname',
           # 'get_info',
@@ -5089,20 +5089,104 @@ print(see_methods(talaba1))
 # __dict__ METODI.
 # Yuqorida zikr qilingan dunder metodlardan biri __dict__ metodi bo'lib, bu metod OBYEKTNING xususiyatlarini lug'at ko'rinishida
 # qaytaradi:
-print(talaba1.__dict__)
+# print(talaba1.__dict__)
 # Natija: {'ism': 'Olim', 'familiya': 'Olimov', 'tyil': 1995, 'bosqich': 1}
 
 # Natijadan faqatgina kalitlarni ajratib olsak, obyektning xususiyatlari chiqadi:
-print(talaba1.__dict__.keys())
+# print(talaba1.__dict__.keys())
 # Natija: dict_keys(['ism', 'familiya', 'tyil', 'bosqich'])
 
 # AMALIYOT TOPSHIRIQLARI.
-#1 - 
+#1 - Avto degan yangi klass yarating. Unga avtomobillarga doir bo'lgan bir nechta xususiyatlar (model, rang, korobka, narh va hokazo)
+# qo'shing. Ayrim xususiyatlarga standart qiymat bering (masalan, kilometer=0).
+class Avto:
+    def __init__(self, model, rang, korobka, narx):
+        self.model = model
+        self.rang = rang
+        self.korobka = korobka
+        self.narx = narx
+        self.km = 0
+    def set_km(self, km):
+        """Avtomobilni km sini yangilaydigan metod"""
+        self.km = km
+    def update_km(self):
+        """Avtomobilni yurgan km sini yangilaydigan metod"""
+        self.km += 10
 
+#2 -  Avto ga oid obyektning xususiyatlarini qaytaradigan metodlar yozing get_info() metodi avti haqida to'liq ma'lumotni matn
+# ko'rinishida qaytarsin.       
+    def get_info(self):
+        """Avtomo9billar haqida to'liq ma'lumotni qaytaradi"""
+        return f"{self.model} modelidagi mashina, {self.rang} rangda, korobkasi {self.korobka}, narx {self.narx} va yurgan km si {self.km} km."        
+avto1 = Avto("Jentra", "qora", "avtomat", 15000)
+print(avto1.get_info())
+# Natija: Jentra modelidagi mashina, qora rangda, korobkasi avromat, narx 15000 va yurgan km si 0 km.
+
+#3 - Avto ga oid obyektning xususiyatlarini yangilaydigan metodlar yozing. update_km() metodi son qabul qilib olib, avtomobilning
+# yurgan kilometrajini yangilab borsin.
+avto1 = Avto("Jentra", "qora", "avtomat", 15000)
+print(avto1.get_info())
+avto1.km = 100
+print(avto1.get_info())
+avto1.update_km()
+print(avto1.get_info())
+
+#4 - Yangi, Avtosalon degan klass yarating va kerakli xususiyatlar bilan to'ldiring (salon nomi, manzili, sotuvdagi avtomobillar
+# va hokazo).
+class Avtosalon:
+    def __init__(self, nomi, manzili):
+        self.nomi = nomi
+        self.manzili = manzili
+        self.avtolar_soni = 0
+        self.s_avtomobillar = []
         
-        
-        
-        
+#5 - Avtosalonga yangi avtomobillar qo'shish uchun metod yozing.
+    def add_avto(self, avto):
+        """Salonga avtolar qo'shish uchun metod"""
+        self.s_avtomobillar.append(avto)
+        self.avtolar_soni += 1
+
+#6 - Avtosalondagi avtomobillar haqida ma'lumot qaytaruvchi metod yozing
+    def get_avtolar(self):
+       """Salondagi avtomobillar haqida ma'lumot qaytaruvchi metod"""
+       return [avto.get_info() for avto in self.s_avtomobillar]
+
+#7 - Yuqoridagi obyektlar va ularga tegishli metodlarni tekshirib ko'ring.
+avto1 = Avto("Jenta", "qora", "avtomat", 15000) 
+avto2 = Avto("Malibu", "qora", "mexanika", 33000) 
+avto3 = Avto("Gelenwagen", "oq", "korobka", 400000) 
+
+avtosalon = Avtosalon("LUX Avtosalon", " Tahskent")
+avtosalon.add_avto(avto1)
+avtosalon.add_avto(avto2)
+avtosalon.add_avto(avto3)
+for avto_info in avtosalon.get_avtolar():
+    print(avto_info)
+
+#7 - dir() funksyasi va __dict__ metodi yordamida o'zingiz yozgan va Pythondagi turli klass va obyektlarning xususiyatlari va metodlarini
+# toping (dir(str), dir(int) va hokazo)
+print("Avtosalon sinfining atributlari va metodlari")
+print(dir(Avtosalon))
+print("\nAvtosalon obyektining holati: (__dict__):")
+print(avtosalon.__dict__)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #  - DARS.
 # LOYIHALAR. 
 # "SON TOPISH" VA "SO'Z TOPISH" O'YINLARI.
