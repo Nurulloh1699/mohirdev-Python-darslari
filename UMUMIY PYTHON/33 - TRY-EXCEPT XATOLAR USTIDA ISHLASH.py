@@ -7,23 +7,23 @@ Created on Sun Jan 19 16:48:23 2025
 
 # 33 - DARS.
 # TRY-EXCEPT XATOLAR USTIDA ISHLASH.
-# yosh = input("Yoshingizni kiriting: ")
-# yosh = int(yosh)
-# print(f"Siz {2025-yosh}-yilda tug'ilgansiz!")
+yosh = input("Yoshingizni kiriting: ")
+yosh = int(yosh)
+print(f"Siz {2025-yosh}-yilda tug'ilgansiz!")
 # Yoshingizni kiriting: 26
-# Natija: Siz 1999-yilda tug'ilgansiz.
+#Natija: Siz 1999-yilda tug'ilgansiz.
 
 # Yoshingizni kiriting: 25.5
 # ValueError: invalid literal for int() with base 10: '25.5'
 
 # Endi shu holatlarni oldini olishni ko'rib chiqamiz. Buning uchun try-except funksiyasidan
 # foydalanamiz: 
-# yosh = input("Yoshingizni kiriting: ")
-# try:
-#     yosh = int(yosh)    
-#     print(f"Siz {2025 - yosh}-yilda tug'ilgansiz.")
-# except:
-#     print("Siz butun son kiritmadingiz!")    
+yosh = input("Yoshingizni kiriting: ")
+try:
+    yosh = int(yosh)    
+    print(f"Siz {2025 - yosh}-yilda tug'ilgansiz.")
+except:
+    print("Siz butun son kiritmadingiz!")    
 # Yoshingizni kiriting: 26.5
 # Natija: Siz butun son kiritmadingiz!
 
@@ -31,17 +31,17 @@ Created on Sun Jan 19 16:48:23 2025
 # Natija: Siz 1999-yilda tug'ilgansiz.
 
 # Agar yanayam to'g'riroq yozmoqchi bo'lsak bunday qilamiz:
-# yosh = input("Yoshingizni kiritng: ")
-# try:
-#     yosh = int(yosh)
-# except:
-#     print("Siz butun son kiritmadingiz!")
-# else:
-#     print(f"Siz {2025-yosh}-yilda tug'ilgansiz.")
+yosh = input("Yoshingizni kiritng: ")
+try:
+    yosh = int(yosh)
+except:
+    print("Siz butun son kiritmadingiz!")
+else:
+    print(f"Siz {2025-yosh}-yilda tug'ilgansiz.")
 # Aytish kerakki yuqoridagi amallar bilan kod to'htab qolmaydi va agar kod davomiga biz ayrim
 # qo'shimchalar yozsak o'shalar ham bajarilib keyin kodlar tugasa shunda dastur to'htaydi
-# print("Dastur davom etyapti.")
-# print("Dastur tugadi.")    
+print("Dastur davom etyapti.")
+print("Dastur tugadi.")    
 # Bunda ham natija o'zgarmaydi.
 
 # except bilan biz turli xil xatolarni ushlashimiz mumkin. Yuqoridagi xolatga o'xshab har turli
