@@ -8,36 +8,31 @@ Created on Sat Apr  5 11:36:09 2025
 # modules/product_manager.py
 
 from data_base.database import fetch_one, fetch_all, execute_query, execute_returning_id
-from data_base.database import execute_query, fetch_one, fetch_all, execute_returning_id
-from data_base.database import fetch_all  # bu import yuqorida bo'lishi kerak
-from data_base.database import fetch_one, execute_query, execute_returning_id
 
+# --- Barcha kategoriyalarni olish ---
 def get_all_categories():
-    query = "SELECT nomi FROM kategoriyalar ORDER BY nomi"
+    query = "SELECT category_name FROM categories ORDER BY category_name"
     rows = fetch_all(query)
-    return [row["nomi"] for row in rows]
+    return [row["category_name"] for row in rows]
 
-# --- Mahsulot qo‘shish ---
-def add_product(barcode, name, sale_price, quantity, category):
-    query = """
-        INSERT INTO products (barcode, name, sale_price, quantity, category)
-        VALUES (%s, %s, %s, %s, %s)
-        RETURNING id
-    """
-    return execute_returning_id(query, (barcode, name, sale_price, quantity, category))
+# --- Mahsulotni barcode orqali olish ---
+def get_product_by_barcode(barcode):
+    query = "SELECT * FROM products WHERE barcode = %s"
+    return fetch_one(query, (barcode,))
 
 # --- Mahsulotni ID bo‘yicha olish ---
 def get_product_by_id(product_id):
     query = "SELECT * FROM products WHERE id = %s"
     return fetch_one(query, (product_id,))
 
-# --- Mahsulotni barcode orqali olish (sotuvda kerak) ---
-def get_product_by_barcode(barcode):
-    query = "SELECT * FROM products WHERE barcode = %s"
-    return fetch_one(query, (barcode,))
+# --- Kategoriya nomidan ID topish ---
+def get_category_id_by_name(category_name):
+    query = "SELECT id FROM categories WHERE category_name = %s LIMIT 1"
+    row = fetch_one(query, (category_name,))
+    return row["id"] if row else None
 
-# --- 🆕 Mahsulot qo‘shish yoki yangilash (MIQDOR) ---
-def add_or_update_product(barcode, nomi, narx, miqdor, amal, category_id, foyda_turi, foyda_miqdori, olchov):
+# --- Mahsulot qo‘shish yoki yangilash ---
+def add_or_update_product(barcode, nomi, sotuv_narxi, miqdor, amal, category_id, foyda_turi, foyda_miqdori, olchov, purchase_price):
     existing = fetch_one("SELECT id FROM products WHERE barcode = %s", (barcode,))
     if existing:
         query = "UPDATE products SET quantity = quantity + %s WHERE barcode = %s"
@@ -45,27 +40,26 @@ def add_or_update_product(barcode, nomi, narx, miqdor, amal, category_id, foyda_
     else:
         query = '''
             INSERT INTO products 
-            (barcode, name, sale_price, quantity, expiry_date, category_id, profit_type, profit_value)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            (barcode, name, purchase_price, sale_price, quantity, expiry_date, category_id, profit_type, profit_value, unit, status)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 'active')
         '''
-        params = (barcode, nomi, narx, miqdor, amal, category_id, foyda_turi, foyda_miqdori, olchov)
-        
+        params = (barcode, nomi, purchase_price, sotuv_narxi, miqdor, amal, category_id, foyda_turi, foyda_miqdori, olchov)
+        execute_query(query, params)
 
 # --- Mahsulotlarni toifaga qarab olish ---
 def get_products_by_category(category_name):
     query = """
-        SELECT p.id, p.name, p.sale_price, p.quantity
+        SELECT p.barcode, p.name, p.sale_price, p.quantity
         FROM products p
         JOIN categories c ON p.category_id = c.id
-        WHERE c.category_name = %s
+        WHERE LOWER(c.category_name) = LOWER(%s)
+          AND p.sale_price > 0
+          AND p.quantity > 0
+          AND p.status = 'active'
         ORDER BY p.name
     """
-    return fetch_all(query, (category_name,))
+    return fetch_all(query, (category_name.strip(),))
 
-def get_category_id_by_name(nomi):
-    query = "SELECT id FROM categories WHERE category_name = %s"
-    row = fetch_one(query, (nomi,))
-    return row["id"] if row else None
 
 # --- Barcha mahsulotlar ro‘yxatini olish ---
 def get_all_products():
@@ -78,13 +72,13 @@ def update_stock(product_id, amount):
     execute_query(query, (amount, product_id))
 
 # --- Mahsulot ma’lumotlarini yangilash ---
-def update_product(product_id, name, sale_price, quantity, category):
+def update_product(product_id, name, sale_price, quantity, category_id):
     query = """
         UPDATE products
-        SET name = %s, sale_price = %s, quantity = %s, category = %s
+        SET name = %s, sale_price = %s, quantity = %s, category_id = %s
         WHERE id = %s
     """
-    execute_query(query, (name, sale_price, quantity, category, product_id))
+    execute_query(query, (name, sale_price, quantity, category_id, product_id))
 
 # --- Mahsulotni o‘chirish ---
 def delete_product(product_id):

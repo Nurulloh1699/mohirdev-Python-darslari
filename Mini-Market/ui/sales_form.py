@@ -9,21 +9,22 @@ Created on Sun Apr 13 11:36:30 2025
 
 from PyQt5.QtWidgets import (
     QWidget, QLabel, QPushButton, QTextEdit, QVBoxLayout,
-    QHBoxLayout, QFrame, QStackedLayout, QSizePolicy, QScrollArea
+    QHBoxLayout, QFrame, QStackedLayout, QSizePolicy, QScrollArea, QSpacerItem
 )
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtCore import Qt, QSize
-from modules.product_manager import get_products_by_category
-from ui.base_form import BaseWindow  # ✅ Qo‘shildi
+from functools import partial
+from modules.product_manager import get_products_by_category, get_product_by_barcode
+from ui.base_form import BaseWindow
 
 class SalesWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__()
-        self.parent = parent  # main.py orqali kelgan parent
+        self.parent = parent
         self.setWindowTitle("Mini Market - Savdo")
         self.setGeometry(0, 0, 1280, 1024)
         self.setStyleSheet("background-color: #f8f8f8;")
-
+        self.cart = {}  # barcode -> {name, price, quantity}
         self.init_ui()
 
     def init_ui(self):
@@ -84,7 +85,6 @@ class SalesWindow(QWidget):
             btn.clicked.connect(lambda checked, category=name: self.show_products(category))
             layout.addWidget(btn)
 
-        # ✅ Baza bo‘limiga o‘tish tugmasi
         btn_to_base = QPushButton("📦 Baza bo‘limi")
         btn_to_base.setFont(QFont("Arial", 14))
         btn_to_base.setStyleSheet("padding: 10px; background-color: #ddd; border-radius: 8px;")
@@ -103,6 +103,13 @@ class SalesWindow(QWidget):
         self.category_title.setFont(QFont("Arial", 28, QFont.Bold))
         top_layout.addWidget(self.category_title)
         top_layout.addStretch()
+
+        back_btn = QPushButton("⬅️ Orqaga")
+        back_btn.setFont(QFont("Arial", 14))
+        back_btn.setFixedHeight(40)
+        back_btn.clicked.connect(self.back_to_categories)
+        top_layout.addWidget(back_btn)
+
         layout.addLayout(top_layout)
 
         scroll = QScrollArea()
@@ -116,8 +123,10 @@ class SalesWindow(QWidget):
         frame.setLayout(layout)
         return frame
 
+    def back_to_categories(self):
+        self.stack_layout.setCurrentIndex(0)
+
     def show_products(self, category_name):
-        from functools import partial
         for i in reversed(range(self.products_layout.count())):
             self.products_layout.itemAt(i).widget().setParent(None)
 
@@ -129,22 +138,74 @@ class SalesWindow(QWidget):
             self.products_layout.addWidget(lbl)
         else:
             for product in products:
-                product_name = product["name"]
-                product_price = product["sale_price"]
-                btn = QPushButton(f"🛒 {product_name} - {product_price} so'm")
+                barcode = product["barcode"]
+                name = product["name"]
+                price = product["sale_price"]
+                btn = QPushButton(f"🛒 {name} - {price} so'm")
                 btn.setFont(QFont("Arial", 18))
                 btn.setStyleSheet("padding: 12px; background-color: white; border: 1px solid #ccc; border-radius: 10px;")
-                btn.clicked.connect(partial(self.add_to_cart_display, product_name, product_price))
+                btn.clicked.connect(partial(self.add_to_cart, barcode))
                 self.products_layout.addWidget(btn)
 
         self.category_title.setText(f"📦 {category_name}")
         self.stack_layout.setCurrentIndex(1)
 
-    def add_to_cart_display(self, name, price):
-        current_text = self.cart_display.toPlainText()
-        new_line = f"{name} - {price} so'm"
-        updated = f"{current_text}\n{new_line}" if current_text else new_line
-        self.cart_display.setText(updated)
+    def add_to_cart(self, barcode):
+        product = get_product_by_barcode(barcode)
+        if not product:
+            return
+
+        name = product["name"]
+        price = float(product["sale_price"])
+
+        if barcode in self.cart:
+            self.cart[barcode]["quantity"] += 1
+        else:
+            self.cart[barcode] = {"name": name, "price": price, "quantity": 1}
+
+        self.refresh_cart_display()
+
+    def change_quantity(self, barcode, delta):
+        if barcode in self.cart:
+            self.cart[barcode]["quantity"] += delta
+            if self.cart[barcode]["quantity"] <= 0:
+                del self.cart[barcode]
+            self.refresh_cart_display()
+
+    def clear_cart(self):
+        self.cart.clear()
+        self.refresh_cart_display()
+
+    def refresh_cart_display(self):
+        for i in reversed(range(self.cart_layout.count())):
+            item = self.cart_layout.itemAt(i)
+            if item.widget():
+                item.widget().deleteLater()
+
+        for barcode, item in self.cart.items():
+            name = item["name"]
+            price = item["price"]
+            quantity = item["quantity"]
+
+            line = QLabel(f"{name} | {quantity} x {price} so'm = {quantity * price:.2f} so'm")
+            line.setFont(QFont("Arial", 16))
+
+            minus_btn = QPushButton("➖")
+            minus_btn.clicked.connect(partial(self.change_quantity, barcode, -1))
+            plus_btn = QPushButton("➕")
+            plus_btn.clicked.connect(partial(self.change_quantity, barcode, 1))
+            for btn in [minus_btn, plus_btn]:
+                btn.setFixedSize(32, 32)
+                btn.setStyleSheet("font-size: 14pt;")
+
+            row = QHBoxLayout()
+            row.addWidget(line)
+            row.addWidget(minus_btn)
+            row.addWidget(plus_btn)
+
+            row_widget = QWidget()
+            row_widget.setLayout(row)
+            self.cart_layout.addWidget(row_widget)
 
     def create_sales_panel(self):
         frame = QFrame()
@@ -155,11 +216,27 @@ class SalesWindow(QWidget):
         label.setFont(QFont("Arial", 28, QFont.Bold))
         layout.addWidget(label)
 
-        self.cart_display = QTextEdit()
-        self.cart_display.setFont(QFont("Courier", 18))
-        self.cart_display.setReadOnly(True)
-        self.cart_display.setText("")
-        layout.addWidget(self.cart_display)
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        content = QWidget()
+        self.cart_layout = QVBoxLayout()
+        content.setLayout(self.cart_layout)
+        scroll.setWidget(content)
+
+        layout.addWidget(scroll)
+
+        btn_layout = QHBoxLayout()
+        btn_clear = QPushButton("🗑️ Tozalash")
+        btn_clear.setFont(QFont("Arial", 14))
+        btn_clear.clicked.connect(self.clear_cart)
+
+        btn_checkout = QPushButton("✅ Savdoni yakunlash")
+        btn_checkout.setFont(QFont("Arial", 14))
+        # btn_checkout.clicked.connect(self.finalize_sale)  # Future function
+
+        btn_layout.addWidget(btn_clear)
+        btn_layout.addWidget(btn_checkout)
+        layout.addLayout(btn_layout)
 
         frame.setLayout(layout)
         return frame
@@ -168,5 +245,3 @@ class SalesWindow(QWidget):
         self.hide()
         self.base_window = BaseWindow(self.parent)
         self.base_window.show()
-
-
