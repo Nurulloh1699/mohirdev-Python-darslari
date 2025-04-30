@@ -6101,26 +6101,26 @@ Created on Sat Oct 26 19:25:01 2024
 # DUNDER METODLAR.
 
 # Bu metodlarni muisollar orqali ko'rib chiqamiz.
-class Avto:
-    __num_avto = 0
-    """Avto nomli klass"""
-    def __init__(self, make, model, rang, yil, narx, km=0):
-        """Avtomobilning xususiyatlari"""
-        self.make = make
-        self.model = model 
-        self.rang = rang
-        self.yil = yil
-        self.narx = narx
-        Avto.__num_avto += 1
+# class Avto:
+#     __num_avto = 0
+#     """Avto nomli klass"""
+#     def __init__(self, make, model, rang, yil, narx, km=0):
+#         """Avtomobilning xususiyatlari"""
+#         self.make = make
+#         self.model = model 
+#         self.rang = rang
+#         self.yil = yil
+#         self.narx = narx
+#         Avto.__num_avto += 1
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 40000, 1000)
 # print(avto1)
 # # Natija: <__main__.Avto object at 0x0000013267839430>
 
-    def __str__(self):
-        return f"Avto: {self.make} {self.model}"
+    # def __str__(self):
+    #     return f"Avto: {self.make} {self.model}"
 
-    def __repr__(self):
-        return f"Avto: {self.make} {self.model}"
+    # def __repr__(self):
+    #     return f"Avto: {self.make} {self.model}"
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 40000, 1000)
 # print(avto1)    
 # Natija: Avto: GM Malibu.
@@ -6138,8 +6138,8 @@ class Avto:
 # x.__eq__(self, y) = (x == y)
 # x.__ne__(self, y) = (x != y)
 
-    def __eq__(self, y):
-        return self.narx == y.narx
+    # def __eq__(self, y):
+    #     return self.narx == y.narx
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
 # avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
 # print(avto1 == avto2)
@@ -6148,8 +6148,8 @@ class Avto:
 # Natija: TypeError: '<' not supported between instances of 'Avto' and 'Avto'
 
 # Endi ikki avtolarning narxlari kicik yoki katta ekanini tekshiramiz.
-    def __lt__(self, y):
-        return self.narx < y.narx
+    # def __lt__(self, y):
+    #     return self.narx < y.narx
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
 # avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
 # print(avto1 > avto2)
@@ -6158,8 +6158,8 @@ class Avto:
 # Natija: False
 # Natija: True
 # Natija: TypeError: '<=' not supported between instances of 'Avto' and 'Avto'
-    def __le__(self, y):
-        return self.narx <= y.narx
+    # def __le__(self, y):
+    #     return self.narx <= y.narx
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
 # avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
 # print(avto1 <= avto2)
@@ -6168,14 +6168,14 @@ class Avto:
 # Natija: False
 
 # Endi biz metodlarni uzunligini ko'rishni uchun nima qilishimizni ko'rib chiqamiz.
-class Avtosalon:
-    """Avtosalon klassi"""
-    def __init__(self, name):
-        self.name = name
-        self.avtolar = []
+# class Avtosalon:
+#     """Avtosalon klassi"""
+#     def __init__(self, name):
+#         self.name = name
+#         self.avtolar = []
    
-    def __repr__(self):
-        return f"{self.name} avtosalon"
+#     def __repr__(self):
+#         return f"{self.name} avtosalon"
 
 # salon1 = Avtosalon("MaxAvto")
 
@@ -6189,12 +6189,12 @@ class Avtosalon:
 # beradi.
 # print(isinstance(4, int))
 # Natija: True
-    def add_avto(self, * qiymat):
-        for avto in qiymat:
-            if isinstance(avto, Avto):
-                self.avtolar.append(avto)
-            else:
-                print("Avto klassiga oid avto kiriting")
+    # def add_avto(self, * qiymat):
+    #     for avto in qiymat:
+    #         if isinstance(avto, Avto):
+    #             self.avtolar.append(avto)
+    #         else:
+    #             print("Avto klassiga oid avto kiriting")
 # Bu funksiya bilan tanishishimizdan maqsad yuqoridagi avtolar = [] ro'yxatimizga faqat Avto (va o'rniga boshqa klasslarni ham yozishimiz
 # mumkin) klassiga tegishli avtolarni qo'shishga ruxsat beramiz holos.
 # salon1 = Avtosalon("MaxAvto")
@@ -6202,8 +6202,8 @@ class Avtosalon:
 # avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
 # avto3 = Avto("GM", "Jentra", "Oq", 2020, 13000)
 # salon1.append(avto1, avto2, avto3)
-    def __getitem__(self, index):
-        return self.avtolar[index]
+    # def __getitem__(self, index):
+    #     return self.avtolar[index]
     
 # salon1 = Avtosalon("MaxAvto")
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
@@ -6217,8 +6217,8 @@ class Avtosalon:
 # salon1[0] = Avto("Mercedes Benz", "S-klass", "Qora", 2024, 200000)
 # Natija: TypeError: 'Avtosalon' object does not support item assignment
 
-    def __setitem__(self, index, qiymat):
-       self.avtolar[index] = qiymat
+    # def __setitem__(self, index, qiymat):
+    #    self.avtolar[index] = qiymat
 
 # salon1 = Avtosalon("MaxAvto")
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
@@ -6247,12 +6247,12 @@ class Avtosalon:
 
 # Bu __call__ metodiga biz istalgancha shart berishimiz mumkin va hozir bu metodga murojaat qilganimizda berilgan qiymatlarimiz
 # chaqirilgan metodga qo'shilsin deb shart yozamiz: 
-    def __call__(self, * qiymat): # Biz call metodi orqali istalgancha metod chaqirsa bo'ladigan qilib qo'ydik. 
-        if qiymat:
-            for avto in qiymat:
-                self.add_avto(avto)
-        else:
-            return [avto for avto in self.avtolar]
+    # def __call__(self, * qiymat): # Biz call metodi orqali istalgancha metod chaqirsa bo'ladigan qilib qo'ydik. 
+    #     if qiymat:
+    #         for avto in qiymat:
+    #             self.add_avto(avto)
+    #     else:
+    #         return [avto for avto in self.avtolar]
 
 # salon1 = Avtosalon("MaxAvto")
 # avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
@@ -6321,59 +6321,59 @@ class Avtosalon:
 # __div__ - Bo'lish uchun
 
 # Deamak endi biz metod yozishni boshlaymiz.
-class Avto:
-    __num_avto = 0
-    def __init__(self, make, model, rang, yil, narx, km=0):
-        self.make = make
-        self.model = model
-        self.rang = rang
-        self.yil = yil
-        self.narx = narx
-        Avto.__num_avto += 1
+# class Avto:
+#     __num_avto = 0
+#     def __init__(self, make, model, rang, yil, narx, km=0):
+#         self.make = make
+#         self.model = model
+#         self.rang = rang
+#         self.yil = yil
+#         self.narx = narx
+#         Avto.__num_avto += 1
 
-    def __str__(self):
-        return f"Avto: {self.make} {self.model}"
+#     def __str__(self):
+#         return f"Avto: {self.make} {self.model}"
 
-    def __repr__(self):
-        return f"Avto: {self.make} {self.model}"
+#     def __repr__(self):
+#         return f"Avto: {self.make} {self.model}"
 
-    def __eq__(self, y):
-        return self.narx == y.narx
+#     def __eq__(self, y):
+#         return self.narx == y.narx
 
-    def __lt__(self, y):
-        return self.narx < y.narx
+#     def __lt__(self, y):
+#         return self.narx < y.narx
 
-    def __le__(self, y):
-        return self.narx <= y.narx
+#     def __le__(self, y):
+#         return self.narx <= y.narx
 
 
-class Avtosalon:
-    def __init__(self, name):
-        self.name = name
-        self.avtolar = []
+# class Avtosalon:
+#     def __init__(self, name):
+#         self.name = name
+#         self.avtolar = []
 
-    def __repr__(self):
-        return f"{self.name} avtosalon"
+#     def __repr__(self):
+#         return f"{self.name} avtosalon"
 
-    def add_avto(self, *qiymat):
-        for avto in qiymat:
-            if isinstance(avto, Avto):
-                self.avtolar.append(avto)
-            else:
-                print("Avto klassiga oid avto kiriting")
+#     def add_avto(self, *qiymat):
+#         for avto in qiymat:
+#             if isinstance(avto, Avto):
+#                 self.avtolar.append(avto)
+#             else:
+#                 print("Avto klassiga oid avto kiriting")
 
-    def __getitem__(self, index):
-        return self.avtolar[index]
+#     def __getitem__(self, index):
+#         return self.avtolar[index]
 
-    def __setitem__(self, index, qiymat):
-        self.avtolar[index] = qiymat
+#     def __setitem__(self, index, qiymat):
+#         self.avtolar[index] = qiymat
 
-    def __call__(self, *qiymat):
-        if qiymat:
-            for avto in qiymat:
-                self.add_avto(avto)
-        else:
-            return [avto for avto in self.avtolar]
+#     def __call__(self, *qiymat):
+#         if qiymat:
+#             for avto in qiymat:
+#                 self.add_avto(avto)
+#         else:
+#             return [avto for avto in self.avtolar]
 
     # def __add__(self, boshqa_salon):
     #     if isinstance(boshqa_salon, Avtosalon):
@@ -6407,40 +6407,285 @@ class Avtosalon:
 # Natija: MaxAvto LuxAvto
 
 # Endi keling biz yana shart qo'shaylik.
-    def __add__(self, y):
-        if isinstance(y, Avtosalon):
-           yangi_salon = Avtosalon(f"{self.name} {y.name}")
-           yangi_salon.avtolar = self.avtolar + y.avtolar
-           return yangi_salon
-        elif isinstance(y, Avto):
-           self.add_avto(y)
+#     def __add__(self, y):
+#         if isinstance(y, Avtosalon):
+#            yangi_salon = Avtosalon(f"{self.name} {y.name}")
+#            yangi_salon.avtolar = self.avtolar + y.avtolar
+#            return yangi_salon
+#         elif isinstance(y, Avto):
+#            self.add_avto(y)
 
-salon1 = Avtosalon("MaxAvto")
-salon2 = Avtosalon("LuxAvto")
-avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
-avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
-avto3 = Avto("GM", "Jentra", "Oq", 2020, 13000)
-salon1.add_avto(avto1, avto2, avto3)
+# salon1 = Avtosalon("MaxAvto")
+# salon2 = Avtosalon("LuxAvto")
+# avto1 = Avto("GM", "Malibu", "Qora", 2024, 35000)
+# avto2 = Avto("BMW", "M5", "Yashil", 2022, 120000)
+# avto3 = Avto("GM", "Jentra", "Oq", 2020, 13000)
+# salon1.add_avto(avto1, avto2, avto3)
 
-avto4 = Avto("Mazda", "6", "Qizil", 2016, 25000)
-avto5 = Avto("Volkswagen", "Polo", "Oq", 2020, 18000)
-avto6 = Avto("Honda", "Accord", "Qora", 2018, 22000)
-salon2(avto4, avto5, avto6)
+# avto4 = Avto("Mazda", "6", "Qizil", 2016, 25000)
+# avto5 = Avto("Volkswagen", "Polo", "Oq", 2020, 18000)
+# avto6 = Avto("Honda", "Accord", "Qora", 2018, 22000)
+# salon2(avto4, avto5, avto6)
 
-print(salon1)
+# print(salon1)
 # Natija: MaxAvto avtosalon
-print(salon1())
+# print(salon1())
 # Natija: [Avto: GM Malibu, Avto: BMW M5, Avto: GM Jentra]
-print(avto4)
+# print(avto4)
 # Natija: Avto: Mazda 6
-salon1 + avto4
-print(salon1())
+# salon1 + avto4
+# print(salon1())
 # Natija: [Avto: GM Malibu, Avto: BMW M5, Avto: GM Jentra, Avto: Mazda 6]
 
 # Demak shunday usullar orqali o'zingizni obyektingizga qo'shimcha imkoniyatlar qo'shsangiz bo'ladi.
 
 # AMALIYOT TOPSHIRIQLARI:
-#1 - 
+#1 - Avvalga darslarda yaratilgan obyektlarga (Shaxs, Talaba) turli dunder metodlarni qo'shishni mashq qiling. 
+
+# Obyekt haqida ma'lumot (__rerp__)
+
+# Talabalarni bosqichi bo'yicha solishtirish (__lt__,__eg__ va hokazo)
+# class Shaxs:
+#     """Shaxs degan klass yaratamiz"""
+#     def __init__(self, ism, familiya, passport, email):
+#         self.ism = ism
+#         self.familiya = familiya
+#         self.passport = passport
+#         self.email = email
+#     def __repr__(self):
+#         return f"{self.ism} {self.familiya}, {self.passport} {self.email}"
+        
+# shaxs1 = Shaxs("Nurulloh", "Abdurashidov", "AA002211", "nur2012@mail.ru")
+# print(shaxs1)
+
+# class Talaba:
+#     def __init__(self, ism, familiya,idraqam):
+#         self.ism = ism 
+#         self.familiya = familiya
+#         self.idraqam = idraqam
+#     def __lt__(self, y):
+#         return self.idraqam < y.idraqam
+
+        
+# talaba1 = Talaba("Nurulloh", "Abdurashidov", 123336)
+# talaba2 = Talaba("Mavluda", "Abdurashidova", 15685)
+# print(talaba1 > talaba2)
+# print(talaba1 < talaba2)
+
+
+
+#2 - Fan degan yangi klass yarating. Fan obyetklari tarkibida shu fanga yozilgan talabalarning ro'yxati saqlansin. Buning uchun Fanga
+# add_student(), __getitem__, __setitem__, __len__ kabi metodlarni qo'shing.
+# class Talaba:
+#     def __init__(self, ism, familiya, idraqam):
+#         self.ism = ism  # Talabaning ismini saqlash.
+#         self.familiya = familiya  # Talabaning familiyasini saqlash.
+#         self.idraqam = idraqam  # Talabaning ID raqamini saqlash.
+
+#     def __repr__(self):
+#         return f"{self.ism} {self.familiya} ({self.idraqam})"  # Talabaning matnli ko'rinishini qaytaradi.
+
+
+# class Fan:
+#     def __init__(self, nomi):
+#         self.nomi = nomi  # Fanning nomini saqlash.
+#         self.talabalar = []  # Talabalar ro'yxatini bo'sh holda yaratish.
+
+#     def add_student(self, talaba):
+#         """Yangi talaba qo'shish."""
+#         if isinstance(talaba, Talaba):  # Talaba obyektini tekshirish.
+#             self.talabalar.append(talaba)  # Talabalar ro'yxatiga qo'shish.
+#         else:
+#             raise ValueError("Faqat Talaba obyekti qo'shilishi mumkin!")  # Noto'g'ri obyekt bo'lsa, xato chiqarish.
+
+#     def __getitem__(self, index):
+#         """Index orqali talabani olish."""
+#         return self.talabalar[index]  # Berilgan indeksdagi talabani qaytaradi.
+
+#     def __setitem__(self, index, talaba):
+#         """Index orqali talabani o'zgartirish."""
+#         if isinstance(talaba, Talaba):  # Talaba obyektini tekshirish.
+#             self.talabalar[index] = talaba  # Berilgan indeksdagi talabani almashtirish.
+#         else:
+#             raise ValueError("Faqat Talaba obyekti qo'shilishi mumkin!")  # Noto'g'ri obyekt bo'lsa, xato chiqarish.
+
+#     def __len__(self):
+#         """Talabalar ro'yxatining uzunligini aniqlash."""
+#         return len(self.talabalar)  # Talabalar ro'yxatidagi talabalar sonini qaytarish.
+
+#     def __add__(self, talaba):
+#         """+ operatori orqali talaba qo'shish."""
+#         if isinstance(talaba, Talaba):  # Talaba obyektini tekshirish.
+#             yangi_fan = Fan(self.nomi)  # Yangi fan obyektini yaratish.
+#             yangi_fan.talabalar = self.talabalar + [talaba]  # Talabalar ro'yxatiga yangi talabani qo'shish.
+#             return yangi_fan  # Yangi fan obyektini qaytarish.
+#         else:
+#             raise ValueError("Faqat Talaba obyekti qo'shilishi mumkin!")  # Noto'g'ri obyekt bo'lsa, xato chiqarish.
+
+#     def __sub__(self, talaba_id):
+#         """- operatori orqali talaba olib tashlash."""
+#         yangi_fan = Fan(self.nomi)  # Yangi fan obyektini yaratish.
+#         yangi_fan.talabalar = [talaba for talaba in self.talabalar if talaba.idraqam != talaba_id]  
+#         # Talabalar ro'yxatidan berilgan IDga ega talabani olib tashlash.
+#         return yangi_fan  # Yangi fan obyektini qaytarish.
+
+#     def __call__(self, talaba=None):
+#         """Fanni chaqiriladigan qilish."""
+#         if talaba:  # Agar talaba berilgan bo'lsa.
+#             self.add_student(talaba)  # Talabani qo'shadi.
+#         else:
+#             return self.talabalar  # Aks holda talabalar ro'yxatini qaytaradi.
+
+#     def __repr__(self):
+#         """Fanni va ro'yxatdagi talabalarni ko'rsatish."""
+#         talabalar_ro_yxati = ", ".join([str(t) for t in self.talabalar])  # Talabalar ro'yxatini matnli formatda tuzish.
+#         return f"{self.nomi} fani: [{talabalar_ro_yxati}]"  # Fanning nomi va talabalar ro'yxatini qaytarish.
+
+
+# Misol uchun ishlatish
+# fan = Fan("Matematika")  # "Matematika" nomli fan obyektini yaratish.
+
+# talaba1 = Talaba("Nurulloh", "Abdurashidov", 123336)  # 1-talaba obyekti.
+# talaba2 = Talaba("Mavluda", "Abdurashidova", 15685)  # 2-talaba obyekti.
+# talaba3 = Talaba("Jasur", "To'raev", 987654)  # 3-talaba obyekti.
+
+# Talabalarni qo'shish
+# fan.add_student(talaba1)  # "Nurulloh Abdurashidov"ni ro'yxatga qo'shish.
+# fan.add_student(talaba2)  # "Mavluda Abdurashidova"ni ro'yxatga qo'shish.
+# fan.add_student(talaba3)  # "Jasur To'raev"ni ro'yxatga qo'shish.
+
+# + operatori orqali talaba qo'shish
+# talaba4 = Talaba("Shaxzod", "Nazarov", 54321)  # Yangi talaba.
+# fan = fan + talaba4  # "Shaxzod Nazarov"ni ro'yxatga qo'shish.
+
+# - operatori orqali talaba olib tashlash
+# fan = fan - 15685  # ID raqami 15685 bo'lgan talabani olib tashlash.
+
+# __call__ orqali fanni chaqirish va talaba qo'shish
+# talaba5 = Talaba("Aziz", "Karimov", 112233)  # Yangi talaba.
+# fan(talaba5)  # "Aziz Karimov"ni ro'yxatga qo'shish.
+
+# Talabalarni ko'rish
+# print(fan())  # Fanga qo'shilgan barcha talabalar ro'yxatini chiqaradi.
+# print(fan)  # Fanning nomi va talabalar ro'yxatini chiqaradi.
+
+# 30 - DARS TUGADI.
+
+
+# 31 - DARS.
+# FAYLLAR.
+# Faylni ochish va o'qish
+# with open(r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\test.txt') as file:
+#     pi = file.read()  # Fayl ichidagi barcha matnni o'qib, `pi` o'zgaruvchisiga saqlash
+
+# Fayldan o'qilgan matnni konsolga chiqarish
+# print(pi)
+
+# Matn oxiridagi bo'sh joylar va yangi qator belgilarini olib tashlash
+# pi = pi.rstrip()
+
+# Matndagi barcha yangi qator (`\n`) belgilarini olib tashlash
+# pi = pi.replace('\n', '')
+
+# Matnni float turiga o'zgartirish
+# pi = float(pi)
+
+# Float qiymatni konsolga chiqarish
+# print(pi)
+
+# Endi boshqa fayl misolida ko'ramiz:
+# filename = r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\talabalar.txt'
+# with open(filename) as file:  # `filename` o'zgaruvchisida ko'rsatilgan faylni ochadi
+#     for line in file:  # Fayldagi har bir qatorni ketma-ket ko'rib chiqadi
+#         print(line)  # Har bir qatorni ekranga chiqaradi
+
+# Endi bu talabalarni ismlarini har birini bittadan obyekt sifatida saqlashni ko'rib chiqamiz:
+# with open(filename) as file:  # `filename` o'zgaruvchisida ko'rsatilgan faylni ochadi
+#     talabalar = file.readlines()  # Fayldagi barcha qatorlarni ro'yxat (list) sifatida o'qiydi
+
+# O'qilgan qatorlar ro'yxatini konsolga chiqarish
+# print(talabalar)  # `talabalar` ro'yxatini ekranga chiqaradi
+
+# Keling endi talaba ma'lumotlari ohiridagi \n belgisini olib tashlashni ko'rib chiqamiz:
+# talabalar = [talaba.rstrip() for talaba in talabalar]
+
+# print(talabalar)
+
+# Biz yuqorida faqat fayllarni o'qishni ko'rdik, endi ularga yozishni ko'rib chiqamiz.
+# faylnomi = r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\new_file.txt'
+# ism = "Nurulloh"
+# tyil = 1999
+# with open(faylnomi, 'w') as fayl:
+#     fayl.write(ism + '\n')
+#     fayl.write(str(tyil) + '\n')
+# print(faylnomi)
+# Yuqoridagi usul orqali fayldagi eski ma'lumotlar o'chirilib ustidan yangi ma'lumotlar yoziladi, buni oldini olish uchun quyidagicha yo'l
+# tutamiz:
+# faylnomi = r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\new_file.txt'
+
+# with open(faylnomi, 'a') as fayl:
+#     fayl.write("Anvarov" + "\n")
+#     fayl.write("2004" + "\n")
+    
+# Biz matnlarni fayllarga saqladik, endi fayllarga lug'atlar va o'zgaruvchilar saqlashni ko'rib o'tamiz.
+# import pickle # Bu usulda yaratilgan fayllar faqatgina Pythonning o'zida ochish mumkin bo'ladi boshqa hech qanday usul bilan ochib
+# bo'lmaydi.
+
+# talaba1 = {"ism":"Hasan", "familiya":"Husanov", "tyil":2003, "kurs":2}
+# talaba2 = {"ism":"Alijon", "familiya":"Valiyev", "tyil":2004, "kurs":1}
+
+# with open('info', 'wb') as file:
+#     pickle.dump(talaba1, file)
+#     pickle.dump(talaba2, file)
+    
+# Faylimizni tayorlab oldik keling endi uni o'qishga harakat qilamiz:
+# import pickle
+
+# with open('info', 'rb') as file:
+#     talaba1 = pickle.load(file)
+#     talaba1 = pickle.load(file)
+
+# print(talaba1)
+# print(talaba2)
+
+# AMALIYOT TOPSHIRIQLARI:
+#1 - Bugun o'rgangan narsalaringizni matnga yozing va matnni Python yordamida oching.
+# import pickle  # pickle moduli import qilinmoqda, lekin hozircha bu kodda ishlatilmayapti
+
+# Fayl manzilini belgilash
+# filename = r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\topshiriq1.txt'
+
+# Faylni ochish va uning ichidagi qatorlarni o'qish
+# with open(filename) as file:  # Faylni ochadi. "with" konstruktsiyasi faylni ishlatib bo'lgandan keyin yopishni ta'minlaydi.
+#     for line in file:  # Fayldagi har bir qatorni ketma-ket ko'rib chiqadi
+#         print(line)  # O'qilgan qatorni ekranga chiqaradi
+
+#2 - Quyidagi pi_million_digits.txt faylini yuklab oling (faylda π  soni nuqtadan so'ng million xona aniqlik bilan yozilgan). 
+# Sizning tug'ilgan kuningiz π soni tarkibida uchraydimi yoki yo'q ekanligini aniqlovchi funksiya yozing. Misol uchun, tug'ilgan sanangiz
+# 25 Fevral, 2000-yil bo'lsa, 25022000 ketma-ketligi yuqoridagi matnda uchraydimi yo'q toping.
+import pickle
+pitop = r'C:\Users\DavrServis\Desktop\GitHUB\mohirdev-Python-darslari\Fayllar bilan ishlash\pi_million_digits.txt'
+with open(pitop) as file:
+    pi = file.read()
+pi = pi.rstrip()
+pi = pi.replace('\n', '')
+pi = pi.replace(' ', '')
+
+bdate = '16031999' or '03161999' or '19991603'
+# print(pi)
+print(bdate in pi)
+
+#4 - Fayl ichidagi matnni float ma'lumot turiga o'tkazing va pickle yordamida yangi faylga saqlang.
+pi = float(pi)
+print(pi)
+
+with open('pi','wb') as file:
+    pickle.dump(pi,file)
+
+# 31 - DARS TUGADI.
+
+
+# 32 - DARS.
 
 #  - DARS.
 # LOYIHALAR. 

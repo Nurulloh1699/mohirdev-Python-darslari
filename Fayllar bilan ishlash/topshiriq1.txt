@@ -1,0 +1,5 @@
+Bugungi darsda biz ko'p narsalarni o'rgandik:
+1. Faylni ochish va o'qish.
+2. Fayldan o'qilgan matnni konsolga chiqarish.
+3. Matn oxiridagi bo'sh joylar va yangi qator belgilarini olib tashlash.
+4. Matndagi barcha yangi qator (`\n`) belgilarini olib tashlash.
