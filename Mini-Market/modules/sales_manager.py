@@ -25,12 +25,13 @@ def get_product_by_barcode(barcode):
     return fetch_one(query, (barcode,))
 
 # 1. Yangi savdo sessiyasini boshlash
-def start_sale(payment_type, customer_id=None):
+def start_sale(payment_type, user_id, customer_id=None):
     query = """
-        INSERT INTO sales (payment_type, customer_id, total_amount, cash_given, change)
-        VALUES (%s, %s, 0, 0, 0) RETURNING id
+        INSERT INTO sales (payment_type, customer_id, total_amount, cash_given, change, user_id)
+        VALUES (%s, %s, 0, 0, 0, %s) RETURNING id
     """
-    return execute_returning_id(query, (payment_type, customer_id))
+    return execute_returning_id(query, (payment_type, customer_id, user_id))
+
 
 # 2. Mahsulotni skan qilish — vaqtinchalik ro‘yxatga qo‘shish uchun GUI moduli ishlatadi
 def scan_item(barcode):
